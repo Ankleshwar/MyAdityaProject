@@ -1,0 +1,63 @@
+{
+    "LandingVC":[
+               {"name": "Jaipur","img":"jaipur.jpg"},
+                 {"name": "Mumbai","img":"mumbai.JPG"},
+               {"name": "Kerala","img":"kerala.jpg"},
+                {"name": "Kolkata","img":"kolkata.jpg"},
+                
+               
+               ],
+    
+    "LeftDrawer":[
+                 {"name": "Home"},
+                 {"name": "Subscription"},
+                  {"name": "Refer a Friend"},
+                 {"name": "Suggestions"},
+                 {"name": "Like The App..!!"},
+                  {"name": "Profile"},
+                  {"name": "SignOut"},
+                 
+                ],
+    
+    "HomeVC":[
+                  {"name": "hotel"},
+                  {"name": "resta"},
+                  {"name": "shop"},
+                  {"name": "sight"},
+                  {"name": "sosicon.jpg"},
+                  ],
+
+   
+    "ExploreVC":[{"name": "Monuments",
+                  "color": "3936ff",
+                 "img":[{"value":"igate.jpg"},
+                        {"value":"rajghat.jpg"},
+                        {"value":"amarjwan.jpg"}]
+                 },
+                 {"name": "Religious Place",
+                 "color": "3395ff",
+                 "img":[{"value":"aksharsham.jpg"},
+                        {"value":"lotous.jpg"},
+                        {"value":"gurudwara.jpg"}]
+                 },
+                 {"name": "Mixed Bag",
+                  "color": "f64c73",
+                 "img":[{"value":"taj.jpg"},
+                        {"value":"igi.jpg"},
+                        {"value":"rashtrapatinhawan.jpg"}]
+                 },
+                 {"name": "Market & Shopping",
+                  "color": "c873f4",
+                 "img":[{"value":"sarojni.jpg"},
+                        {"value":"kmarket.jpg"},
+                        {"value":"sarojni.jpg"}]
+                 }
+                 ],
+    
+
+    
+   
+   
+    
+}
+

@@ -1,0 +1,6 @@
+framework module Pods_LelojiKeyboard {
+  umbrella header "Pods-LelojiKeyboard-umbrella.h"
+
+  export *
+  module * { export * }
+}

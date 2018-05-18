@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="ArialRoundedMTBold.ttf">
+            <string>ArialRoundedMTBold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SubscriptionVC" customModule="Leloji" customModuleProvider="target">
+            <connections>
+                <outlet property="flowingMenuTransitionManager" destination="iVS-t3-EnT" id="yze-5e-Qcu"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nLj-FZ-fei">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="66"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subscription" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rbe-Xa-wRS">
+                            <rect key="frame" x="152.66666666666666" y="28" width="109.99999999999997" height="30"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="62Y-8H-86T"/>
+                                <constraint firstAttribute="width" constant="110" id="PMf-Wn-i05"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Yt-M9-Usj">
+                            <rect key="frame" x="20" y="28" width="30" height="30"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="DAE-js-tso"/>
+                                <constraint firstAttribute="width" constant="30" id="dXv-UD-Ouf"/>
+                            </constraints>
+                            <state key="normal" image="menu.png"/>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="0.29868465370000002" green="0.44505756639999999" blue="0.80489444730000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="3Yt-M9-Usj" secondAttribute="bottom" constant="8" id="0Fu-nz-MmY"/>
+                        <constraint firstAttribute="bottom" secondItem="rbe-Xa-wRS" secondAttribute="bottom" constant="8" id="79r-v6-ey2"/>
+                        <constraint firstAttribute="height" constant="66" id="LpX-Dj-4kq"/>
+                        <constraint firstItem="3Yt-M9-Usj" firstAttribute="leading" secondItem="nLj-FZ-fei" secondAttribute="leading" constant="20" id="d8R-Il-PkU"/>
+                        <constraint firstItem="rbe-Xa-wRS" firstAttribute="centerX" secondItem="nLj-FZ-fei" secondAttribute="centerX" id="iVj-78-55e"/>
+                        <constraint firstItem="rbe-Xa-wRS" firstAttribute="top" secondItem="nLj-FZ-fei" secondAttribute="top" constant="28" id="nEn-RM-8zS"/>
+                        <constraint firstItem="3Yt-M9-Usj" firstAttribute="top" secondItem="nLj-FZ-fei" secondAttribute="top" constant="28" id="v1v-z2-oFo"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You are Eligibale For a" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mYa-VD-HPo">
+                    <rect key="frame" x="10" y="76" width="394" height="25"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="25" id="ieU-Tm-rY8"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="20"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ACC-aF-cMe">
+                    <rect key="frame" x="10" y="111" width="394" height="160"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="160" id="SgQ-Ig-H1M"/>
+                    </constraints>
+                    <attributedString key="attributedText">
+                        <fragment content=" Discount of                         ">
+                            <attributes>
+                                <font key="NSFont" size="20" name="ArialRoundedMTBold"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                            </attributes>
+                        </fragment>
+                        <fragment content="50%">
+                            <attributes>
+                                <font key="NSFont" size="96" name="ArialRoundedMTBold"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                            </attributes>
+                        </fragment>
+                    </attributedString>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P44-7r-exX">
+                    <rect key="frame" x="0.0" y="281" width="414" height="1"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="kh5-FC-V49"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gh6-ik-PCs">
+                    <rect key="frame" x="10" y="297" width="394" height="40"/>
+                    <color key="backgroundColor" red="0.29868465370000002" green="0.44505756639999999" blue="0.80489444730000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="CY0-O5-GVX"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="14"/>
+                    <state key="normal" title="Subscribe to our monthly plan for 49 INR">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TdP-Jz-0Sk">
+                    <rect key="frame" x="10" y="352" width="394" height="40"/>
+                    <color key="backgroundColor" red="0.29868465370000002" green="0.44505756639999999" blue="0.80489444730000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="a4L-yK-0Wg"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="14"/>
+                    <state key="normal" title="Subscribe to our yearly plan for 39 INR">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VGR-nx-jWE">
+                    <rect key="frame" x="0.0" y="407" width="414" height="1"/>
+                    <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="pxi-xF-jPr"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Abv-n9-jb5">
+                    <rect key="frame" x="10" y="443" width="394" height="60"/>
+                    <color key="backgroundColor" red="0.29868465370000002" green="0.44505756639999999" blue="0.80489444730000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="PjF-bn-8oS"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="15"/>
+                    <state key="normal" title="Refer a friend to get more Discount...!!">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="0.93333333330000001" green="0.97254901959999995" blue="0.79215686269999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="mYa-VD-HPo" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="0z6-i8-dbl"/>
+                <constraint firstItem="mYa-VD-HPo" firstAttribute="top" secondItem="nLj-FZ-fei" secondAttribute="bottom" constant="10" id="5Mx-3D-AI5"/>
+                <constraint firstAttribute="trailing" secondItem="P44-7r-exX" secondAttribute="trailing" id="B20-O6-deS"/>
+                <constraint firstItem="nLj-FZ-fei" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Ctp-hu-YPR"/>
+                <constraint firstItem="Gh6-ik-PCs" firstAttribute="top" secondItem="P44-7r-exX" secondAttribute="bottom" constant="15" id="I5g-JZ-ePV"/>
+                <constraint firstItem="TdP-Jz-0Sk" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="Im1-4u-QLj"/>
+                <constraint firstItem="Abv-n9-jb5" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="M3o-SR-RTh"/>
+                <constraint firstItem="Gh6-ik-PCs" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="NDb-TJ-fVo"/>
+                <constraint firstItem="P44-7r-exX" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="NbE-xc-P6m"/>
+                <constraint firstItem="Abv-n9-jb5" firstAttribute="top" secondItem="VGR-nx-jWE" secondAttribute="bottom" constant="35" id="NjD-oT-h9C"/>
+                <constraint firstItem="VGR-nx-jWE" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="RBF-kB-Or5"/>
+                <constraint firstItem="TdP-Jz-0Sk" firstAttribute="top" secondItem="Gh6-ik-PCs" secondAttribute="bottom" constant="15" id="RQ9-D4-SgJ"/>
+                <constraint firstItem="nLj-FZ-fei" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="WpP-IM-bxh"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Gh6-ik-PCs" secondAttribute="trailing" constant="10" id="X7P-7g-zVF"/>
+                <constraint firstAttribute="trailing" secondItem="VGR-nx-jWE" secondAttribute="trailing" id="Xhu-3f-eq6"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="TdP-Jz-0Sk" secondAttribute="trailing" constant="10" id="ab4-GP-c8l"/>
+                <constraint firstItem="VGR-nx-jWE" firstAttribute="top" secondItem="TdP-Jz-0Sk" secondAttribute="bottom" constant="15" id="azx-EE-RQV"/>
+                <constraint firstItem="ACC-aF-cMe" firstAttribute="top" secondItem="mYa-VD-HPo" secondAttribute="bottom" constant="10" id="jic-8c-2kY"/>
+                <constraint firstItem="nLj-FZ-fei" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="kQA-XF-bcG"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Abv-n9-jb5" secondAttribute="trailing" constant="10" id="nwU-4D-qSU"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ACC-aF-cMe" secondAttribute="trailing" constant="10" id="pma-uQ-jmY"/>
+                <constraint firstItem="P44-7r-exX" firstAttribute="top" secondItem="ACC-aF-cMe" secondAttribute="bottom" constant="10" id="uAZ-4U-UgW"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="mYa-VD-HPo" secondAttribute="trailing" constant="10" id="x4S-42-v5U"/>
+                <constraint firstItem="ACC-aF-cMe" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="xbm-jK-gFd"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+        </view>
+        <customObject id="iVS-t3-EnT" customClass="FlowingMenuTransitionManager" customModule="Leloji" customModuleProvider="target"/>
+    </objects>
+    <resources>
+        <image name="menu.png" width="64" height="64"/>
+    </resources>
+</document>

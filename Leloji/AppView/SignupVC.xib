@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="ArialRoundedMTBold.ttf">
+            <string>ArialRoundedMTBold</string>
+        </array>
+        <array key="HelveticaNeueLights.ttc">
+            <string>HelveticaNeue-Thin</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SignupVC" customModule="Leloji" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nLM-Pg-r9t">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="20"/>
+                    <color key="backgroundColor" red="0.90588235289999997" green="0.94117647059999998" blue="0.76862745099999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="InF-q0-fot">
+                    <rect key="frame" x="0.0" y="20" width="320" height="46"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vZo-G5-yvg">
+                            <rect key="frame" x="10" y="9" width="28" height="28"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="28" id="BJL-DS-dEU"/>
+                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="28" id="H9w-jV-8aX"/>
+                                <constraint firstAttribute="width" constant="28" id="nmT-9o-mTE"/>
+                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="28" id="rdd-47-Z3K"/>
+                            </constraints>
+                            <state key="normal" image="back.png"/>
+                            <connections>
+                                <action selector="clickToBack:" destination="-1" eventType="touchUpInside" id="Wdb-F5-ZsJ"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="0.90588235289999997" green="0.94117647059999998" blue="0.76862745099999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="vZo-G5-yvg" secondAttribute="bottom" constant="9" id="864-qN-OqU"/>
+                        <constraint firstItem="vZo-G5-yvg" firstAttribute="leading" secondItem="InF-q0-fot" secondAttribute="leading" constant="10" id="HMC-bC-Y7k"/>
+                        <constraint firstAttribute="height" constant="46" id="d2p-ZJ-gCE"/>
+                        <constraint firstItem="vZo-G5-yvg" firstAttribute="top" secondItem="InF-q0-fot" secondAttribute="top" constant="9" id="rhT-gH-7UA"/>
+                    </constraints>
+                </view>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mkU-aK-Iba">
+                    <rect key="frame" x="0.0" y="66" width="320" height="502"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f1O-2A-9W8">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="800"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SignUp" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KSt-O1-z81">
+                                    <rect key="frame" x="110" y="50" width="100" height="40"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="100" id="0mo-la-kY3"/>
+                                        <constraint firstAttribute="height" constant="40" id="AMT-4M-6hN"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="25"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rVD-IS-ad0">
+                                    <rect key="frame" x="20" y="425" width="280" height="40"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="40" id="xbx-7c-GbX"/>
+                                    </constraints>
+                                    <state key="normal" title="SignUp">
+                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="clickToSignUp:" destination="-1" eventType="touchUpInside" id="gFB-3T-jFL"/>
+                                    </connections>
+                                </button>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="yEG-3v-Tzt">
+                                    <rect key="frame" x="20" y="115" width="280" height="260"/>
+                                    <subviews>
+                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aDv-2r-PTx" customClass="HoshiTextField" customModule="TextFieldEffects">
+                                            <rect key="frame" x="0.0" y="0.0" width="280" height="40"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="40" id="LLJ-cG-ai6"/>
+                                            </constraints>
+                                            <nil key="textColor"/>
+                                            <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
+                                            <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
+                                                    <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="borderActiveColor">
+                                                    <color key="value" red="0.29868465370000002" green="0.44505756639999999" blue="0.80489444730000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                                    <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <outlet property="delegate" destination="-1" id="Fpj-QX-4OU"/>
+                                            </connections>
+                                        </textField>
+                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9za-KW-GAW" customClass="HoshiTextField" customModule="TextFieldEffects">
+                                            <rect key="frame" x="0.0" y="55" width="280" height="40"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="40" id="l0X-Fj-Xeb"/>
+                                            </constraints>
+                                            <nil key="textColor"/>
+                                            <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
+                                            <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
+                                                    <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="borderActiveColor">
+                                                    <color key="value" red="0.29868465370000002" green="0.44505756639999999" blue="0.80489444730000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                                    <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <outlet property="delegate" destination="-1" id="X8w-WB-kPo"/>
+                                            </connections>
+                                        </textField>
+                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hvz-fF-NCV" customClass="HoshiTextField" customModule="TextFieldEffects">
+                                            <rect key="frame" x="0.0" y="110" width="280" height="40"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="40" id="1t4-vk-qvb"/>
+                                            </constraints>
+                                            <nil key="textColor"/>
+                                            <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
+                                            <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
+                                                    <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="borderActiveColor">
+                                                    <color key="value" red="0.29868465370000002" green="0.44505756639999999" blue="0.80489444730000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                                    <color key="value" red="0.29868465370000002" green="0.44505756639999999" blue="0.80489444730000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <outlet property="delegate" destination="-1" id="s3s-rv-tqB"/>
+                                            </connections>
+                                        </textField>
+                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Confirm Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="c0s-QY-dJt" customClass="HoshiTextField" customModule="TextFieldEffects">
+                                            <rect key="frame" x="0.0" y="165" width="280" height="40"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="40" id="BsY-Mk-Unw"/>
+                                            </constraints>
+                                            <nil key="textColor"/>
+                                            <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
+                                            <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
+                                                    <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="borderActiveColor">
+                                                    <color key="value" red="0.29868465370000002" green="0.44505756639999999" blue="0.80489444730000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                                    <color key="value" red="0.29868465370000002" green="0.44505756639999999" blue="0.80489444730000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <outlet property="delegate" destination="-1" id="ptU-3E-nqQ"/>
+                                            </connections>
+                                        </textField>
+                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Reffral  Code" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SiB-Em-A3R" customClass="HoshiTextField" customModule="TextFieldEffects">
+                                            <rect key="frame" x="0.0" y="220" width="280" height="40"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="40" id="OQR-eN-EQg"/>
+                                            </constraints>
+                                            <nil key="textColor"/>
+                                            <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
+                                            <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
+                                                    <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="borderActiveColor">
+                                                    <color key="value" red="0.29868465370000002" green="0.44505756639999999" blue="0.80489444730000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                                    <color key="value" red="0.29868465370000002" green="0.44505756639999999" blue="0.80489444730000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <outlet property="delegate" destination="-1" id="1uP-iz-Qdj"/>
+                                            </connections>
+                                        </textField>
+                                    </subviews>
+                                </stackView>
+                            </subviews>
+                            <color key="backgroundColor" red="0.90588235289999997" green="0.94117647059999998" blue="0.76862745099999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="rVD-IS-ad0" secondAttribute="trailing" constant="20" id="6Nh-Zu-hYU"/>
+                                <constraint firstItem="yEG-3v-Tzt" firstAttribute="leading" secondItem="f1O-2A-9W8" secondAttribute="leading" constant="20" id="Bcc-hu-oi6"/>
+                                <constraint firstItem="rVD-IS-ad0" firstAttribute="top" secondItem="yEG-3v-Tzt" secondAttribute="bottom" constant="50" id="DSa-cg-WLM"/>
+                                <constraint firstItem="yEG-3v-Tzt" firstAttribute="top" secondItem="KSt-O1-z81" secondAttribute="bottom" constant="25" id="Eez-Zi-Z75"/>
+                                <constraint firstItem="KSt-O1-z81" firstAttribute="centerX" secondItem="f1O-2A-9W8" secondAttribute="centerX" id="IHG-K7-daN"/>
+                                <constraint firstAttribute="trailing" secondItem="yEG-3v-Tzt" secondAttribute="trailing" constant="20" id="Nn0-hU-X3N"/>
+                                <constraint firstItem="KSt-O1-z81" firstAttribute="top" secondItem="f1O-2A-9W8" secondAttribute="top" constant="50" id="brL-P0-vAb"/>
+                                <constraint firstAttribute="height" constant="800" id="f7Y-NC-4O3"/>
+                                <constraint firstItem="rVD-IS-ad0" firstAttribute="leading" secondItem="f1O-2A-9W8" secondAttribute="leading" constant="20" id="vKg-Kj-CC4"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="f1O-2A-9W8" firstAttribute="centerX" secondItem="mkU-aK-Iba" secondAttribute="centerX" id="INX-SH-tdM"/>
+                        <constraint firstItem="f1O-2A-9W8" firstAttribute="top" secondItem="mkU-aK-Iba" secondAttribute="top" id="QsW-It-7tn"/>
+                        <constraint firstAttribute="trailing" secondItem="f1O-2A-9W8" secondAttribute="trailing" id="l7m-Ah-MA7"/>
+                        <constraint firstItem="f1O-2A-9W8" firstAttribute="leading" secondItem="mkU-aK-Iba" secondAttribute="leading" id="n8n-NW-gB1"/>
+                        <constraint firstAttribute="bottom" secondItem="f1O-2A-9W8" secondAttribute="bottom" id="yXi-Jg-KlX"/>
+                    </constraints>
+                </scrollView>
+            </subviews>
+            <color key="backgroundColor" red="0.73974693520000001" green="0.95294117649999999" blue="0.71545450060000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="nLM-Pg-r9t" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="0c1-Dj-45O"/>
+                <constraint firstItem="InF-q0-fot" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="3Dq-rx-kaq"/>
+                <constraint firstItem="mkU-aK-Iba" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="3OQ-5f-dUW"/>
+                <constraint firstItem="InF-q0-fot" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="3cG-W3-PKV"/>
+                <constraint firstItem="mkU-aK-Iba" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="4rO-Jw-F9i"/>
+                <constraint firstItem="InF-q0-fot" firstAttribute="top" secondItem="nLM-Pg-r9t" secondAttribute="bottom" id="6ST-Sq-BcU"/>
+                <constraint firstItem="InF-q0-fot" firstAttribute="top" secondItem="nLM-Pg-r9t" secondAttribute="bottom" id="96U-kf-KZK"/>
+                <constraint firstItem="mkU-aK-Iba" firstAttribute="top" secondItem="InF-q0-fot" secondAttribute="bottom" id="DKt-DT-BTU"/>
+                <constraint firstItem="nLM-Pg-r9t" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Rlj-rf-2FL"/>
+                <constraint firstAttribute="trailing" secondItem="nLM-Pg-r9t" secondAttribute="trailing" id="VrP-M4-3L7"/>
+                <constraint firstItem="InF-q0-fot" firstAttribute="top" secondItem="nLM-Pg-r9t" secondAttribute="bottom" id="cig-x4-Da8"/>
+                <constraint firstItem="nLM-Pg-r9t" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="eHE-To-Yop"/>
+                <constraint firstItem="InF-q0-fot" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="l5w-GK-uUo"/>
+                <constraint firstAttribute="trailing" secondItem="nLM-Pg-r9t" secondAttribute="trailing" id="lyr-7l-Qii"/>
+                <constraint firstItem="nLM-Pg-r9t" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="pik-l5-zTq"/>
+                <constraint firstItem="mkU-aK-Iba" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="r8R-7J-Co6"/>
+                <constraint firstItem="f1O-2A-9W8" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="tcH-W8-7Bv"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="-269" y="54"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="back.png" width="32" height="32"/>
+    </resources>
+</document>

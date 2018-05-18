@@ -1,0 +1,6 @@
+framework module Pods_Leloji {
+  umbrella header "Pods-Leloji-umbrella.h"
+
+  export *
+  module * { export * }
+}
