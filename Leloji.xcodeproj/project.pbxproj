@@ -204,6 +204,8 @@
 		1BD733E320AED34C007BEBA5 /* UserImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BD733AB20AED34B007BEBA5 /* UserImage.png */; };
 		1BD733E420AED34C007BEBA5 /* voymate.gif in Resources */ = {isa = PBXBuildFile; fileRef = 1BD733AC20AED34B007BEBA5 /* voymate.gif */; };
 		1BD733E620AED399007BEBA5 /* referal.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BD733E520AED398007BEBA5 /* referal.png */; };
+		1BD733E920AEDC77007BEBA5 /* facebook.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BD733E720AEDC77007BEBA5 /* facebook.png */; };
+		1BD733EA20AEDC77007BEBA5 /* google-plus.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BD733E820AEDC77007BEBA5 /* google-plus.png */; };
 		2ACA56C3AD3A4236FF83FA48 /* Pods_LelojiTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF7CDE373D978ABF345DDD83 /* Pods_LelojiTests.framework */; };
 		6E54CC58E5E1B806899F7797 /* Pods_LelojiUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18F881DECABEECF0CC78EA11 /* Pods_LelojiUITests.framework */; };
 		7F311E95C02E9C085A07A446 /* Pods_LelojiKeyboard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BB069203275B6782D8F4746 /* Pods_LelojiKeyboard.framework */; };
@@ -458,6 +460,8 @@
 		1BD733AB20AED34B007BEBA5 /* UserImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UserImage.png; sourceTree = "<group>"; };
 		1BD733AC20AED34B007BEBA5 /* voymate.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = voymate.gif; sourceTree = "<group>"; };
 		1BD733E520AED398007BEBA5 /* referal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = referal.png; sourceTree = "<group>"; };
+		1BD733E720AEDC77007BEBA5 /* facebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebook.png; sourceTree = "<group>"; };
+		1BD733E820AEDC77007BEBA5 /* google-plus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "google-plus.png"; sourceTree = "<group>"; };
 		26FF80974105F293785B02BC /* Pods-Leloji.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Leloji.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Leloji/Pods-Leloji.debug.xcconfig"; sourceTree = "<group>"; };
 		2A315FC574FED3E06A21AE07 /* Pods-LelojiKeyboard.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LelojiKeyboard.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LelojiKeyboard/Pods-LelojiKeyboard.debug.xcconfig"; sourceTree = "<group>"; };
 		2BD1AA3F22C52FB189328D9F /* Pods_Leloji.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Leloji.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -781,6 +785,8 @@
 		1BD7337420AED34B007BEBA5 /* pngs */ = {
 			isa = PBXGroup;
 			children = (
+				1BD733E720AEDC77007BEBA5 /* facebook.png */,
+				1BD733E820AEDC77007BEBA5 /* google-plus.png */,
 				1BD733E520AED398007BEBA5 /* referal.png */,
 				1BD7337520AED34B007BEBA5 /* a1.png */,
 				1BD7337620AED34B007BEBA5 /* a10.png */,
@@ -1047,9 +1053,11 @@
 				1BD733C720AED34C007BEBA5 /* a5.png in Resources */,
 				1BD7337020AECFC3007BEBA5 /* SuggestionVC.xib in Resources */,
 				1BD7336E20AECFC3007BEBA5 /* SignupVC.xib in Resources */,
+				1BD733EA20AEDC77007BEBA5 /* google-plus.png in Resources */,
 				1BD733C820AED34C007BEBA5 /* a6.png in Resources */,
 				1BD733CF20AED34C007BEBA5 /* b12.png in Resources */,
 				1BD733AD20AED34C007BEBA5 /* a1.png in Resources */,
+				1BD733E920AEDC77007BEBA5 /* facebook.png in Resources */,
 				1BD7333920AEC990007BEBA5 /* TopBar.xib in Resources */,
 				1BD733D120AED34C007BEBA5 /* b14.png in Resources */,
 				1BD733E320AED34C007BEBA5 /* UserImage.png in Resources */,
