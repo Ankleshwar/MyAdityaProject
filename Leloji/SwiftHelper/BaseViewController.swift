@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreLocation
+import GoogleSignIn
 
 
 
@@ -80,7 +81,12 @@ class BaseViewController: UIViewController {
  //       }
         
         
-
+    func logOutUser(){
+        GIDSignIn.sharedInstance().signOut()
+        
+    }
+    
+    
    public func isFirstTime(){
         if !UserDefaults.standard.bool(forKey: "HasLaunchedOnce") {
             UserDefaults.standard.set(true, forKey: "HasLaunchedOnce")

@@ -4,11 +4,9 @@
 target 'Leloji' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
-
-  # Pods for Leloji
-
-
-
+  pod 'Firebase/Core'
+  pod 'Firebase/Messaging'
+pod  'GoogleSignIn'
 pod 'ObjectMapper'
 pod 'TextFieldEffects'
 pod 'SwiftyJSON'
@@ -17,8 +15,7 @@ pod "Toast-Swift"
 pod "SwiftKeychainWrapper"
 pod "JWTDecode"
 pod 'YALSideMenu'
-
-
+pod 'SVProgressHUD'
 
   target 'LelojiTests' do
     inherit! :search_paths

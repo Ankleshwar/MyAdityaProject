@@ -107,7 +107,12 @@ extension LeftDrawer: UITableViewDelegate,UITableViewDataSource {
                 
             
         }
-
+        else if indexPath.row == 6{
+            self.logOutUser()
+            let delegate =  UIApplication.shared.delegate as! AppDelegate
+            delegate.setRootController()
+            
+        }
     }
     
     func setController(vc:UIViewController){

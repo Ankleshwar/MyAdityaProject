@@ -1,15 +1,27 @@
 //
 //  AppDelegate.swift
 //  Leloji
-//
+//pod  'GoogleSignIn'
+//pod 'ObjectMapper'
+//pod 'TextFieldEffects'
+//pod 'SwiftyJSON'
+//pod 'Alamofire'
+//pod "Toast-Swift"
+//pod "SwiftKeychainWrapper"
+//pod "JWTDecode"
+//pod 'YALSideMenu'
 //  Created by Opiant tech Solutions Pvt. Ltd. on 18/05/18.
 //  Copyright © 2018 Opiant tech Solutions Pvt. Ltd. All rights reserved.
 //
 
 import UIKit
+import GoogleSignIn
+
+
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate,GIDSignInDelegate {
+  
 
 
     var viewController: LoginVC?
@@ -18,6 +30,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
        
+        setRootController()
+        GIDSignIn.sharedInstance().clientID = googleOAuthClientKey
+        GIDSignIn.sharedInstance().delegate = self
+        return true
+    }
+    
+    func setRootController(){
+        
         window = UIWindow(frame: UIScreen.main.bounds)
         viewController = LoginVC(nibName: "LoginVC", bundle: nil)
         navigationController = UINavigationController(rootViewController: (viewController)!)
@@ -25,9 +45,49 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.rootViewController = self.navigationController
         navigationController?.navigationBar.isHidden = true
         window?.makeKeyAndVisible()
-        
-        return true
     }
+    
+    
+    
+    //MARK: Social Login Requier Method
+    
+    
+    func application(_ application: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any])
+        -> Bool {
+            return GIDSignIn.sharedInstance().handle(url, sourceApplication:options[UIApplicationOpenURLOptionsKey.sourceApplication] as? String, annotation: [:])
+    }
+
+    
+    
+    
+    
+    private func application(application: UIApplication,
+                     openURL url: NSURL, sourceApplication: String?, annotation: AnyObject?) -> Bool {
+        var _: [String: AnyObject] = [UIApplicationOpenURLOptionsKey.sourceApplication.rawValue: sourceApplication as AnyObject,
+                                            UIApplicationOpenURLOptionsKey.annotation.rawValue: annotation!]
+        return GIDSignIn.sharedInstance().handle(url as URL?,
+                                                    sourceApplication: sourceApplication,
+                                                    annotation: annotation)
+    }
+    
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!,
+              withError error: Error!) {
+        if let error = error {
+            print("\(error.localizedDescription)")
+        } else {
+            // Perform any operations on signed in user here.
+            let userId = user.userID                  // For client-side use only!
+            let idToken = user.authentication.idToken // Safe to send to the server
+            let fullName = user.profile.name
+            let givenName = user.profile.givenName
+            let familyName = user.profile.familyName
+            let email = user.profile.email
+            viewController?.setHomeController()
+        }
+    }
+    
+    
+    
 
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

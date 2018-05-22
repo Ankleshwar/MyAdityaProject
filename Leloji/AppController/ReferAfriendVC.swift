@@ -20,6 +20,14 @@ class ReferAfriendVC: UIViewController {
         flowingMenuTransitionManager.delegate = self
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        self.view.isHidden = false
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.view.isHidden = true
+    }
+
 
 }
 extension ReferAfriendVC: FlowingMenuDelegate{

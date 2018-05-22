@@ -36,6 +36,73 @@ class ServiceClass: NSObject {
     
     
     
+    
+    
+    
+    
+    
+    public func getLoginDetails(strUrl:String,param:[String:String],completion:@escaping (dictionaryBlock)){
+        
+        print(param)
+        
+        requestPOSTURL(baseURL+strUrl, params: param as [String : AnyObject], headers: nil, success: {
+            (JSONResponse) -> Void in
+            print(JSONResponse)
+            
+            
+            
+            
+            
+            
+            completion(nil,JSONResponse.dictionaryObject!)
+            
+            
+            
+        }) {
+            (error) -> Void in
+            
+            completion(error,[:])
+            
+        }
+    }
+    
+    
+    
+    
+    
+    public func signUpDetails(strUrl:String,param:[String:String],completion:@escaping (dictionaryBlock)){
+        
+        print(param)
+        
+        requestPOSTURL(baseURL+strUrl, params: param as [String : AnyObject], headers: nil, success: {
+            (JSONResponse) -> Void in
+            print(JSONResponse)
+            
+            
+            
+            
+            
+            
+            completion(nil,JSONResponse.dictionaryObject!)
+            
+            
+            
+        }) {
+            (error) -> Void in
+            
+            completion(error,[:])
+            
+        }
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
     public func getDataForSearchCity(strUrl:String,prama:[String:String],completion: @escaping (arrayBlock)){
       
         

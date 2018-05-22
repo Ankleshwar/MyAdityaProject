@@ -1,18 +1,23 @@
 //
 //  LoginVC.swift
 //  VoyMate
-//
+//  GIDSignIn.sharedInstance().signOut()
 //  Created by Opiant on 23/04/18.
 //  Copyright © 2018 Opiant. All rights reserved.
 //
 
 import UIKit
 import TextFieldEffects
+import  GoogleSignIn
+import SVProgressHUD
+
 
 class LoginVC: BaseViewController {
     @IBOutlet weak var txtEmail: TextFieldEffects!
-  
+     var viewController: SocialLogin?
     @IBOutlet weak var imgView: UIImageView!
+  
+    @IBOutlet weak var signInButton: GIDSignInButton!
     
     @IBOutlet weak var txtPassword: TextFieldEffects!
     
@@ -25,6 +30,7 @@ class LoginVC: BaseViewController {
       //  self.txtEmail.setBottomBorder(color: "")
         
         self.imgView.image = UIImage.gifImageWithName("pandit")
+        GIDSignIn.sharedInstance().uiDelegate = self
         
     }
 
@@ -33,8 +39,12 @@ class LoginVC: BaseViewController {
     }
 
     @IBAction func clickToLogin(_ sender: Any) {
+        //self.setHomeController()
+        callLoginServiec()
+    }
+    
+   public func setHomeController() {
         let viewController = HomeVC(nibName: "HomeVC", bundle: nil)
- 
         present(viewController, animated: true, completion: nil)
     }
     
@@ -62,7 +72,48 @@ class LoginVC: BaseViewController {
         return transition
     }
     
-    
+    func callLoginServiec(){
+        
+        SVProgressHUD.show()
+        
+        
+        let dic = [
+                   "email":self.txtEmail.text,
+                   "password": self.txtPassword.text,
+               
+        ]
+        
+        ServiceClass().getLoginDetails(strUrl:"login", param: dic as! [String : String] ) { error , dicData  in
+            
+            if dicData["status"] as!String == "Ok" {
+                if (dicData["data"] as? [String : Any]) != nil {
+                    
+                  self.setHomeController()
+                    
+                }
+                SVProgressHUD.dismiss()
+                
+            }
+            else{
+                
+                if let users = dicData["errors"] as? [String : Any] {
+                    if let mobile = users["mobileNumber"] as? [String : Any]{
+                        
+                        let msg = mobile["msg"] as! String
+                        ECSAlert().showAlert(message: msg, controller: self)
+                        
+                    }
+                }
+                
+                SVProgressHUD.dismiss()
+                
+                
+                
+            }
+            
+        }
+    }
+
     
 }
 extension LoginVC: UITextFieldDelegate{
@@ -75,3 +126,24 @@ extension LoginVC: UITextFieldDelegate{
     }
     
 }
+
+extension LoginVC: GIDSignInUIDelegate{
+    
+    private func signInWillDispatch(signIn: GIDSignIn!, error: Error!) {
+       // myActivityIndicator.stopAnimating()
+    }
+    
+    // Present a view that prompts the user to sign in with Google
+    func sign(_ signIn: GIDSignIn!,
+              present viewController: UIViewController!) {
+        self.present(viewController, animated: true, completion: nil)
+    }
+    
+    // Dismiss the "Sign in with Google" view
+    func sign(_ signIn: GIDSignIn!,
+              dismiss viewController: UIViewController!) {
+        self.dismiss(animated: true, completion: nil)
+    }
+}
+
+

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0359CEEFB86B24CA774C4669 /* Pods_LelojiKeyboard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFFBCB68270961C71C355962 /* Pods_LelojiKeyboard.framework */; };
 		1BD731A720AEBC01007BEBA5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD731A620AEBC01007BEBA5 /* AppDelegate.swift */; };
 		1BD731AC20AEBC01007BEBA5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1BD731AA20AEBC01007BEBA5 /* Main.storyboard */; };
 		1BD731AE20AEBC04007BEBA5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1BD731AD20AEBC04007BEBA5 /* Assets.xcassets */; };
@@ -206,10 +207,10 @@
 		1BD733E620AED399007BEBA5 /* referal.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BD733E520AED398007BEBA5 /* referal.png */; };
 		1BD733E920AEDC77007BEBA5 /* facebook.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BD733E720AEDC77007BEBA5 /* facebook.png */; };
 		1BD733EA20AEDC77007BEBA5 /* google-plus.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BD733E820AEDC77007BEBA5 /* google-plus.png */; };
-		2ACA56C3AD3A4236FF83FA48 /* Pods_LelojiTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF7CDE373D978ABF345DDD83 /* Pods_LelojiTests.framework */; };
-		6E54CC58E5E1B806899F7797 /* Pods_LelojiUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18F881DECABEECF0CC78EA11 /* Pods_LelojiUITests.framework */; };
-		7F311E95C02E9C085A07A446 /* Pods_LelojiKeyboard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BB069203275B6782D8F4746 /* Pods_LelojiKeyboard.framework */; };
-		97B5F4EC44E47C1978D23881 /* Pods_Leloji.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BD1AA3F22C52FB189328D9F /* Pods_Leloji.framework */; };
+		3BBF65C920B0370D00F7FF06 /* SocialLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBF65C820B0370D00F7FF06 /* SocialLogin.swift */; };
+		433D3BC3846EFF5B15B4BF81 /* Pods_LelojiUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 653A8636C77C2C05A6C8C81C /* Pods_LelojiUITests.framework */; };
+		B5B701429EF64CFE615C9A7A /* Pods_Leloji.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F4E9F8A92463B95C0F667E7 /* Pods_Leloji.framework */; };
+		E2EB4C1C63F30DA4261F45E6 /* Pods_LelojiTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 534B664A37D979FDE79AD96F /* Pods_LelojiTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -251,8 +252,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		18F881DECABEECF0CC78EA11 /* Pods_LelojiUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LelojiUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		1BB069203275B6782D8F4746 /* Pods_LelojiKeyboard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LelojiKeyboard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0BC0C7C11C9D38955085D18A /* Pods-LelojiKeyboard.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LelojiKeyboard.release.xcconfig"; path = "Pods/Target Support Files/Pods-LelojiKeyboard/Pods-LelojiKeyboard.release.xcconfig"; sourceTree = "<group>"; };
 		1BD731A320AEBC01007BEBA5 /* Leloji.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Leloji.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BD731A620AEBC01007BEBA5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1BD731AB20AEBC01007BEBA5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -462,16 +462,19 @@
 		1BD733E520AED398007BEBA5 /* referal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = referal.png; sourceTree = "<group>"; };
 		1BD733E720AEDC77007BEBA5 /* facebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebook.png; sourceTree = "<group>"; };
 		1BD733E820AEDC77007BEBA5 /* google-plus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "google-plus.png"; sourceTree = "<group>"; };
-		26FF80974105F293785B02BC /* Pods-Leloji.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Leloji.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Leloji/Pods-Leloji.debug.xcconfig"; sourceTree = "<group>"; };
-		2A315FC574FED3E06A21AE07 /* Pods-LelojiKeyboard.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LelojiKeyboard.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LelojiKeyboard/Pods-LelojiKeyboard.debug.xcconfig"; sourceTree = "<group>"; };
-		2BD1AA3F22C52FB189328D9F /* Pods_Leloji.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Leloji.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		40354FAC7AEE28F6F1DAA9D9 /* Pods-LelojiTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LelojiTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LelojiTests/Pods-LelojiTests.debug.xcconfig"; sourceTree = "<group>"; };
-		6641F0403A01D1A3AB52B9DF /* Pods-LelojiTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LelojiTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LelojiTests/Pods-LelojiTests.release.xcconfig"; sourceTree = "<group>"; };
-		8ACFEDF674767DADF3A0A331 /* Pods-LelojiUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LelojiUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LelojiUITests/Pods-LelojiUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		9261EEEEAED3E02C3CC30F41 /* Pods-LelojiUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LelojiUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LelojiUITests/Pods-LelojiUITests.release.xcconfig"; sourceTree = "<group>"; };
-		9C8D21F0E7F3B296D3E63BE4 /* Pods-LelojiKeyboard.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LelojiKeyboard.release.xcconfig"; path = "Pods/Target Support Files/Pods-LelojiKeyboard/Pods-LelojiKeyboard.release.xcconfig"; sourceTree = "<group>"; };
-		DF7CDE373D978ABF345DDD83 /* Pods_LelojiTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LelojiTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F23AF7D5B2AC47D5ADA884AB /* Pods-Leloji.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Leloji.release.xcconfig"; path = "Pods/Target Support Files/Pods-Leloji/Pods-Leloji.release.xcconfig"; sourceTree = "<group>"; };
+		3BBF65C820B0370D00F7FF06 /* SocialLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialLogin.swift; sourceTree = "<group>"; };
+		3BBF65CA20B0496600F7FF06 /* Leloji.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Leloji.entitlements; sourceTree = "<group>"; };
+		4F4E9F8A92463B95C0F667E7 /* Pods_Leloji.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Leloji.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4F7B0BFFCBA1AC2ED960609C /* Pods-LelojiUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LelojiUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LelojiUITests/Pods-LelojiUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		534B664A37D979FDE79AD96F /* Pods_LelojiTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LelojiTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		594E6EF0CB9BF8DABCFC04B8 /* Pods-LelojiTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LelojiTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LelojiTests/Pods-LelojiTests.debug.xcconfig"; sourceTree = "<group>"; };
+		653A8636C77C2C05A6C8C81C /* Pods_LelojiUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LelojiUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		86022CED6CA46D4C109DD246 /* Pods-Leloji.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Leloji.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Leloji/Pods-Leloji.debug.xcconfig"; sourceTree = "<group>"; };
+		933E2778EB1A56E942FC3837 /* Pods-Leloji.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Leloji.release.xcconfig"; path = "Pods/Target Support Files/Pods-Leloji/Pods-Leloji.release.xcconfig"; sourceTree = "<group>"; };
+		9CA1A0CF394B30D46DDF290E /* Pods-LelojiUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LelojiUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LelojiUITests/Pods-LelojiUITests.release.xcconfig"; sourceTree = "<group>"; };
+		C33521D1720A375B857FDA5F /* Pods-LelojiKeyboard.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LelojiKeyboard.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LelojiKeyboard/Pods-LelojiKeyboard.debug.xcconfig"; sourceTree = "<group>"; };
+		EB9393CA230E33C922AA516D /* Pods-LelojiTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LelojiTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LelojiTests/Pods-LelojiTests.release.xcconfig"; sourceTree = "<group>"; };
+		FFFBCB68270961C71C355962 /* Pods_LelojiKeyboard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LelojiKeyboard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -479,7 +482,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				97B5F4EC44E47C1978D23881 /* Pods_Leloji.framework in Frameworks */,
+				B5B701429EF64CFE615C9A7A /* Pods_Leloji.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -487,7 +490,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2ACA56C3AD3A4236FF83FA48 /* Pods_LelojiTests.framework in Frameworks */,
+				E2EB4C1C63F30DA4261F45E6 /* Pods_LelojiTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -495,7 +498,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6E54CC58E5E1B806899F7797 /* Pods_LelojiUITests.framework in Frameworks */,
+				433D3BC3846EFF5B15B4BF81 /* Pods_LelojiUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -503,7 +506,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7F311E95C02E9C085A07A446 /* Pods_LelojiKeyboard.framework in Frameworks */,
+				0359CEEFB86B24CA774C4669 /* Pods_LelojiKeyboard.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -518,8 +521,8 @@
 				1BD731C520AEBC04007BEBA5 /* LelojiUITests */,
 				1BD731D920AEBC66007BEBA5 /* LelojiKeyboard */,
 				1BD731A420AEBC01007BEBA5 /* Products */,
-				1BEB690B999EC18699F4C7CB /* Pods */,
-				BA44CC43FE778934C3CED494 /* Frameworks */,
+				32A5D8D27977BE37A210671A /* Pods */,
+				3FFCCAE7DE7238CA6A8FC690 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -537,6 +540,7 @@
 		1BD731A520AEBC01007BEBA5 /* Leloji */ = {
 			isa = PBXGroup;
 			children = (
+				3BBF65CA20B0496600F7FF06 /* Leloji.entitlements */,
 				1BD7334020AECFC2007BEBA5 /* AppController */,
 				1BD7334D20AECFC2007BEBA5 /* AppView */,
 				1BD7331420AEC990007BEBA5 /* SwiftHelper */,
@@ -725,6 +729,7 @@
 			isa = PBXGroup;
 			children = (
 				1BD7331520AEC990007BEBA5 /* BaseViewController.swift */,
+				3BBF65C820B0370D00F7FF06 /* SocialLogin.swift */,
 				1BD7331620AEC990007BEBA5 /* Constaint.swift */,
 				1BD7333D20AECAF0007BEBA5 /* AppUserObject.h */,
 				1BD7333E20AECAF0007BEBA5 /* AppUserObject.m */,
@@ -848,28 +853,28 @@
 			path = pngs;
 			sourceTree = "<group>";
 		};
-		1BEB690B999EC18699F4C7CB /* Pods */ = {
+		32A5D8D27977BE37A210671A /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				26FF80974105F293785B02BC /* Pods-Leloji.debug.xcconfig */,
-				F23AF7D5B2AC47D5ADA884AB /* Pods-Leloji.release.xcconfig */,
-				2A315FC574FED3E06A21AE07 /* Pods-LelojiKeyboard.debug.xcconfig */,
-				9C8D21F0E7F3B296D3E63BE4 /* Pods-LelojiKeyboard.release.xcconfig */,
-				40354FAC7AEE28F6F1DAA9D9 /* Pods-LelojiTests.debug.xcconfig */,
-				6641F0403A01D1A3AB52B9DF /* Pods-LelojiTests.release.xcconfig */,
-				8ACFEDF674767DADF3A0A331 /* Pods-LelojiUITests.debug.xcconfig */,
-				9261EEEEAED3E02C3CC30F41 /* Pods-LelojiUITests.release.xcconfig */,
+				86022CED6CA46D4C109DD246 /* Pods-Leloji.debug.xcconfig */,
+				933E2778EB1A56E942FC3837 /* Pods-Leloji.release.xcconfig */,
+				C33521D1720A375B857FDA5F /* Pods-LelojiKeyboard.debug.xcconfig */,
+				0BC0C7C11C9D38955085D18A /* Pods-LelojiKeyboard.release.xcconfig */,
+				594E6EF0CB9BF8DABCFC04B8 /* Pods-LelojiTests.debug.xcconfig */,
+				EB9393CA230E33C922AA516D /* Pods-LelojiTests.release.xcconfig */,
+				4F7B0BFFCBA1AC2ED960609C /* Pods-LelojiUITests.debug.xcconfig */,
+				9CA1A0CF394B30D46DDF290E /* Pods-LelojiUITests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		BA44CC43FE778934C3CED494 /* Frameworks */ = {
+		3FFCCAE7DE7238CA6A8FC690 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				2BD1AA3F22C52FB189328D9F /* Pods_Leloji.framework */,
-				1BB069203275B6782D8F4746 /* Pods_LelojiKeyboard.framework */,
-				DF7CDE373D978ABF345DDD83 /* Pods_LelojiTests.framework */,
-				18F881DECABEECF0CC78EA11 /* Pods_LelojiUITests.framework */,
+				4F4E9F8A92463B95C0F667E7 /* Pods_Leloji.framework */,
+				FFFBCB68270961C71C355962 /* Pods_LelojiKeyboard.framework */,
+				534B664A37D979FDE79AD96F /* Pods_LelojiTests.framework */,
+				653A8636C77C2C05A6C8C81C /* Pods_LelojiUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -881,12 +886,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1BD731CB20AEBC04007BEBA5 /* Build configuration list for PBXNativeTarget "Leloji" */;
 			buildPhases = (
-				67618EC3C65609A892D7D95C /* [CP] Check Pods Manifest.lock */,
+				A199F63550653DBF6851ACA8 /* [CP] Check Pods Manifest.lock */,
 				1BD7319F20AEBC01007BEBA5 /* Sources */,
 				1BD731A020AEBC01007BEBA5 /* Frameworks */,
 				1BD731A120AEBC01007BEBA5 /* Resources */,
 				1BD731E320AEBC66007BEBA5 /* Embed App Extensions */,
-				89C9A3DF20308FF5D3C9C705 /* [CP] Embed Pods Frameworks */,
+				70992319C42421D6FFCB74AD /* [CP] Embed Pods Frameworks */,
+				844190227CED901E7EFA4C47 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -902,10 +908,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1BD731CE20AEBC04007BEBA5 /* Build configuration list for PBXNativeTarget "LelojiTests" */;
 			buildPhases = (
-				4EB1C5587E0325674B800FEE /* [CP] Check Pods Manifest.lock */,
+				C4330D6B445E4B787B470897 /* [CP] Check Pods Manifest.lock */,
 				1BD731B320AEBC04007BEBA5 /* Sources */,
 				1BD731B420AEBC04007BEBA5 /* Frameworks */,
 				1BD731B520AEBC04007BEBA5 /* Resources */,
+				5C3F0917625B470EE4C21EF8 /* [CP] Embed Pods Frameworks */,
+				D95954F832887DABE880814C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -921,10 +929,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1BD731D120AEBC04007BEBA5 /* Build configuration list for PBXNativeTarget "LelojiUITests" */;
 			buildPhases = (
-				546C914F92253107BB9FA2FC /* [CP] Check Pods Manifest.lock */,
+				7B2869D1DB6521C1F905D5C4 /* [CP] Check Pods Manifest.lock */,
 				1BD731BE20AEBC04007BEBA5 /* Sources */,
 				1BD731BF20AEBC04007BEBA5 /* Frameworks */,
 				1BD731C020AEBC04007BEBA5 /* Resources */,
+				A403234CFD693B547B3A3BC9 /* [CP] Embed Pods Frameworks */,
+				658546CA84DAC0B514620036 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -940,10 +950,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1BD731E020AEBC66007BEBA5 /* Build configuration list for PBXNativeTarget "LelojiKeyboard" */;
 			buildPhases = (
-				6431E85B3352A164983B36C3 /* [CP] Check Pods Manifest.lock */,
+				A036284FEF9A3B8D2851504F /* [CP] Check Pods Manifest.lock */,
 				1BD731D420AEBC66007BEBA5 /* Sources */,
 				1BD731D520AEBC66007BEBA5 /* Frameworks */,
 				1BD731D620AEBC66007BEBA5 /* Resources */,
+				CF316C8FF286D6F9863D6D66 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -967,6 +978,14 @@
 					1BD731A220AEBC01007BEBA5 = {
 						CreatedOnToolsVersion = 9.3;
 						LastSwiftMigration = 0930;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					1BD731B620AEBC04007BEBA5 = {
 						CreatedOnToolsVersion = 9.3;
@@ -978,6 +997,11 @@
 					};
 					1BD731D720AEBC66007BEBA5 = {
 						CreatedOnToolsVersion = 9.3;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -1174,25 +1198,81 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		4EB1C5587E0325674B800FEE /* [CP] Check Pods Manifest.lock */ = {
+		5C3F0917625B470EE4C21EF8 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
 			);
-			name = "[CP] Check Pods Manifest.lock";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-LelojiTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LelojiTests/Pods-LelojiTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		546C914F92253107BB9FA2FC /* [CP] Check Pods Manifest.lock */ = {
+		658546CA84DAC0B514620036 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LelojiUITests/Pods-LelojiUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		70992319C42421D6FFCB74AD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Leloji/Pods-Leloji-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/JWTDecode/JWTDecode.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftKeychainWrapper/SwiftKeychainWrapper.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/TextFieldEffects/TextFieldEffects.framework",
+				"${BUILT_PRODUCTS_DIR}/Toast-Swift/Toast_Swift.framework",
+				"${BUILT_PRODUCTS_DIR}/YALSideMenu/SideMenu.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JWTDecode.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftKeychainWrapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TextFieldEffects.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Toast_Swift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SideMenu.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Leloji/Pods-Leloji-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7B2869D1DB6521C1F905D5C4 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1210,7 +1290,25 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		6431E85B3352A164983B36C3 /* [CP] Check Pods Manifest.lock */ = {
+		844190227CED901E7EFA4C47 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Leloji/Pods-Leloji-resources.sh",
+				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Leloji/Pods-Leloji-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A036284FEF9A3B8D2851504F /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1228,7 +1326,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		67618EC3C65609A892D7D95C /* [CP] Check Pods Manifest.lock */ = {
+		A199F63550653DBF6851ACA8 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1246,36 +1344,67 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		89C9A3DF20308FF5D3C9C705 /* [CP] Embed Pods Frameworks */ = {
+		A403234CFD693B547B3A3BC9 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Leloji/Pods-Leloji-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/JWTDecode/JWTDecode.framework",
-				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftKeychainWrapper/SwiftKeychainWrapper.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
-				"${BUILT_PRODUCTS_DIR}/TextFieldEffects/TextFieldEffects.framework",
-				"${BUILT_PRODUCTS_DIR}/Toast-Swift/Toast_Swift.framework",
-				"${BUILT_PRODUCTS_DIR}/YALSideMenu/SideMenu.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JWTDecode.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftKeychainWrapper.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TextFieldEffects.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Toast_Swift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SideMenu.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Leloji/Pods-Leloji-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LelojiUITests/Pods-LelojiUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C4330D6B445E4B787B470897 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LelojiTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CF316C8FF286D6F9863D6D66 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LelojiKeyboard/Pods-LelojiKeyboard-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D95954F832887DABE880814C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LelojiTests/Pods-LelojiTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1317,6 +1446,7 @@
 				1BD7332920AEC990007BEBA5 /* FlowingMenuTransitionManager+UIGestureRecognizer.swift in Sources */,
 				1BD7336020AECFC3007BEBA5 /* RateUs.swift in Sources */,
 				1BD7330420AEC931007BEBA5 /* ThumbnilVC.swift in Sources */,
+				3BBF65C920B0370D00F7FF06 /* SocialLogin.swift in Sources */,
 				1BD7332C20AEC990007BEBA5 /* FlowingMenuTransitionManager.swift in Sources */,
 				1BD732FC20AEC931007BEBA5 /* CopyboardManager.swift in Sources */,
 				1BD7332D20AEC990007BEBA5 /* FlowingMenuTransitionStatus.swift in Sources */,
@@ -1523,19 +1653,17 @@
 		};
 		1BD731CC20AEBC04007BEBA5 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 26FF80974105F293785B02BC /* Pods-Leloji.debug.xcconfig */;
+			baseConfigurationReference = 86022CED6CA46D4C109DD246 /* Pods-Leloji.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Leloji/Leloji.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 577N9MGWW6;
 				INFOPLIST_FILE = Leloji/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lelojicreatives.leloji;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Leloji/SwiftHelper/Leloji-Bridging-Header.h";
@@ -1547,19 +1675,17 @@
 		};
 		1BD731CD20AEBC04007BEBA5 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F23AF7D5B2AC47D5ADA884AB /* Pods-Leloji.release.xcconfig */;
+			baseConfigurationReference = 933E2778EB1A56E942FC3837 /* Pods-Leloji.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Leloji/Leloji.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 577N9MGWW6;
 				INFOPLIST_FILE = Leloji/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lelojicreatives.leloji;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Leloji/SwiftHelper/Leloji-Bridging-Header.h";
@@ -1570,17 +1696,13 @@
 		};
 		1BD731CF20AEBC04007BEBA5 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 40354FAC7AEE28F6F1DAA9D9 /* Pods-LelojiTests.debug.xcconfig */;
+			baseConfigurationReference = 594E6EF0CB9BF8DABCFC04B8 /* Pods-LelojiTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = LelojiTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Opiant.LelojiTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -1591,17 +1713,13 @@
 		};
 		1BD731D020AEBC04007BEBA5 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6641F0403A01D1A3AB52B9DF /* Pods-LelojiTests.release.xcconfig */;
+			baseConfigurationReference = EB9393CA230E33C922AA516D /* Pods-LelojiTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = LelojiTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Opiant.LelojiTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -1612,16 +1730,12 @@
 		};
 		1BD731D220AEBC04007BEBA5 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8ACFEDF674767DADF3A0A331 /* Pods-LelojiUITests.debug.xcconfig */;
+			baseConfigurationReference = 4F7B0BFFCBA1AC2ED960609C /* Pods-LelojiUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = LelojiUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Opiant.LelojiUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -1632,16 +1746,12 @@
 		};
 		1BD731D320AEBC04007BEBA5 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9261EEEEAED3E02C3CC30F41 /* Pods-LelojiUITests.release.xcconfig */;
+			baseConfigurationReference = 9CA1A0CF394B30D46DDF290E /* Pods-LelojiUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = LelojiUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Opiant.LelojiUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -1652,17 +1762,14 @@
 		};
 		1BD731E120AEBC66007BEBA5 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2A315FC574FED3E06A21AE07 /* Pods-LelojiKeyboard.debug.xcconfig */;
+			baseConfigurationReference = C33521D1720A375B857FDA5F /* Pods-LelojiKeyboard.debug.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = LelojiKeyboard/LelojiKeyboard.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 577N9MGWW6;
 				INFOPLIST_FILE = LelojiKeyboard/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lelojicreatives.leloji.LelojiKeyboard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1673,17 +1780,14 @@
 		};
 		1BD731E220AEBC66007BEBA5 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9C8D21F0E7F3B296D3E63BE4 /* Pods-LelojiKeyboard.release.xcconfig */;
+			baseConfigurationReference = 0BC0C7C11C9D38955085D18A /* Pods-LelojiKeyboard.release.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = LelojiKeyboard/LelojiKeyboard.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 577N9MGWW6;
 				INFOPLIST_FILE = LelojiKeyboard/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lelojicreatives.leloji.LelojiKeyboard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
