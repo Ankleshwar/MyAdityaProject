@@ -1,10 +1,6 @@
-//
-//  LeftDrawer.swift
-//  VoyMate
-//
-//  Created by Opiant on 02/04/18.
-//  Copyright © 2018 Opiant. All rights reserved.
-//
+
+
+
 
 import UIKit
 

@@ -26,11 +26,34 @@ class SignupVC: BaseViewController {
 
     @IBAction func clickToBack(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
+       // self.txtEmail.textRect(forBounds: self.txtEmail.bounds)
     }
     
 
     @IBAction func clickToSignUp(_ sender: Any) {
-        callSignUpServiec()
+        
+        let strEmail : String
+        strEmail = txtEmail.text!
+        
+        if txtName.text?.count == 0 {
+            ECSAlert().showAlert(message: "Please Enter Your Name", controller: self)
+        }else if txtEmail.text?.count == 0{
+            ECSAlert().showAlert(message: "Please Enter valid Email", controller: self)
+        }
+        else if txtPassword.text?.count == 0 {
+            ECSAlert().showAlert(message: "Please Enter Your Password", controller: self)
+        }
+        else if txtConfPassword.text?.count == 0 {
+            ECSAlert().showAlert(message: "Please Enter Your Confirm Password", controller: self)
+        }
+        else if isEqual (txtPassword.text == txtConfPassword.text) {
+            ECSAlert().showAlert(message: "Please Match  Your Password", controller: self)
+        }
+        else{
+            callSignUpServiec()
+        }
+        
+        
         
         print("value added")
     }
@@ -60,32 +83,57 @@ class SignupVC: BaseViewController {
                    "email":self.txtEmail.text,
                    "password": self.txtPassword.text,
                     "password_confirmation": self.txtConfPassword.text,
-            "referral_code":self.txtreffral.text
+                    "referral_code":self.txtreffral.text
                    ]
         
         ServiceClass().signUpDetails(strUrl:"register", param: dic as! [String : String] ) { error , dicData  in
             
             if dicData["status"] as!String == "Ok" {
-                if (dicData["data"] as? [String : Any]) != nil {
-            
-                    let viewController = HomeVC(nibName: "HomeVC", bundle: nil)
-                    viewController.transitioningDelegate = self as? UIViewControllerTransitioningDelegate
-                    viewController.modalPresentationStyle = .custom
-                    self.present(viewController, animated: true, completion: nil)
+
+                
+                if let dicSuccessData = dicData["successData"] as? [String : Any]{
                     
+                    if let data = dicSuccessData["data"] as? [String : Any]{
+                        self.appUserObject = AppUserObject.instance(from: data)
+                        
+                        self.appUserObject?.email = data["email"] as! String
+                        self.appUserObject?.userName = data["name"] as! String
+                        self.appUserObject?.userId = "\(data["id"])"
+                        
+                        
+                        guard let myString =  self.nullToNil( value: data["phone"] as AnyObject ) , !(myString as AnyObject).isEmpty else {
+//                            print("String is nil or empty.")
+//                            SVProgressHUD.dismiss()
+//                            return // or break, continue, throw
+//                        }
+                        
+                        
+                     //   self.appUserObject?.mobile = "\(myString)"
+                        self.appUserObject?.saveToUserDefault()
+                        let viewController = HomeVC(nibName: "HomeVC", bundle: nil)
+                        self.present(viewController, animated: true, completion: nil)
+                        
+                    }
                 }
+               
+                
+                
                 SVProgressHUD.dismiss()
                 
             }
             else{
                 
-                if let users = dicData["errors"] as? [String : Any] {
-                    if let mobile = users["mobileNumber"] as? [String : Any]{
-                        
-                        let msg = mobile["msg"] as! String
-                        ECSAlert().showAlert(message: msg, controller: self)
-                        
+                if let users = dicData["errorData"] as? [String : Any] {
+              
+                    for errData in (users as? [String : Any])!{
+                        print(errData)
+                      //  let msg = 
+                      //  ECSAlert().showAlert(message: msg, controller: self)
                     }
+                        
+                    
+                        
+                    
                 }
                 
                 SVProgressHUD.dismiss()
@@ -98,7 +146,7 @@ class SignupVC: BaseViewController {
     }
     
     
-    
+    }
     
     
     
@@ -111,4 +159,19 @@ extension SignupVC: UITextFieldDelegate{
         return true
     }
     
+}
+class MyCustomTextField : UITextField {
+    var leftMargin : CGFloat = 10.0
+    
+    override func textRect(forBounds bounds: CGRect) -> CGRect {
+        var newBounds = bounds
+        newBounds.origin.x += leftMargin
+        return newBounds
+    }
+    
+    override func editingRect(forBounds bounds: CGRect) -> CGRect {
+        var newBounds = bounds
+        newBounds.origin.x += leftMargin
+        return newBounds
+    }
 }

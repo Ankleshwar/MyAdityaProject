@@ -90,18 +90,20 @@
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="40" id="LLJ-cG-ai6"/>
                                             </constraints>
-                                            <nil key="textColor"/>
-                                            <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="18"/>
                                             <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
                                                     <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </userDefinedRuntimeAttribute>
                                                 <userDefinedRuntimeAttribute type="color" keyPath="borderActiveColor">
-                                                    <color key="value" red="0.29868465370000002" green="0.44505756639999999" blue="0.80489444730000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </userDefinedRuntimeAttribute>
                                                 <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
                                                     <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="placeholderFontScale">
+                                                    <real key="value" value="1"/>
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                             <connections>
@@ -113,18 +115,20 @@
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="40" id="l0X-Fj-Xeb"/>
                                             </constraints>
-                                            <nil key="textColor"/>
-                                            <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="18"/>
                                             <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
                                                     <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </userDefinedRuntimeAttribute>
                                                 <userDefinedRuntimeAttribute type="color" keyPath="borderActiveColor">
-                                                    <color key="value" red="0.29868465370000002" green="0.44505756639999999" blue="0.80489444730000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </userDefinedRuntimeAttribute>
                                                 <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
                                                     <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="placeholderFontScale">
+                                                    <real key="value" value="1"/>
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                             <connections>
@@ -136,18 +140,20 @@
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="40" id="1t4-vk-qvb"/>
                                             </constraints>
-                                            <nil key="textColor"/>
-                                            <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="18"/>
                                             <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
                                                     <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </userDefinedRuntimeAttribute>
                                                 <userDefinedRuntimeAttribute type="color" keyPath="borderActiveColor">
-                                                    <color key="value" red="0.29868465370000002" green="0.44505756639999999" blue="0.80489444730000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </userDefinedRuntimeAttribute>
                                                 <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
-                                                    <color key="value" red="0.29868465370000002" green="0.44505756639999999" blue="0.80489444730000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="placeholderFontScale">
+                                                    <real key="value" value="1"/>
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                             <connections>
@@ -159,18 +165,20 @@
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="40" id="BsY-Mk-Unw"/>
                                             </constraints>
-                                            <nil key="textColor"/>
-                                            <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="18"/>
                                             <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
                                                     <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </userDefinedRuntimeAttribute>
                                                 <userDefinedRuntimeAttribute type="color" keyPath="borderActiveColor">
-                                                    <color key="value" red="0.29868465370000002" green="0.44505756639999999" blue="0.80489444730000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </userDefinedRuntimeAttribute>
                                                 <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
-                                                    <color key="value" red="0.29868465370000002" green="0.44505756639999999" blue="0.80489444730000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="placeholderFontScale">
+                                                    <real key="value" value="1"/>
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                             <connections>
@@ -182,18 +190,20 @@
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="40" id="OQR-eN-EQg"/>
                                             </constraints>
-                                            <nil key="textColor"/>
-                                            <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="18"/>
                                             <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
                                                     <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </userDefinedRuntimeAttribute>
                                                 <userDefinedRuntimeAttribute type="color" keyPath="borderActiveColor">
-                                                    <color key="value" red="0.29868465370000002" green="0.44505756639999999" blue="0.80489444730000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </userDefinedRuntimeAttribute>
                                                 <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
-                                                    <color key="value" red="0.29868465370000002" green="0.44505756639999999" blue="0.80489444730000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="placeholderFontScale">
+                                                    <real key="value" value="1"/>
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                             <connections>
@@ -247,7 +257,7 @@
                 <constraint firstItem="f1O-2A-9W8" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="tcH-W8-7Bv"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <point key="canvasLocation" x="-269" y="54"/>
+            <point key="canvasLocation" x="-112" y="85"/>
         </view>
     </objects>
     <resources>

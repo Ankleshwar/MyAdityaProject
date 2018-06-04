@@ -41,6 +41,15 @@ class BaseViewController: UIViewController {
         }
     
     
+    func nullToNil(value : AnyObject?) -> AnyObject? {
+        if value is NSNull {
+            return nil
+        } else {
+            return value
+        }
+    }
+    
+    
     func setDataWithLocalJson(_ key: String) -> Array<Any> {
         let filePath: String? = Bundle.main.path(forResource: "LocalText", ofType: "json")
         let data = NSData(contentsOfFile: filePath ?? "") as Data?

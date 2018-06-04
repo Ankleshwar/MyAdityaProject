@@ -39,8 +39,16 @@ class LoginVC: BaseViewController {
     }
 
     @IBAction func clickToLogin(_ sender: Any) {
-        //self.setHomeController()
-        callLoginServiec()
+
+        if txtEmail.text?.count == 0 {
+            ECSAlert().showAlert(message: "Please Enter Email", controller: self)
+        }else     if txtPassword.text?.count == 0 {
+            ECSAlert().showAlert(message: "Please Enter Password", controller: self)
+        }
+        else{
+                 callLoginServiec()
+        }
+       
     }
     
    public func setHomeController() {
@@ -86,24 +94,40 @@ class LoginVC: BaseViewController {
         ServiceClass().getLoginDetails(strUrl:"login", param: dic as! [String : String] ) { error , dicData  in
             
             if dicData["status"] as!String == "Ok" {
-                if (dicData["data"] as? [String : Any]) != nil {
+                if let dicSuccessData = dicData["successData"] as? [String : Any]{
                     
-                  self.setHomeController()
+                    if let data = dicSuccessData["userData"] as? [String : Any]{
+                    self.appUserObject = AppUserObject.instance(from: data)
                     
+                    self.appUserObject?.email = data["email"] as! String
+                    self.appUserObject?.userName = data["name"] as! String
+                    self.appUserObject?.userId = "\(data["id"])"
+                    
+                    
+                    //                        guard let myString =  self.nullToNil( value: data["phone"] as AnyObject ) , !(myString as AnyObject).isEmpty else {
+                    //                            print("String is nil or empty.")
+                    //                            SVProgressHUD.dismiss()
+                    //                            return // or break, continue, throw
+                    //                        }
+                    
+                    
+                    //   self.appUserObject?.mobile = "\(myString)"
+                        self.appUserObject?.token = dicSuccessData["token"] as! String
+                    self.appUserObject?.saveToUserDefault()
+                    let viewController = HomeVC(nibName: "HomeVC", bundle: nil)
+                    self.present(viewController, animated: true, completion: nil)
+                 }
                 }
                 SVProgressHUD.dismiss()
                 
             }
             else{
                 
-                if let users = dicData["errors"] as? [String : Any] {
-                    if let mobile = users["mobileNumber"] as? [String : Any]{
-                        
-                        let msg = mobile["msg"] as! String
+        
+                        let msg = dicData["error"] as! String
                         ECSAlert().showAlert(message: msg, controller: self)
                         
-                    }
-                }
+              
                 
                 SVProgressHUD.dismiss()
                 

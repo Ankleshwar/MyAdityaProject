@@ -22,6 +22,21 @@ public extension String {
         return self
     }
     
+    
+    func isValidEmail(testStr:String) -> Bool {
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+        
+        let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        return emailTest.evaluate(with: testStr)
+    }
+    
+    
+    func isValidEmail() -> Bool {
+        // here, `try!` will always succeed because the pattern is valid
+        let regex = try! NSRegularExpression(pattern: "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$", options: .caseInsensitive)
+        return regex.firstMatch(in: self, options: [], range: NSRange(location: 0, length: count)) != nil
+    }
+    
     func stringWithFloat(float f: Float) -> String {
         let string = "\(f)"
         return string
@@ -84,7 +99,7 @@ public extension Date {
         let dateFormatter = DateFormatter()
         dateFormatter.locale = NSLocale(localeIdentifier: "en_US_POSIX") as Locale!
         dateFormatter.timeZone = NSTimeZone(abbreviation: "GMT") as TimeZone!
-        dateFormatter.dateFormat = "dd EEEE MMM yyyy"
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
         return dateFormatter.string(from:date)
     }
     
@@ -116,7 +131,8 @@ public extension Date {
    
     var dayAfter : String
     {
-        return ISOStringFromDate(date: dayAfterTomorrow)
+        let date = Date()
+        return ISOStringFromDate(date: date)
     }
    
  
