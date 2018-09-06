@@ -29,6 +29,14 @@ class ReferAfriendVC: UIViewController {
     }
 
 
+    @IBAction func clickToMenu(_ sender: Any) {
+        
+        setController()
+        
+        
+    }
+    
+    
 }
 extension ReferAfriendVC: FlowingMenuDelegate{
     
@@ -45,7 +53,7 @@ extension ReferAfriendVC: FlowingMenuDelegate{
     
     
     func colorOfElasticShapeInFlowingMenu(_ flowingMenu: FlowingMenuTransitionManager) -> UIColor? {
-        return #colorLiteral(red: 0.2986846537, green: 0.4450575664, blue: 0.8048944473, alpha: 1)
+        return #colorLiteral(red: 0.01176470588, green: 0.9921568627, blue: 0.9843137255, alpha: 1)
     }
     
     func flowingMenuNeedsPresentMenu(_ flowingMenu: FlowingMenuTransitionManager) {

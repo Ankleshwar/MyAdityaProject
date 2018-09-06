@@ -37,6 +37,9 @@ class HomeVC: BaseViewController{
         setEmojiView()
         setBottomView()
         self.emojiPanel.isEmoji = true
+        let titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.black]
+        segmentController.setTitleTextAttributes(titleTextAttributes, for: .normal)
+        segmentController.setTitleTextAttributes(titleTextAttributes, for: .selected)
         
         flowingMenuTransitionManager.setInteractivePresentationView(view)
         flowingMenuTransitionManager.delegate = self
@@ -211,7 +214,7 @@ extension HomeVC: FlowingMenuDelegate{
     }
     
     func colorOfElasticShapeInFlowingMenu(_ flowingMenu: FlowingMenuTransitionManager) -> UIColor? {
-        return #colorLiteral(red: 0.2986846537, green: 0.4450575664, blue: 0.8048944473, alpha: 1)
+        return #colorLiteral(red: 0.3960784314, green: 0.3960784314, blue: 0.3960784314, alpha: 1)
     }
     
     func flowingMenuNeedsPresentMenu(_ flowingMenu: FlowingMenuTransitionManager) {

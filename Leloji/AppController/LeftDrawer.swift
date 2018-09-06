@@ -41,6 +41,7 @@ extension LeftDrawer: UITableViewDelegate,UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "DefaultCell", for: indexPath)
         cell.textLabel?.text = arrValue?[indexPath.row]["name"] as? String
         cell.textLabel?.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        cell.textLabel?.font = UIFont(name: "Helvetica-Neue", size: 22)
         cell.backgroundColor = UIColor.clear
         cell.separatorInset = .zero
     

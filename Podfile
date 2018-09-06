@@ -16,6 +16,9 @@ pod "SwiftKeychainWrapper"
 pod "JWTDecode"
 pod 'YALSideMenu'
 pod 'SVProgressHUD'
+pod 'FacebookCore'
+pod 'FacebookLogin'
+pod 'FacebookShare'
 
   target 'LelojiTests' do
     inherit! :search_paths

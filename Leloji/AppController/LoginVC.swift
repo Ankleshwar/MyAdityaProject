@@ -10,16 +10,25 @@ import UIKit
 import TextFieldEffects
 import  GoogleSignIn
 import SVProgressHUD
+import FBSDKCoreKit
+import FBSDKLoginKit
 
 
-class LoginVC: BaseViewController {
+
+
+
+class LoginVC: BaseViewController, FBSDKLoginButtonDelegate {
     @IBOutlet weak var txtEmail: TextFieldEffects!
      var viewController: SocialLogin?
     @IBOutlet weak var imgView: UIImageView!
-  
+    @IBOutlet weak var viewFb: UIView!
+    
     @IBOutlet weak var signInButton: GIDSignInButton!
     
     @IBOutlet weak var txtPassword: TextFieldEffects!
+    
+    @IBOutlet weak var btnFacebookLogin: FBSDKLoginButton!
+    
     
     var txtField = TextFieldEffects()
     
@@ -28,9 +37,11 @@ class LoginVC: BaseViewController {
         super.viewDidLoad()
 
       //  self.txtEmail.setBottomBorder(color: "")
-        
+       
         self.imgView.image = UIImage.gifImageWithName("pandit")
         GIDSignIn.sharedInstance().uiDelegate = self
+      //  self.btnFacebookLogin.readPermissions = ["public_profile", "email", "user_friends"]
+       // self.btnFacebookLogin.delegate = self
         
     }
 
@@ -47,8 +58,63 @@ class LoginVC: BaseViewController {
         }
         else{
                  callLoginServiec()
+
         }
-       
+       //setHomeController()
+    }
+    
+    
+    
+    
+    func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
+        print("User Logged In")
+        
+        if ((error) != nil)
+        {
+            // Process error
+        }
+        else if result.isCancelled {
+            // Handle cancellations
+        }
+        else {
+            // If you ask for multiple permissions at once, you
+            // should check if specific permissions missing
+            if result.grantedPermissions.contains("email")
+            {
+                returnUserData()
+            }
+        }
+    }
+    
+    func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
+        print("User Logged Out")
+    }
+    
+    
+    func returnUserData()
+    {
+        let graphRequest : FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, name, first_name, last_name, picture.type(large), email"])
+        graphRequest.start(completionHandler: { (connection, result, error) -> Void in
+            
+            if ((error) != nil)
+            {
+                // Process error
+                print(error?.localizedDescription)
+            }
+            else
+            {
+                print("fetched user: \(result)")
+                let dict = result as! [String : AnyObject]
+                let userName : NSString = dict["name"] as! NSString
+                print("User Name is: \(userName)")
+                let userEmail : NSString = dict["email"] as! NSString
+                print("User Email is: \(userEmail)")
+                print(dict)
+               // self.callSocialScreenValue(name: userName as String, email: userEmail as String)
+                
+                
+            }
+        })
     }
     
    public func setHomeController() {
@@ -93,48 +159,20 @@ class LoginVC: BaseViewController {
         
         ServiceClass().getLoginDetails(strUrl:"login", param: dic as! [String : String] ) { error , dicData  in
             
-            if dicData["status"] as!String == "Ok" {
-                if let dicSuccessData = dicData["successData"] as? [String : Any]{
-                    
-                    if let data = dicSuccessData["userData"] as? [String : Any]{
-                    self.appUserObject = AppUserObject.instance(from: data)
-                    
-                    self.appUserObject?.email = data["email"] as! String
-                    self.appUserObject?.userName = data["name"] as! String
-                    self.appUserObject?.userId = "\(data["id"])"
-                    
-                    
-                    //                        guard let myString =  self.nullToNil( value: data["phone"] as AnyObject ) , !(myString as AnyObject).isEmpty else {
-                    //                            print("String is nil or empty.")
-                    //                            SVProgressHUD.dismiss()
-                    //                            return // or break, continue, throw
-                    //                        }
-                    
-                    
-                    //   self.appUserObject?.mobile = "\(myString)"
-                        self.appUserObject?.token = dicSuccessData["token"] as! String
-                    self.appUserObject?.saveToUserDefault()
-                    let viewController = HomeVC(nibName: "HomeVC", bundle: nil)
-                    self.present(viewController, animated: true, completion: nil)
-                 }
-                }
+            if error != nil{
+                ECSAlert().showAlert(message: (error?.localizedDescription)!, controller: self)
                 SVProgressHUD.dismiss()
-                
             }
             else{
-                
-        
-                        let msg = dicData["error"] as! String
-                        ECSAlert().showAlert(message: msg, controller: self)
-                        
-              
-                
+                 self.appUserObject = AppUserObject.instance(from: dicData)
+                self.appUserObject?.token = dicData["auth_token"] as! String
+                self.appUserObject?.saveToUserDefault()
+                UserDefaults.standard.set(1, forKey: "isLogin")
+                UserDefaults.standard.synchronize()
+                let viewController = HomeVC(nibName: "HomeVC", bundle: nil)
+                self.present(viewController, animated: true, completion: nil)
                 SVProgressHUD.dismiss()
-                
-                
-                
             }
-            
         }
     }
 
@@ -170,4 +208,32 @@ extension LoginVC: GIDSignInUIDelegate{
     }
 }
 
+//MARK: Userfull
 
+
+
+//if dicData["status"] as!String == "Ok" {
+//    if let dicSuccessData = dicData["successData"] as? [String : Any]{
+//
+//        if let data = dicSuccessData["userData"] as? [String : Any]{
+//            self.appUserObject = AppUserObject.instance(from: data)
+//
+//            self.appUserObject?.email = data["email"] as! String
+//            self.appUserObject?.userName = data["name"] as! String
+//            self.appUserObject?.userId = "\(data["id"])"
+//
+//
+//            //                        guard let myString =  self.nullToNil( value: data["phone"] as AnyObject ) , !(myString as AnyObject).isEmpty else {
+//            //                            print("String is nil or empty.")
+//            //                            SVProgressHUD.dismiss()
+//            //                            return // or break, continue, throw
+//            //                        }
+//
+//
+//            //   self.appUserObject?.mobile = "\(myString)"
+//            self.appUserObject?.token = dicSuccessData["token"] as! String
+//            self.appUserObject?.saveToUserDefault()
+//            let viewController = HomeVC(nibName: "HomeVC", bundle: nil)
+//            self.present(viewController, animated: true, completion: nil)
+//        }
+//}

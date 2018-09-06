@@ -16,7 +16,7 @@
 
 import UIKit
 import GoogleSignIn
-
+import FBSDKLoginKit
 
 
 @UIApplicationMain
@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate,GIDSignInDelegate {
   
 
 
-    var viewController: LoginVC?
+    var viewController: UIViewController?
     var window: UIWindow?
     var navigationController: UINavigationController?
 
@@ -39,6 +39,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate,GIDSignInDelegate {
     func setRootController(){
         
         window = UIWindow(frame: UIScreen.main.bounds)
+        
+        
+        let controllerVelue = UserDefaults.standard.integer(forKey: "isLogin")
+        
+        if controllerVelue == 1{
+            viewController = HomeVC(nibName: "HomeVC", bundle: nil)
+        }
+        else{
+            viewController = LoginVC(nibName: "LoginVC", bundle: nil)
+        }
         viewController = LoginVC(nibName: "LoginVC", bundle: nil)
         navigationController = UINavigationController(rootViewController: (viewController)!)
         
@@ -54,7 +64,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate,GIDSignInDelegate {
     
     func application(_ application: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any])
         -> Bool {
-            return GIDSignIn.sharedInstance().handle(url, sourceApplication:options[UIApplicationOpenURLOptionsKey.sourceApplication] as? String, annotation: [:])
+            return GIDSignIn.sharedInstance().handle(url, sourceApplication:options[UIApplicationOpenURLOptionsKey.sourceApplication] as? String, annotation: [:]) || FBSDKApplicationDelegate.sharedInstance().application(application, open: url, options: options)
     }
 
     
@@ -70,6 +80,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate,GIDSignInDelegate {
                                                     annotation: annotation)
     }
     
+//    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+//        return FBSDKApplicationDelegate.sharedInstance().application(app, open: url, options: options)
+//    }
+    
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!,
               withError error: Error!) {
         if let error = error {
@@ -82,7 +96,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate,GIDSignInDelegate {
             let givenName = user.profile.givenName
             let familyName = user.profile.familyName
             let email = user.profile.email
-            viewController?.setHomeController()
+           // viewController.setHomeController()
         }
     }
     

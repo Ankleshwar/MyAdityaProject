@@ -11,12 +11,17 @@ import SVProgressHUD
 import TextFieldEffects
 
 class SignupVC: BaseViewController {
-    @IBOutlet weak var txtConfPassword: HoshiTextField!
-    
-    @IBOutlet weak var txtreffral: HoshiTextField!
+   
+    @IBOutlet weak var txtConfirmPass: HoshiTextField!
+    @IBOutlet weak var txtCountryCode: HoshiTextField!
+    @IBOutlet weak var txtState: HoshiTextField!
+    @IBOutlet weak var txtLastName: HoshiTextField!
     @IBOutlet weak var txtPassword: HoshiTextField!
     @IBOutlet weak var txtEmail: HoshiTextField!
-    @IBOutlet weak var txtName: HoshiTextField!
+    @IBOutlet weak var txtFirstName: HoshiTextField!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -34,26 +39,31 @@ class SignupVC: BaseViewController {
         
         let strEmail : String
         strEmail = txtEmail.text!
-        
-        if txtName.text?.count == 0 {
+
+        if txtFirstName.text?.count == 0 {
             ECSAlert().showAlert(message: "Please Enter Your Name", controller: self)
         }else if txtEmail.text?.count == 0{
             ECSAlert().showAlert(message: "Please Enter valid Email", controller: self)
+        }else if strEmail.isValidEmail() == false {
+             ECSAlert().showAlert(message: "Please Enter valid Email", controller: self)
         }
+            
         else if txtPassword.text?.count == 0 {
             ECSAlert().showAlert(message: "Please Enter Your Password", controller: self)
         }
-        else if txtConfPassword.text?.count == 0 {
+        else if txtConfirmPass.text?.count == 0 {
             ECSAlert().showAlert(message: "Please Enter Your Confirm Password", controller: self)
         }
-        else if isEqual (txtPassword.text == txtConfPassword.text) {
+            
+        else if isEqual (txtPassword.text == txtConfirmPass.text) {
             ECSAlert().showAlert(message: "Please Match  Your Password", controller: self)
         }
         else{
             callSignUpServiec()
         }
         
-        
+//        let viewController = HomeVC(nibName: "HomeVC", bundle: nil)
+//        self.present(viewController, animated: true, completion: nil)
         
         print("value added")
     }
@@ -76,45 +86,34 @@ class SignupVC: BaseViewController {
     
     func callSignUpServiec(){
         
-        SVProgressHUD.show()
+    
+        let dic = [ "firstName": self.txtFirstName.text ?? "",
+                   "lastName":self.txtLastName.text ?? "",
+                   "password": self.txtPassword.text ?? "",
+                   "countryCode": self.txtCountryCode.text ?? "",
+                   "email": self.txtEmail.text ?? "",
+                   "state":self.txtState.text ?? "",
+                   "signupType":1
+            ] as [String : Any]
         
-        
-        let dic = ["name":self.txtName.text,
-                   "email":self.txtEmail.text,
-                   "password": self.txtPassword.text,
-                    "password_confirmation": self.txtConfPassword.text,
-                    "referral_code":self.txtreffral.text
-                   ]
-        
-        ServiceClass().signUpDetails(strUrl:"register", param: dic as! [String : String] ) { error , dicData  in
+         SVProgressHUD.show()
+        ServiceClass().signUpDetails(strUrl:"signup", param: dic ) { error , dicData  in
             
-            if dicData["status"] as!String == "Ok" {
+            if dicData["status"] as! Bool == true {
 
-                
-                if let dicSuccessData = dicData["successData"] as? [String : Any]{
+               
                     
-                    if let data = dicSuccessData["data"] as? [String : Any]{
-                        self.appUserObject = AppUserObject.instance(from: data)
+                
+                self.appUserObject = AppUserObject.instance(from: dicData)
+                self.appUserObject?.token = dicData["auth_token"] as! String
+                self.appUserObject?.saveToUserDefault()
+                UserDefaults.standard.set(1, forKey: "isLogin")
+                UserDefaults.standard.synchronize()
+                let viewController = HomeVC(nibName: "HomeVC", bundle: nil)
+                self.present(viewController, animated: true, completion: nil)
                         
-                        self.appUserObject?.email = data["email"] as! String
-                        self.appUserObject?.userName = data["name"] as! String
-                        self.appUserObject?.userId = "\(data["id"])"
-                        
-                        
-                        guard let myString =  self.nullToNil( value: data["phone"] as AnyObject ) , !(myString as AnyObject).isEmpty else {
-//                            print("String is nil or empty.")
-//                            SVProgressHUD.dismiss()
-//                            return // or break, continue, throw
-//                        }
-                        
-                        
-                     //   self.appUserObject?.mobile = "\(myString)"
-                        self.appUserObject?.saveToUserDefault()
-                        let viewController = HomeVC(nibName: "HomeVC", bundle: nil)
-                        self.present(viewController, animated: true, completion: nil)
-                        
-                    }
-                }
+                    
+                
                
                 
                 
@@ -123,7 +122,7 @@ class SignupVC: BaseViewController {
             }
             else{
                 
-                if let users = dicData["errorData"] as? [String : Any] {
+                if let users = dicData["error"] as? [String : Any] {
               
                     for errData in (users as? [String : Any])!{
                         print(errData)
@@ -151,7 +150,7 @@ class SignupVC: BaseViewController {
     
     
     
-}
+
 extension SignupVC: UITextFieldDelegate{
     
     

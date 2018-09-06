@@ -49,12 +49,22 @@ class ServiceClass: NSObject {
             (JSONResponse) -> Void in
             print(JSONResponse)
             
+             let dicData = JSONResponse.dictionaryObject!
+            if dicData["status"] as! Bool == true {
+                 completion(nil,JSONResponse.dictionaryObject!)
+            }else{
+                let msg = dicData["error"] as! String
+                
+                let error = NSError(domain:"", code:401, userInfo:[ NSLocalizedDescriptionKey: msg])
+                
+                completion(error as Error,[:])
+             
+                
+            }
             
             
             
-            
-            
-            completion(nil,JSONResponse.dictionaryObject!)
+           
             
             
             
@@ -70,29 +80,79 @@ class ServiceClass: NSObject {
     
     
     
-    public func signUpDetails(strUrl:String,param:[String:String],completion:@escaping (dictionaryBlock)){
+    public func signUpDetails(strUrl:String,param:[String:Any],completion:@escaping (dictionaryBlock)){
         
         print(param)
         
-        requestPOSTURL(baseURL+strUrl, params: param as [String : AnyObject], headers: nil, success: {
-            (JSONResponse) -> Void in
-            print(JSONResponse)
+        let dicHeader = [ "Content-Type": "application/json"]
+
+        
+        
+        let headersValue: HTTPHeaders = [
+             "Content-Type": "application/json"
             
+        ]
+        
+        do {
+            let data = try JSONSerialization.data(withJSONObject: param, options: [])
             
-            
-            
-            
-            
-            completion(nil,JSONResponse.dictionaryObject!)
-            
-            
-            
-        }) {
-            (error) -> Void in
-            
-            completion(error,[:])
-            
+            if let utf8 = String(data: data, encoding: .utf8) {
+                print("JSON: \(utf8)")
+                
+                let json = utf8
+                
+                let url = URL(string: baseURL+strUrl)!
+                let jsonData = json.data(using: .utf8, allowLossyConversion: false)!
+                
+                var request = URLRequest(url: url)
+                request.httpMethod = HTTPMethod.post.rawValue
+                request.setValue("application/json; charset=UTF-8", forHTTPHeaderField: "Content-Type")
+                request.httpBody = jsonData
+                request.allHTTPHeaderFields = headersValue
+                
+                Alamofire.request(request).responseJSON {
+                    (response) in
+                    
+                    print(response)
+                    
+                    if response.result.isSuccess {
+                        let resJson = JSON(response.result.value!)
+                        
+                        let dicData = resJson.dictionaryObject!
+                        
+                        if dicData["status"] as! Bool == true {
+                         
+                            completion(nil,dicData)
+                        }
+                        else{
+                            let msg = dicData["error"] as! String
+                            
+                            let error = NSError(domain:"", code:401, userInfo:[ NSLocalizedDescriptionKey: msg])
+                            
+                            completion(error as Error,[:])
+                        }
+                        
+                        
+                        
+                        
+                    }
+                    if response.result.isFailure {
+                        let error : Error = response.result.error!
+                        completion(error,[:])
+                    }
+                    
+                    
+                    
+                }
+                
+                
+            }
+        } catch {
+            print(error)
         }
+            
+        
+        
     }
     
     

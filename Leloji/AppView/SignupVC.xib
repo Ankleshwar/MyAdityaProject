@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -11,11 +12,13 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SignupVC" customModule="Leloji" customModuleProvider="target">
             <connections>
-                <outlet property="txtConfPassword" destination="c0s-QY-dJt" id="YdW-rn-1zW"/>
-                <outlet property="txtEmail" destination="9za-KW-GAW" id="bVY-LO-Mfn"/>
-                <outlet property="txtName" destination="aDv-2r-PTx" id="GOz-Hh-tS5"/>
-                <outlet property="txtPassword" destination="hvz-fF-NCV" id="hkH-Jl-NDH"/>
-                <outlet property="txtreffral" destination="SiB-Em-A3R" id="FOz-SA-wpY"/>
+                <outlet property="txtConfirmPass" destination="SiB-Em-A3R" id="VJQ-Jw-RWW"/>
+                <outlet property="txtCountryCode" destination="b8P-WM-kVL" id="0ug-Pt-fUq"/>
+                <outlet property="txtEmail" destination="hvz-fF-NCV" id="DT4-eJ-xce"/>
+                <outlet property="txtFirstName" destination="aDv-2r-PTx" id="jd6-lQ-j07"/>
+                <outlet property="txtLastName" destination="9za-KW-GAW" id="4aX-hq-MyG"/>
+                <outlet property="txtPassword" destination="c0s-QY-dJt" id="quf-zA-MRk"/>
+                <outlet property="txtState" destination="a4b-0c-FKp" id="D70-Dg-xzy"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -26,7 +29,7 @@
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nLM-Pg-r9t">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="20"/>
-                    <color key="backgroundColor" red="0.90588235289999997" green="0.94117647059999998" blue="0.76862745099999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="backgroundColor" red="1" green="1" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="InF-q0-fot">
                     <rect key="frame" x="0.0" y="20" width="320" height="46"/>
@@ -45,7 +48,7 @@
                             </connections>
                         </button>
                     </subviews>
-                    <color key="backgroundColor" red="0.90588235289999997" green="0.94117647059999998" blue="0.76862745099999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="backgroundColor" red="1" green="1" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="bottom" secondItem="vZo-G5-yvg" secondAttribute="bottom" constant="9" id="864-qN-OqU"/>
                         <constraint firstItem="vZo-G5-yvg" firstAttribute="leading" secondItem="InF-q0-fot" secondAttribute="leading" constant="10" id="HMC-bC-Y7k"/>
@@ -70,8 +73,8 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rVD-IS-ad0">
-                                    <rect key="frame" x="20" y="425" width="280" height="40"/>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <rect key="frame" x="20" y="553" width="280" height="40"/>
+                                    <color key="backgroundColor" red="0.01176470588" green="0.99215686270000003" blue="0.98431372549999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="40" id="xbx-7c-GbX"/>
                                     </constraints>
@@ -82,22 +85,22 @@
                                         <action selector="clickToSignUp:" destination="-1" eventType="touchUpInside" id="gFB-3T-jFL"/>
                                     </connections>
                                 </button>
-                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="yEG-3v-Tzt">
-                                    <rect key="frame" x="20" y="115" width="280" height="260"/>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="yEG-3v-Tzt">
+                                    <rect key="frame" x="20" y="115" width="280" height="388"/>
                                     <subviews>
-                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aDv-2r-PTx" customClass="HoshiTextField" customModule="TextFieldEffects">
+                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="First Name" textAlignment="justified" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="aDv-2r-PTx" customClass="HoshiTextField" customModule="TextFieldEffects">
                                             <rect key="frame" x="0.0" y="0.0" width="280" height="40"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="40" id="LLJ-cG-ai6"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="18"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="16"/>
                                             <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
                                                     <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </userDefinedRuntimeAttribute>
                                                 <userDefinedRuntimeAttribute type="color" keyPath="borderActiveColor">
-                                                    <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </userDefinedRuntimeAttribute>
                                                 <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
                                                     <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -110,19 +113,19 @@
                                                 <outlet property="delegate" destination="-1" id="Fpj-QX-4OU"/>
                                             </connections>
                                         </textField>
-                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9za-KW-GAW" customClass="HoshiTextField" customModule="TextFieldEffects">
-                                            <rect key="frame" x="0.0" y="55" width="280" height="40"/>
+                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Last Name" textAlignment="justified" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="9za-KW-GAW" customClass="HoshiTextField" customModule="TextFieldEffects">
+                                            <rect key="frame" x="0.0" y="58" width="280" height="40"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="40" id="l0X-Fj-Xeb"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="18"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="16"/>
                                             <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
                                                     <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </userDefinedRuntimeAttribute>
                                                 <userDefinedRuntimeAttribute type="color" keyPath="borderActiveColor">
-                                                    <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </userDefinedRuntimeAttribute>
                                                 <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
                                                     <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -135,13 +138,13 @@
                                                 <outlet property="delegate" destination="-1" id="X8w-WB-kPo"/>
                                             </connections>
                                         </textField>
-                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hvz-fF-NCV" customClass="HoshiTextField" customModule="TextFieldEffects">
-                                            <rect key="frame" x="0.0" y="110" width="280" height="40"/>
+                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="justified" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="hvz-fF-NCV" customClass="HoshiTextField" customModule="TextFieldEffects">
+                                            <rect key="frame" x="0.0" y="116" width="280" height="40"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="40" id="1t4-vk-qvb"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="18"/>
-                                            <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="16"/>
+                                            <textInputTraits key="textInputTraits"/>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
                                                     <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -160,8 +163,8 @@
                                                 <outlet property="delegate" destination="-1" id="s3s-rv-tqB"/>
                                             </connections>
                                         </textField>
-                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Confirm Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="c0s-QY-dJt" customClass="HoshiTextField" customModule="TextFieldEffects">
-                                            <rect key="frame" x="0.0" y="165" width="280" height="40"/>
+                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="c0s-QY-dJt" customClass="HoshiTextField" customModule="TextFieldEffects">
+                                            <rect key="frame" x="0.0" y="174" width="280" height="40"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="40" id="BsY-Mk-Unw"/>
                                             </constraints>
@@ -185,8 +188,8 @@
                                                 <outlet property="delegate" destination="-1" id="ptU-3E-nqQ"/>
                                             </connections>
                                         </textField>
-                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Reffral  Code" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SiB-Em-A3R" customClass="HoshiTextField" customModule="TextFieldEffects">
-                                            <rect key="frame" x="0.0" y="220" width="280" height="40"/>
+                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Confirm Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SiB-Em-A3R" customClass="HoshiTextField" customModule="TextFieldEffects">
+                                            <rect key="frame" x="0.0" y="232" width="280" height="40"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="40" id="OQR-eN-EQg"/>
                                             </constraints>
@@ -210,10 +213,60 @@
                                                 <outlet property="delegate" destination="-1" id="1uP-iz-Qdj"/>
                                             </connections>
                                         </textField>
+                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Country Code" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="b8P-WM-kVL" customClass="HoshiTextField" customModule="TextFieldEffects">
+                                            <rect key="frame" x="0.0" y="290" width="280" height="40"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="40" id="U85-99-J3z"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="18"/>
+                                            <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
+                                                    <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="borderActiveColor">
+                                                    <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                                    <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="placeholderFontScale">
+                                                    <real key="value" value="1"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <outlet property="delegate" destination="-1" id="YLe-dw-CiC"/>
+                                            </connections>
+                                        </textField>
+                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="State" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="a4b-0c-FKp" customClass="HoshiTextField" customModule="TextFieldEffects">
+                                            <rect key="frame" x="0.0" y="348" width="280" height="40"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="40" id="3DZ-Va-gwY"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="18"/>
+                                            <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
+                                                    <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="borderActiveColor">
+                                                    <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                                    <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="placeholderFontScale">
+                                                    <real key="value" value="1"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <outlet property="delegate" destination="-1" id="hch-WK-UUs"/>
+                                            </connections>
+                                        </textField>
                                     </subviews>
                                 </stackView>
                             </subviews>
-                            <color key="backgroundColor" red="0.90588235289999997" green="0.94117647059999998" blue="0.76862745099999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="backgroundColor" red="1" green="1" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstAttribute="trailing" secondItem="rVD-IS-ad0" secondAttribute="trailing" constant="20" id="6Nh-Zu-hYU"/>
                                 <constraint firstItem="yEG-3v-Tzt" firstAttribute="leading" secondItem="f1O-2A-9W8" secondAttribute="leading" constant="20" id="Bcc-hu-oi6"/>
@@ -236,7 +289,7 @@
                     </constraints>
                 </scrollView>
             </subviews>
-            <color key="backgroundColor" red="0.73974693520000001" green="0.95294117649999999" blue="0.71545450060000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="nLM-Pg-r9t" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="0c1-Dj-45O"/>
                 <constraint firstItem="InF-q0-fot" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="3Dq-rx-kaq"/>
