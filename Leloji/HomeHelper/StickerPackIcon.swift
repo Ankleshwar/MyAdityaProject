@@ -1,6 +1,7 @@
 
 
 import UIKit
+import Kingfisher
 
 
 class StickerPackIcon: UICollectionViewCell {
@@ -29,10 +30,13 @@ class StickerPackIcon: UICollectionViewCell {
     }
     
     private func updateIcon() {
+        let url = URL(string: (self.strImg))
         if isPackSelected {
-            stickerImage.image = UIImage(named: self.strImg)
+             stickerImage.kf.setImage(with: url)
+           // stickerImage.image = UIImage(named: self.strImg)
         } else {
-            stickerImage.image = UIImage(named: self.strImg)
+            stickerImage.kf.setImage(with: url)
+            //stickerImage.image = UIImage(named: self.strImg)
         }
     }
 }

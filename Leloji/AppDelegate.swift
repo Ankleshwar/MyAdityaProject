@@ -49,7 +49,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate,GIDSignInDelegate {
         else{
             viewController = LoginVC(nibName: "LoginVC", bundle: nil)
         }
-        viewController = LoginVC(nibName: "LoginVC", bundle: nil)
+        //viewController = LoginVC(nibName: "LoginVC", bundle: nil)
         navigationController = UINavigationController(rootViewController: (viewController)!)
         
         self.window?.rootViewController = self.navigationController

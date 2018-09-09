@@ -97,7 +97,7 @@ class SignupVC: BaseViewController {
             ] as [String : Any]
         
          SVProgressHUD.show()
-        ServiceClass().signUpDetails(strUrl:"signup", param: dic ) { error , dicData  in
+        ServiceClass().signUpDetails(strUrl:"auth/signup", param: dic ) { error , dicData  in
             
             if dicData["status"] as! Bool == true {
 

@@ -10,7 +10,7 @@ import UIKit
 
 
 let stickerPackIconSize: CGFloat = 30.0
-let stickerPackSpacing: CGFloat = 7.0
+let stickerPackSpacing: CGFloat = 10.0
 
 protocol ThumbnilVCDelegate: class {
     func didSelectPack(at packIndex: Int)
@@ -64,7 +64,7 @@ class ThumbnilVC: UIView {
     }
     
     func reloadCollection(arrData:NSMutableArray) {
-//        self.emojiPanel = panel
+        print(arrData)
         self.arrayThumbnil = arrData
         self.collectionView.reloadData()
     }
@@ -86,10 +86,10 @@ extension ThumbnilVC: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: StickerPackIcon.identifier, for: indexPath) as! StickerPackIcon
-        
-        let imgName = self.arrayThumbnil[indexPath.row] as! String
+           let objCate = self.arrayThumbnil[indexPath.row] as! LLCategory
+        let imgName = objCate.icon
     
-        cell.configure(packname: imgName, isSelected: (indexPath.item == self.selectedPackIndex))
+        cell.configure(packname: imgName!, isSelected: (indexPath.item == self.selectedPackIndex))
         return cell
     }
 }
@@ -98,7 +98,7 @@ extension ThumbnilVC: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print(self.emojiPanel.selectedPackIndex)
         
-        
+         let objCate = self.arrayThumbnil[indexPath.row] as! LLCategory
         
         if (self.emojiPanel.selectedPackIndex != indexPath.item) {
             let index = NSIndexPath(item: self.selectedPackIndex, section: 0)
@@ -109,7 +109,7 @@ extension ThumbnilVC: UICollectionViewDelegate {
             self.selectedPackIndex = indexPath.item
             self.collectionView.reloadData()
             delegate?.didSelectPack(at: indexPath.item)
-            self.emojiPanel.reloadCollection(arrData: self.arrayThumbnil)
+            self.emojiPanel.reloadCollection(arrData: objCate.stickers)
         }
         
         

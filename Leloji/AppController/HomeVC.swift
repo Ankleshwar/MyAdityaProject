@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import SVProgressHUD
 
 
 class HomeVC: BaseViewController{
@@ -23,7 +23,7 @@ class HomeVC: BaseViewController{
     @IBOutlet fileprivate var barButton: UIButton!
     @IBOutlet weak var topView: UIView!
     var imgArrayBottomEmoji = NSMutableArray()
-    var imgArrayEmoji = NSMutableArray()
+    var imgArrayEmoji : [LLSticker]!
     let mainColor      = #colorLiteral(red: 1, green: 0, blue: 0.1483619339, alpha: 1)
     var menu: LeftDrawer?
     
@@ -31,11 +31,13 @@ class HomeVC: BaseViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+          self.imgArrayEmoji = []
+        self.getHomeData()
         
         segmentController.selectedSegmentIndex = 0
-        setDataEmoji()
-        setEmojiView()
-        setBottomView()
+   
+      
+
         self.emojiPanel.isEmoji = true
         let titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.black]
         segmentController.setTitleTextAttributes(titleTextAttributes, for: .normal)
@@ -43,8 +45,38 @@ class HomeVC: BaseViewController{
         
         flowingMenuTransitionManager.setInteractivePresentationView(view)
         flowingMenuTransitionManager.delegate = self
+        
          
  }
+    func getHomeData() {
+        SVProgressHUD.show()
+        
+        
+       
+        
+        ServiceClass().homeData(strUrl:"emojis/stickers", prama: [:] as! [String : String] ) { (result)  in
+            switch result {
+                case .Error(let error):
+                    do {
+                        ECSAlert().showAlert(message: (error.localizedDescription), controller: self)
+                    SVProgressHUD.dismiss()
+                }
+            case .Success(let json):
+                    let obj = LLHomeData(fromJson: json)
+                    for i in 0 ..< obj.result.count{
+                        self.imgArrayBottomEmoji.add(obj.result[i].category)
+                       self.imgArrayEmoji = obj.result[0].category.stickers
+                    }
+                    
+                        self.setBottomView()
+                        self.setEmojiView()
+                    SVProgressHUD.dismiss()
+
+            }
+           
+        
+        }
+    }
     
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -78,33 +110,33 @@ class HomeVC: BaseViewController{
     
     func setDataEmoji(){
         
-      
-        self.imgArrayEmoji.removeAllObjects()
-        self.imgArrayBottomEmoji.removeAllObjects()
-        for var j in 1...15{
-            self.imgArrayBottomEmoji.add("b\(j).png")
-        }
-        for var i in 1...30
-        {
-            self.imgArrayEmoji.add("a\(i).png")
-        }
-        
+//
+//        self.imgArrayEmoji.removeAllObjects()
+//        self.imgArrayBottomEmoji.removeAllObjects()
+//        for var j in 1...15{
+//            self.imgArrayBottomEmoji.add("b\(j).png")
+//        }
+//        for var i in 1...30
+//        {
+//            self.imgArrayEmoji.add("a\(i).png")
+//        }
+//
     }
-    func setDataGIF(){
-        self.imgArrayEmoji.removeAllObjects()
-        self.imgArrayBottomEmoji.removeAllObjects()
-        
-        
-        self.imgArrayBottomEmoji.add("pandit.gif")
-        
-        let strGIF = "voymate"
-        
-        for var i in 1...5
-        {
-            self.imgArrayEmoji.add(strGIF)
-        }
-        
-    }
+//    func setDataGIF(){
+//        self.imgArrayEmoji.removeAllObjects()
+//        self.imgArrayBottomEmoji.removeAllObjects()
+//
+//
+//        self.imgArrayBottomEmoji.add("pandit.gif")
+//
+//        let strGIF = "voymate"
+//
+//        for var i in 1...5
+//        {
+//            self.imgArrayEmoji.add(strGIF)
+//        }
+//
+//    }
 
     
     
@@ -112,14 +144,14 @@ class HomeVC: BaseViewController{
         if segmentController.selectedSegmentIndex == 0 {
             
     
-            setDataEmoji()
+          //  setDataEmoji()
             self.emojiPanel.isEmoji = true
             setEmojiView()
             setBottomView()
             
         }
         else{
-            setDataGIF()
+           // setDataGIF()
             self.emojiPanel.isEmoji = false
             setEmojiView()
             setBottomView()
@@ -174,10 +206,10 @@ extension HomeVC: ThumbnilVCDelegate {
 extension HomeVC: EmojiPanelDelegate {
 
     
-    func didSelect(image: UIImage!, isPaid: Bool) {
+    func didSelect(image: String!, isPaid: Bool) {
         
         let viewController = DetailsVc(nibName: "DetailsVc", bundle: nil)
-        viewController.image = image
+        viewController.strImage = image
          viewController.isEmoji = true
         viewController.isPaidValue = isPaid
         present(viewController, animated: true, completion: nil)

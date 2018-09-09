@@ -102,7 +102,7 @@
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TestSignUp3@test.com" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8kv-6v-S7j" customClass="HoshiTextField" customModule="TextFieldEffects">
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="abc@g.com" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8kv-6v-S7j" customClass="HoshiTextField" customModule="TextFieldEffects">
                                     <rect key="frame" x="30" y="365" width="354" height="40"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="40" id="6oT-Bn-BQn"/>
@@ -128,7 +128,7 @@
                                         <outlet property="delegate" destination="-1" id="myL-SC-2z0"/>
                                     </connections>
                                 </textField>
-                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="123#" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cJY-V7-nS7" customClass="HoshiTextField" customModule="TextFieldEffects">
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="123456" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cJY-V7-nS7" customClass="HoshiTextField" customModule="TextFieldEffects">
                                     <rect key="frame" x="30" y="425" width="354" height="40"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="40" id="k0K-JT-71i"/>

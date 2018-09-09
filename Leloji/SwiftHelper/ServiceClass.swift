@@ -10,11 +10,25 @@ import Foundation
 import Alamofire
 import SwiftyJSON
 
+
+enum Result <T>{
+    case Success(T)
+  case Error(ItunesApiError)
+}
+enum ItunesApiError: Error {
+    case requestFailed
+    case jsonConversionFailure
+    case invalidData
+    case responseUnsuccessful
+    case invalidURL
+    case jsonParsingFailure
+}
+
 class ServiceClass: NSObject {
     
     typealias dictionaryBlock = (_ error: Error?, _ response: [String:Any]) -> Void
     typealias arrayBlock = (_ error: Error?, _ response: [Any]) -> Void
-    
+     typealias JSONTaskCompletionHandler = (Result<JSON>) -> ()
 
     
     var headers: [String: String] = [:]
@@ -51,7 +65,7 @@ class ServiceClass: NSObject {
             
              let dicData = JSONResponse.dictionaryObject!
             if dicData["status"] as! Bool == true {
-                 completion(nil,JSONResponse.dictionaryObject!)
+                completion(nil,JSONResponse.dictionaryObject!)
             }else{
                 let msg = dicData["error"] as! String
                 
@@ -71,10 +85,53 @@ class ServiceClass: NSObject {
         }) {
             (error) -> Void in
             
-            completion(error,[:])
+            completion(error as Error,[:])
             
         }
     }
+    
+    
+    
+    public func homeData(strUrl:String,prama:[String:String],completion: @escaping (JSONTaskCompletionHandler)){
+        print(baseURL+strUrl)
+        
+        requestGETURL(baseURL+strUrl, params: nil, headers: nil, success: {
+            (JSONResponse) -> Void in
+            print(JSONResponse)
+            
+            let dicData = JSONResponse.dictionaryObject!
+            if dicData["status"] as! Bool == true {
+                completion(.Success(JSONResponse))
+            }else{
+                let msg = dicData["error"] as! String
+                
+                let error = NSError(domain:"", code:401, userInfo:[ NSLocalizedDescriptionKey: msg])
+                
+               completion(.Error(.jsonConversionFailure))
+                
+                
+            }
+            
+            
+            
+            
+            
+            
+            
+        }) {
+            (error) -> Void in
+            print(error)
+            completion(.Error(.responseUnsuccessful))
+            
+        }
+        
+
+        
+        
+        
+        
+    }
+    
     
     
     

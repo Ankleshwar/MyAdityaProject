@@ -157,7 +157,7 @@ class LoginVC: BaseViewController, FBSDKLoginButtonDelegate {
                
         ]
         
-        ServiceClass().getLoginDetails(strUrl:"login", param: dic as! [String : String] ) { error , dicData  in
+        ServiceClass().getLoginDetails(strUrl:"auth/login", param: dic as! [String : String] ) { error , dicData  in
             
             if error != nil{
                 ECSAlert().showAlert(message: (error?.localizedDescription)!, controller: self)

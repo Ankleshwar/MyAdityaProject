@@ -18,12 +18,13 @@ class DetailsVc: UIViewController {
         var gifName: String!
     @IBOutlet weak var imgView: UIImageView?
     var image: UIImage!
+    var strImage = String()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        let url = URL(string: (strImage))
         if isEmoji == true {
-            self.imgView?.image = image
+            self.imgView?.kf.setImage(with: url)
         }
         else{
            self.imgView?.image = UIImage.gifImageWithName(gifName)

@@ -10,7 +10,7 @@ import Foundation
 
 let googleApikey = "AIzaSyB3bRHVPT8erGG8oTZdbFCuSA3aKIWxCMI"
 let googlePlaceApikey = "AIzaSyBfK9hv6qIpL7vLV-WRa1qkiNzD4ix1Hjc"
-let baseURL = "http://ec2-13-126-37-79.ap-south-1.compute.amazonaws.com/api/auth/"
+let baseURL = "http://ec2-13-126-37-79.ap-south-1.compute.amazonaws.com/api/"
 
  let googleSearchTypeUrl = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=28.5273,77.1515&radius=5000&type=restaurant&key=AIzaSyBfK9hv6qIpL7vLV-WRa1qkiNzD4ix1Hjc"
 
