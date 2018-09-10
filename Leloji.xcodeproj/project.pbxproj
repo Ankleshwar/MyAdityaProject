@@ -207,7 +207,15 @@
 		1BD733E620AED399007BEBA5 /* referal.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BD733E520AED398007BEBA5 /* referal.png */; };
 		1BD733E920AEDC77007BEBA5 /* facebook.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BD733E720AEDC77007BEBA5 /* facebook.png */; };
 		1BD733EA20AEDC77007BEBA5 /* google-plus.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BD733E820AEDC77007BEBA5 /* google-plus.png */; };
+		3BB306972145495000BE59A6 /* UIExtentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD7332120AEC990007BEBA5 /* UIExtentions.swift */; };
+		3BB3069821454BFF00BE59A6 /* ServiceClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD7331C20AEC990007BEBA5 /* ServiceClass.swift */; };
+		3BB3069921454C1900BE59A6 /* Constaint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD7331620AEC990007BEBA5 /* Constaint.swift */; };
+		3BB3069A21454CF200BE59A6 /* LLResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF1E09F2143ABFD00A84661 /* LLResult.swift */; };
+		3BB3069B21454CF600BE59A6 /* LLHomeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF1E0A02143ABFD00A84661 /* LLHomeData.swift */; };
+		3BB3069C21454CFA00BE59A6 /* LLCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF1E0A12143ABFD00A84661 /* LLCategory.swift */; };
+		3BB3069D21454CFD00BE59A6 /* LLSticker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF1E0A22143ABFD00A84661 /* LLSticker.swift */; };
 		3BBF65C920B0370D00F7FF06 /* SocialLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBF65C820B0370D00F7FF06 /* SocialLogin.swift */; };
+		3BEEEC9C214589B0001EBEFB /* final time.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3BEEEC9B214589AF001EBEFB /* final time.gif */; };
 		3BF1E0A32143ABFD00A84661 /* LLResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF1E09F2143ABFD00A84661 /* LLResult.swift */; };
 		3BF1E0A42143ABFD00A84661 /* LLHomeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF1E0A02143ABFD00A84661 /* LLHomeData.swift */; };
 		3BF1E0A52143ABFD00A84661 /* LLCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF1E0A12143ABFD00A84661 /* LLCategory.swift */; };
@@ -468,6 +476,7 @@
 		1BD733E820AEDC77007BEBA5 /* google-plus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "google-plus.png"; sourceTree = "<group>"; };
 		3BBF65C820B0370D00F7FF06 /* SocialLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialLogin.swift; sourceTree = "<group>"; };
 		3BBF65CA20B0496600F7FF06 /* Leloji.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Leloji.entitlements; sourceTree = "<group>"; };
+		3BEEEC9B214589AF001EBEFB /* final time.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "final time.gif"; sourceTree = "<group>"; };
 		3BF1E09F2143ABFD00A84661 /* LLResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLResult.swift; sourceTree = "<group>"; };
 		3BF1E0A02143ABFD00A84661 /* LLHomeData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLHomeData.swift; sourceTree = "<group>"; };
 		3BF1E0A12143ABFD00A84661 /* LLCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLCategory.swift; sourceTree = "<group>"; };
@@ -799,6 +808,7 @@
 		1BD7337420AED34B007BEBA5 /* pngs */ = {
 			isa = PBXGroup;
 			children = (
+				3BEEEC9B214589AF001EBEFB /* final time.gif */,
 				1BD733E720AEDC77007BEBA5 /* facebook.png */,
 				1BD733E820AEDC77007BEBA5 /* google-plus.png */,
 				1BD733E520AED398007BEBA5 /* referal.png */,
@@ -1062,6 +1072,7 @@
 				1BD7332620AEC990007BEBA5 /* ic_menu@3x.png in Resources */,
 				1BD733C220AED34C007BEBA5 /* a29.png in Resources */,
 				1BD733C120AED34C007BEBA5 /* a28.png in Resources */,
+				3BEEEC9C214589B0001EBEFB /* final time.gif in Resources */,
 				1BD7336D20AECFC3007BEBA5 /* ReferAfriendVC.xib in Resources */,
 				1BD733B020AED34C007BEBA5 /* a12.png in Resources */,
 				1BD733CA20AED34C007BEBA5 /* a8.png in Resources */,
@@ -1255,7 +1266,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Leloji/Pods-Leloji-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Alamofire-iOS10.0/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
@@ -1267,16 +1278,19 @@
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/JWTDecode/JWTDecode.framework",
-				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher-iOS10.0/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftKeychainWrapper/SwiftKeychainWrapper.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON-iOS10.0/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/TextFieldEffects/TextFieldEffects.framework",
 				"${BUILT_PRODUCTS_DIR}/Toast-Swift/Toast_Swift.framework",
 				"${BUILT_PRODUCTS_DIR}/YALSideMenu/SideMenu.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+				"${BUILT_PRODUCTS_DIR}/Alamofire-iOS11.0/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher-iOS11.0/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON-iOS11.0/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -1524,15 +1538,22 @@
 				1BD731FC20AEBCC8007BEBA5 /* StickerDataSource.swift in Sources */,
 				1BD7320120AEBCC8007BEBA5 /* ThumbnilVC.swift in Sources */,
 				1BD731F720AEBCC8007BEBA5 /* KeyboardController.swift in Sources */,
+				3BB3069D21454CFD00BE59A6 /* LLSticker.swift in Sources */,
+				3BB3069821454BFF00BE59A6 /* ServiceClass.swift in Sources */,
 				1BD731FD20AEBCC8007BEBA5 /* StickerIcon.swift in Sources */,
+				3BB3069A21454CF200BE59A6 /* LLResult.swift in Sources */,
 				1BD731FB20AEBCC8007BEBA5 /* NumericButton.swift in Sources */,
 				1BD7327A20AEBD87007BEBA5 /* iOSDevCenters+GIF.swift in Sources */,
 				1BD731F820AEBCC8007BEBA5 /* LettersViewController.swift in Sources */,
 				1BD7320620AEBCC8007BEBA5 /* StickerViewController.swift in Sources */,
 				1BD7320220AEBCC8007BEBA5 /* UIImage+Scale.swift in Sources */,
 				1BD731DB20AEBC66007BEBA5 /* KeyboardViewController.swift in Sources */,
+				3BB3069B21454CF600BE59A6 /* LLHomeData.swift in Sources */,
 				1BD731FA20AEBCC8007BEBA5 /* EmojiPanel.swift in Sources */,
 				1BD731FF20AEBCC8007BEBA5 /* StickerPackIcon.swift in Sources */,
+				3BB3069C21454CFA00BE59A6 /* LLCategory.swift in Sources */,
+				3BB3069921454C1900BE59A6 /* Constaint.swift in Sources */,
+				3BB306972145495000BE59A6 /* UIExtentions.swift in Sources */,
 				1BD731F920AEBCC8007BEBA5 /* CopyboardManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

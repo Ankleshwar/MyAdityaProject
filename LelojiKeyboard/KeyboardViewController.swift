@@ -16,7 +16,7 @@ class ImageCollectionViewCell:UICollectionViewCell {
 
 
 enum KeyboardType {
-
+   
     case letters
     case numbers
     case stickers
@@ -26,7 +26,7 @@ enum KeyboardType {
         switch self {
         case .stickers :
              let lettersController = StickerViewController(nibName: "StickerViewController", bundle: nil)
-            
+           
 
             return lettersController
         case .letters:
@@ -44,11 +44,14 @@ protocol KeyboardContolPanelController {
     func globePressed()
     func numericButtonPressed()
     func alphabetButtonPressed()
+   
+ 
 }
 class KeyboardViewController: UIInputViewController{
 
     
-    
+    var imgArrayThumbnilMain = NSMutableArray()
+    var imgArrayMain : [LLSticker]!
     var heightConstraint: NSLayoutConstraint!
     @IBOutlet var collectionView: UICollectionView!
     
@@ -66,8 +69,41 @@ class KeyboardViewController: UIInputViewController{
 
     }
     
+    
+    func getHomeData() {
+        
+        
+        
+        
+        
+        ServiceClass().homeData(strUrl:"emojis/stickers", prama: [:] as! [String : String] ) { (result)  in
+            switch result {
+            case .Error(let error):
+                do {
+                    // ECSAlert().showAlert(message: (error.localizedDescription), controller: self)
+                    
+                }
+            case .Success(let json):
+                let obj = LLHomeData(fromJson: json)
+                for i in 0 ..< obj.result.count{
+                    self.imgArrayThumbnilMain.add(obj.result[i].category)
+                    self.imgArrayMain = obj.result[0].category.stickers
+                }
+                
+              NotificationCenter.default.post(name: Notification.Name("NotificationIdentifier"), object: nil, userInfo: ["Renish":"Dadhaniya"])
+
+                
+                self.reloadKeyboard()
+            }
+            
+            
+        }
+    }
+    
+    
     override func viewWillAppear(_ animated: Bool) {
-        self.reloadKeyboard()
+        getHomeData()
+        
         
     }
     
@@ -203,6 +239,8 @@ class KeyboardViewController: UIInputViewController{
 //}
 
 extension KeyboardViewController: KeyboardContolPanelController {
+ 
+    
     func backspacePressed() {
         switch textDocumentProxy.documentContextBeforeInput {
         case let s where s?.hasSuffix("    ") == true: // Cursor in front of tab, so delete tab.
@@ -225,5 +263,6 @@ extension KeyboardViewController: KeyboardContolPanelController {
     func alphabetButtonPressed() {
         
     }
+  
 }
 

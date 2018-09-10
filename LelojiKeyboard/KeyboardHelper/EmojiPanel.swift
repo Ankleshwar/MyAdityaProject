@@ -1,6 +1,7 @@
 
 
 import UIKit
+import Kingfisher
 
 
 let stickerIconSize: CGFloat = 35.0
@@ -16,7 +17,7 @@ class EmojiPanel: UIView {
     var dataSource: StickerDataSource?
     weak var delegate: EmojiPanelDelegate?
     var collectionView: UICollectionView!
-    var arrEmojiPanel = NSMutableArray()
+    var arrEmojiPanel = [LLSticker]()
     var selectedPackIndex: Int = 0
     var isEmoji: Bool!
     var iconSize: CGSize {
@@ -54,7 +55,7 @@ class EmojiPanel: UIView {
     
 
     
-    func reloadCollection(arrData:NSMutableArray) {
+    func reloadCollection(arrData:[LLSticker]) {
         
         self.arrEmojiPanel = arrData
         collectionView.reloadData()
@@ -70,8 +71,9 @@ extension EmojiPanel: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: StickerIcon.identifier, for: indexPath) as! StickerIcon
-        let imgName = self.arrEmojiPanel[indexPath.row] as! String
-        cell.configure(for:imgName,inPack:indexPath.row,emoji:isEmoji)
+        let objeSticker = self.arrEmojiPanel[indexPath.row]
+        let imgName = objeSticker.image
+        cell.configure(for:imgName!,inPack:indexPath.row,emoji:isEmoji)
         return cell
     }
 }
@@ -79,10 +81,14 @@ extension EmojiPanel: UICollectionViewDataSource {
 extension EmojiPanel: UICollectionViewDelegate { 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if (collectionView.cellForItem(at: indexPath) as? StickerIcon) != nil {
-             let imgName = self.arrEmojiPanel[indexPath.row] as! String
+              let objeSticker = self.arrEmojiPanel[indexPath.row]
+             let imgName = objeSticker.image
+            let url = URL(string: (imgName!))
             if isEmoji == true {
-
-                delegate?.didSelect(image: UIImage(named: imgName))
+                KingfisherManager.shared.retrieveImage(with: url!, options: nil, progressBlock: nil, completionHandler: { image, error, cacheType, imageURL in
+                    self.delegate?.didSelect(image: image)
+                })
+               
 
             }else{
 

@@ -12,7 +12,7 @@ let kPressPasteTitleAppearDuration = 0.5
 
 import UIKit
 
-class StickerViewController: UIViewController ,KeyboardController {
+class StickerViewController: UIViewController ,KeyboardController  {
     var height: CGFloat = StickerViewController.defaultHeight()
     
     @IBOutlet weak var hintView: UIView!
@@ -20,7 +20,8 @@ class StickerViewController: UIViewController ,KeyboardController {
     @IBOutlet weak var emojiPanel: EmojiPanel!
      var hintButton: UIButton!
     var imgArrayThumbnil = NSMutableArray()
-    var imgArray = NSMutableArray()
+    var imgArray : [LLSticker]!
+    
     @IBOutlet weak var stickerThumbnil: ThumbnilVC!
     func configureKeyboard() {
         
@@ -33,9 +34,12 @@ class StickerViewController: UIViewController ,KeyboardController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        NotificationCenter.default.addObserver(self, selector: #selector(self.methodOfReceivedNotification(notification:)), name: Notification.Name("NotificationIdentifier"), object: nil)
+        self.imgArrayThumbnil = []
+        self.imgArray = []
+     
         
         
-        setView()
      
        
     }
@@ -44,10 +48,13 @@ class StickerViewController: UIViewController ,KeyboardController {
         super.didReceiveMemoryWarning()
         print("Memory leac")
     }
+    
+    
+
 
     
     func  setView(){
-        configureStikers()
+       // configureStikers()
         hintView.isHidden = true
         self.stickerThumbnil.delegate = self
         self.emojiPanel.delegate = self
@@ -63,29 +70,36 @@ class StickerViewController: UIViewController ,KeyboardController {
     
     fileprivate func configureStikers(){
         
-        self.imgArray.add("a31.gif")
-        for var i in 1...30
-        {
-            self.imgArray.add("a\(i).png")
-        }
-       
-         self.imgArray.add("a31.gif")
-        
-        for var j in 1...15{
-            self.imgArrayThumbnil.add("b\(j).png")
-        }
+//        self.imgArray.add("a31.gif")
+//        for var i in 1...30
+//        {
+//            self.imgArray.add("a\(i).png")
+//        }
+//
+//         self.imgArray.add("a31.gif")
+//
+//        for var j in 1...15{
+//            self.imgArrayThumbnil.add("b\(j).png")
+//        }
 
     }
     
     
     override func viewWillAppear(_ animated: Bool) {
+        NotificationCenter.default.removeObserver(self)
         
+        NotificationCenter.default.addObserver(self, selector: Selector(("methodOfReceivedNotification:")), name:Notification.Name("NotificationIdentifier"), object: nil)
     
-        self.stickerThumbnil.scrollTo()
+       
         
         
     }
     
+    
+    @objc func methodOfReceivedNotification(notification: Notification){
+        print(notification.userInfo)
+         self.stickerThumbnil.scrollTo()
+    }
     
     override func viewWillDisappear(_ animated: Bool) {
         // hintButton.removeFromSuperview()
@@ -167,14 +181,16 @@ class StickerViewController: UIViewController ,KeyboardController {
 }
 
 extension StickerViewController: StickerDataSource {
+   
+    
     var arrThumbnilData: NSMutableArray {
         get {
-               return self.imgArray
+            return self.imgArray as! NSMutableArray
         }
         set {
-           
-            
-             self.arrThumbnilData  =  self.imgArray
+
+
+            self.arrThumbnilData  =  self.imgArray as! NSMutableArray
         }
     }
     
@@ -185,6 +201,9 @@ extension StickerViewController: StickerDataSource {
 }
 
 extension StickerViewController: EmojiPanelDelegate {
+   
+    
+
     func didSelectGIF(imagename: String!) {
         let url: URL = Bundle.main.url(forResource: imagename, withExtension: ".gif")! as URL
         do {

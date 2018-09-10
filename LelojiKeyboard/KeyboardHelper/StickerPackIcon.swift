@@ -29,10 +29,13 @@ class StickerPackIcon: UICollectionViewCell {
     }
     
     private func updateIcon() {
+         let url = URL(string: (self.strImg))
         if isPackSelected {
-            stickerImage.image = UIImage(named: self.strImg)
+           // stickerImage.image = UIImage(named: self.strImg)
+            stickerImage.kf.setImage(with: url)
         } else {
-            stickerImage.image = UIImage(named: self.strImg)
+           // stickerImage.image = UIImage(named: self.strImg)
+            stickerImage.kf.setImage(with: url)
         }
     }
 }
