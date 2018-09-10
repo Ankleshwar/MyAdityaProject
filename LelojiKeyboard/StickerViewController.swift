@@ -34,10 +34,11 @@ class StickerViewController: UIViewController ,KeyboardController  {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        NotificationCenter.default.addObserver(self, selector: #selector(self.methodOfReceivedNotification(notification:)), name: Notification.Name("NotificationIdentifier"), object: nil)
-        self.imgArrayThumbnil = []
-        self.imgArray = []
+      
+       print(imgArrayThumbnil)
+         print(imgArray)
      
+        setView()
         
         
      
@@ -48,6 +49,9 @@ class StickerViewController: UIViewController ,KeyboardController  {
         super.didReceiveMemoryWarning()
         print("Memory leac")
     }
+    
+    
+
     
     
 
@@ -86,20 +90,15 @@ class StickerViewController: UIViewController ,KeyboardController  {
     
     
     override func viewWillAppear(_ animated: Bool) {
-        NotificationCenter.default.removeObserver(self)
-        
-        NotificationCenter.default.addObserver(self, selector: Selector(("methodOfReceivedNotification:")), name:Notification.Name("NotificationIdentifier"), object: nil)
-    
-       
+      
+        self.stickerThumbnil.scrollTo()
+      
         
         
     }
     
     
-    @objc func methodOfReceivedNotification(notification: Notification){
-        print(notification.userInfo)
-         self.stickerThumbnil.scrollTo()
-    }
+ 
     
     override func viewWillDisappear(_ animated: Bool) {
         // hintButton.removeFromSuperview()

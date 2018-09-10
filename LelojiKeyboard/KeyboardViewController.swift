@@ -22,12 +22,12 @@ enum KeyboardType {
     case stickers
     
     
-    func controller() -> UIViewController & KeyboardController {
+    func controller(thumbnilArray:NSMutableArray,arrEmoji:[LLSticker]) -> UIViewController & KeyboardController {
         switch self {
         case .stickers :
              let lettersController = StickerViewController(nibName: "StickerViewController", bundle: nil)
-           
-
+                lettersController.imgArrayThumbnil = thumbnilArray
+                lettersController.imgArray = arrEmoji
             return lettersController
         case .letters:
             let lettersController = LettersViewController(nibName: "LettersViewController", bundle: nil)
@@ -72,16 +72,12 @@ class KeyboardViewController: UIInputViewController{
     
     func getHomeData() {
         
-        
-        
-        
-        
         ServiceClass().homeData(strUrl:"emojis/stickers", prama: [:] as! [String : String] ) { (result)  in
             switch result {
-            case .Error(let error):
+            case .Error(let _):
                 do {
                     // ECSAlert().showAlert(message: (error.localizedDescription), controller: self)
-                    
+                    self.reloadKeyboard()
                 }
             case .Success(let json):
                 let obj = LLHomeData(fromJson: json)
@@ -90,7 +86,6 @@ class KeyboardViewController: UIInputViewController{
                     self.imgArrayMain = obj.result[0].category.stickers
                 }
                 
-              NotificationCenter.default.post(name: Notification.Name("NotificationIdentifier"), object: nil, userInfo: ["Renish":"Dadhaniya"])
 
                 
                 self.reloadKeyboard()
@@ -120,7 +115,7 @@ class KeyboardViewController: UIInputViewController{
             oldKeyboard.removeFromParentViewController()
         }
         
-        let keyboard = self.type.controller()
+        let keyboard = self.type.controller(thumbnilArray: self.imgArrayThumbnilMain, arrEmoji: imgArrayMain)
        keyboard.view.frame = self.view.bounds
         self.view.addSubview(keyboard.view)
         self.addChildViewController(keyboard)
