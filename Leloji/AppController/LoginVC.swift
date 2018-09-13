@@ -40,8 +40,8 @@ class LoginVC: BaseViewController, FBSDKLoginButtonDelegate {
        
         self.imgView.image = UIImage.gifImageWithName("final time")
         GIDSignIn.sharedInstance().uiDelegate = self
-      //  self.btnFacebookLogin.readPermissions = ["public_profile", "email", "user_friends"]
-       // self.btnFacebookLogin.delegate = self
+        self.btnFacebookLogin.readPermissions = ["public_profile", "email", "user_friends"]
+        self.btnFacebookLogin.delegate = self
         
     }
 

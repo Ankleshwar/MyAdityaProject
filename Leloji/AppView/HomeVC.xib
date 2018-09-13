@@ -14,7 +14,6 @@
             <connections>
                 <outlet property="emojiPanel" destination="Lu5-bI-1kD" id="HJF-W6-syR"/>
                 <outlet property="flowingMenuTransitionManager" destination="jRI-pv-YHh" id="EVu-QN-X11"/>
-                <outlet property="segmentController" destination="Ez2-HF-vlx" id="zQ2-88-rWM"/>
                 <outlet property="stickerThumbnil" destination="ejU-lT-tt0" id="Y0U-HF-jyj"/>
                 <outlet property="topView" destination="EWa-4v-RRM" id="HGm-nz-PBi"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -60,31 +59,15 @@
                         <constraint firstAttribute="bottom" secondItem="UbN-g9-ebX" secondAttribute="bottom" constant="8" id="fdN-ms-JWr"/>
                     </constraints>
                 </view>
-                <segmentedControl opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Ez2-HF-vlx">
-                    <rect key="frame" x="107" y="96" width="200" height="41"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="200" id="lsS-4u-A5b"/>
-                        <constraint firstAttribute="height" constant="40" id="v4Y-Rl-bhO"/>
-                    </constraints>
-                    <segments>
-                        <segment title="Emoji"/>
-                        <segment title="GIF"/>
-                    </segments>
-                    <color key="tintColor" red="0.01176470588" green="0.99215686270000003" blue="0.98431372549999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <connections>
-                        <action selector="clickToSegment:" destination="-1" eventType="valueChanged" id="ZDt-Kt-YNQ"/>
-                    </connections>
-                </segmentedControl>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ejU-lT-tt0" customClass="ThumbnilVC" customModule="Leloji" customModuleProvider="target">
-                    <rect key="frame" x="10" y="676" width="394" height="60"/>
+                    <rect key="frame" x="0.0" y="676" width="414" height="60"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="60" id="ppY-Lr-U0k"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lu5-bI-1kD" customClass="EmojiPanel" customModule="Leloji" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="146" width="414" height="525"/>
+                    <rect key="frame" x="0.0" y="71" width="414" height="600"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
             </subviews>
@@ -92,13 +75,11 @@
             <constraints>
                 <constraint firstItem="ejU-lT-tt0" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="001-2C-B3A"/>
                 <constraint firstItem="Lu5-bI-1kD" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="1La-dZ-jMi"/>
-                <constraint firstItem="ejU-lT-tt0" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="4dt-Os-Tuq"/>
-                <constraint firstItem="Lu5-bI-1kD" firstAttribute="top" secondItem="Ez2-HF-vlx" secondAttribute="bottom" constant="10" id="9wf-vI-PGB"/>
-                <constraint firstItem="Ez2-HF-vlx" firstAttribute="top" secondItem="EWa-4v-RRM" secondAttribute="bottom" constant="30" id="Bu9-QM-eI0"/>
+                <constraint firstItem="ejU-lT-tt0" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="4dt-Os-Tuq"/>
                 <constraint firstItem="EWa-4v-RRM" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="EOx-jL-y2w"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ejU-lT-tt0" secondAttribute="trailing" constant="10" id="Kh3-Ms-7u1"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ejU-lT-tt0" secondAttribute="trailing" id="Kh3-Ms-7u1"/>
+                <constraint firstItem="Lu5-bI-1kD" firstAttribute="top" secondItem="EWa-4v-RRM" secondAttribute="bottom" constant="5" id="PSv-dN-TIa"/>
                 <constraint firstItem="ejU-lT-tt0" firstAttribute="top" secondItem="Lu5-bI-1kD" secondAttribute="bottom" constant="5" id="Rcp-wK-Tg8"/>
-                <constraint firstItem="Ez2-HF-vlx" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="SCV-g0-aIR"/>
                 <constraint firstItem="Lu5-bI-1kD" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="ZLh-sr-Ujf"/>
                 <constraint firstItem="EWa-4v-RRM" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="akp-TH-8b9"/>
                 <constraint firstItem="EWa-4v-RRM" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="eaD-zx-FeB"/>

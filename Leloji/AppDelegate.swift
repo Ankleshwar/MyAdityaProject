@@ -12,7 +12,7 @@
 //pod 'YALSideMenu'
 //  Created by Opiant tech Solutions Pvt. Ltd. on 18/05/18.
 //  Copyright © 2018 Opiant tech Solutions Pvt. Ltd. All rights reserved.
-//
+//2207438386170879
 
 import UIKit
 import GoogleSignIn
@@ -33,7 +33,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate,GIDSignInDelegate {
         setRootController()
         GIDSignIn.sharedInstance().clientID = googleOAuthClientKey
         GIDSignIn.sharedInstance().delegate = self
-        return true
+        return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
     }
     
     func setRootController(){
@@ -49,7 +49,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate,GIDSignInDelegate {
         else{
             viewController = LoginVC(nibName: "LoginVC", bundle: nil)
         }
-        //viewController = LoginVC(nibName: "LoginVC", bundle: nil)
+        viewController = LoginVC(nibName: "LoginVC", bundle: nil)
         navigationController = UINavigationController(rootViewController: (viewController)!)
         
         self.window?.rootViewController = self.navigationController
@@ -60,6 +60,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate,GIDSignInDelegate {
     
     
     //MARK: Social Login Requier Method
+    
+    
+//    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+//        return FBSDKApplicationDelegate.sharedInstance().application(app, open: url, options: options)
+//    }
     
     
     func application(_ application: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any])
@@ -80,9 +85,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate,GIDSignInDelegate {
                                                     annotation: annotation)
     }
     
-//    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
-//        return FBSDKApplicationDelegate.sharedInstance().application(app, open: url, options: options)
-//    }
+
     
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!,
               withError error: Error!) {
@@ -96,7 +99,69 @@ class AppDelegate: UIResponder, UIApplicationDelegate,GIDSignInDelegate {
             let givenName = user.profile.givenName
             let familyName = user.profile.familyName
             let email = user.profile.email
-           // viewController.setHomeController()
+            self.callSignUpServiec(f)
+        }
+    }
+    
+    
+    
+    func callSignUpServiec(firstName:String,){
+        
+        
+        let dic = [ "firstName": self.txtFirstName.text ?? "",
+                    "lastName":self.txtLastName.text ?? "",
+                    "password": self.txtPassword.text ?? "",
+                    "countryCode": self.txtCountryCode.text ?? "",
+                    "email": self.txtEmail.text ?? "",
+                    "state":self.txtState.text ?? "",
+                    "signupType":1
+            ] as [String : Any]
+        
+        SVProgressHUD.show()
+        ServiceClass().signUpDetails(strUrl:"auth/signup", param: dic ) { error , dicData  in
+            
+            if dicData["status"] as! Bool == true {
+                
+                
+                
+                
+                self.appUserObject = AppUserObject.instance(from: dicData)
+                self.appUserObject?.token = dicData["auth_token"] as! String
+                self.appUserObject?.saveToUserDefault()
+                UserDefaults.standard.set(1, forKey: "isLogin")
+                UserDefaults.standard.synchronize()
+                let viewController = HomeVC(nibName: "HomeVC", bundle: nil)
+                self.present(viewController, animated: true, completion: nil)
+                
+                
+                
+                
+                
+                
+                SVProgressHUD.dismiss()
+                
+            }
+            else{
+                
+                if let users = dicData["error"] as? [String : Any] {
+                    
+                    for errData in (users as? [String : Any])!{
+                        print(errData)
+                        //  let msg =
+                        //  ECSAlert().showAlert(message: msg, controller: self)
+                    }
+                    
+                    
+                    
+                    
+                }
+                
+                SVProgressHUD.dismiss()
+                
+                
+                
+            }
+            
         }
     }
     

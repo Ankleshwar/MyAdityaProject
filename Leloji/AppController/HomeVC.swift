@@ -19,7 +19,7 @@ class HomeVC: BaseViewController{
     
     @IBOutlet weak var emojiPanel: EmojiPanel!
     @IBOutlet weak var stickerThumbnil: ThumbnilVC!
-    @IBOutlet weak var segmentController: UISegmentedControl!
+    
     @IBOutlet fileprivate var barButton: UIButton!
     @IBOutlet weak var topView: UIView!
     var imgArrayBottomEmoji = NSMutableArray()
@@ -34,14 +34,14 @@ class HomeVC: BaseViewController{
           self.imgArrayEmoji = []
         self.getHomeData()
         
-        segmentController.selectedSegmentIndex = 0
+       
    
       
 
         self.emojiPanel.isEmoji = true
         let titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.black]
-        segmentController.setTitleTextAttributes(titleTextAttributes, for: .normal)
-        segmentController.setTitleTextAttributes(titleTextAttributes, for: .selected)
+//        segmentController.setTitleTextAttributes(titleTextAttributes, for: .normal)
+//        segmentController.setTitleTextAttributes(titleTextAttributes, for: .selected)
         
         flowingMenuTransitionManager.setInteractivePresentationView(view)
         flowingMenuTransitionManager.delegate = self
@@ -140,26 +140,26 @@ class HomeVC: BaseViewController{
 
     
     
-    @IBAction func clickToSegment(_ sender: Any) {
-        if segmentController.selectedSegmentIndex == 0 {
-            
-    
-          //  setDataEmoji()
-            self.emojiPanel.isEmoji = true
-            setEmojiView()
-            setBottomView()
-            
-        }
-        else{
-           // setDataGIF()
-            self.emojiPanel.isEmoji = false
-            setEmojiView()
-            setBottomView()
-          
-            
-        }
-        
-    }
+//    @IBAction func clickToSegment(_ sender: Any) {
+//        if segmentController.selectedSegmentIndex == 0 {
+//            
+//    
+//          //  setDataEmoji()
+//            self.emojiPanel.isEmoji = true
+//            setEmojiView()
+//            setBottomView()
+//            
+//        }
+//        else{
+//           // setDataGIF()
+//            self.emojiPanel.isEmoji = false
+//            setEmojiView()
+//            setBottomView()
+//          
+//            
+//        }
+//        
+//    }
     override func viewWillAppear(_ animated: Bool) {
         
         
