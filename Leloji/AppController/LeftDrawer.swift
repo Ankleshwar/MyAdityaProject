@@ -106,6 +106,8 @@ extension LeftDrawer: UITableViewDelegate,UITableViewDataSource {
         }
         else if indexPath.row == 6{
             self.logOutUser()
+            UserDefaults.standard.set(0, forKey: "isLogin")
+            UserDefaults.standard.synchronize()
             let delegate =  UIApplication.shared.delegate as! AppDelegate
             delegate.setRootController()
             

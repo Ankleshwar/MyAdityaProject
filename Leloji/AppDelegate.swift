@@ -16,8 +16,11 @@
 
 import UIKit
 import GoogleSignIn
+import BraintreeDropIn
+import Braintree
 import FBSDKLoginKit
-
+import Fabric
+import Crashlytics
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate,GIDSignInDelegate {
@@ -31,6 +34,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate,GIDSignInDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
        
         setRootController()
+        Fabric.with([Crashlytics.self])
         GIDSignIn.sharedInstance().clientID = googleOAuthClientKey
         GIDSignIn.sharedInstance().delegate = self
         return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
@@ -49,9 +53,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate,GIDSignInDelegate {
         else{
             viewController = LoginVC(nibName: "LoginVC", bundle: nil)
         }
-        viewController = LoginVC(nibName: "LoginVC", bundle: nil)
+      //  viewController = LoginVC(nibName: "LoginVC", bundle: nil)
         navigationController = UINavigationController(rootViewController: (viewController)!)
-        
+         BTAppSwitch.setReturnURLScheme("com.lelojicreatives.leloji.payments")
         self.window?.rootViewController = self.navigationController
         navigationController?.navigationBar.isHidden = true
         window?.makeKeyAndVisible()
@@ -69,22 +73,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate,GIDSignInDelegate {
     
     func application(_ application: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any])
         -> Bool {
+            if url.scheme?.localizedCaseInsensitiveCompare("com.lelojicreatives.leloji.payments") == .orderedSame {
+                return BTAppSwitch.handleOpen(url, sourceApplication: options[UIApplicationOpenURLOptionsKey.sourceApplication] as? String)
+            }
             return GIDSignIn.sharedInstance().handle(url, sourceApplication:options[UIApplicationOpenURLOptionsKey.sourceApplication] as? String, annotation: [:]) || FBSDKApplicationDelegate.sharedInstance().application(application, open: url, options: options)
     }
 
+  
     
+
     
-    
-    
-    private func application(application: UIApplication,
-                     openURL url: NSURL, sourceApplication: String?, annotation: AnyObject?) -> Bool {
-        var _: [String: AnyObject] = [UIApplicationOpenURLOptionsKey.sourceApplication.rawValue: sourceApplication as AnyObject,
-                                            UIApplicationOpenURLOptionsKey.annotation.rawValue: annotation!]
-        return GIDSignIn.sharedInstance().handle(url as URL?,
-                                                    sourceApplication: sourceApplication,
-                                                    annotation: annotation)
-    }
-    
+//    private func application(application: UIApplication,
+//                     openURL url: NSURL, sourceApplication: String?, annotation: AnyObject?) -> Bool {
+//        var _: [String: AnyObject] = [UIApplicationOpenURLOptionsKey.sourceApplication.rawValue: sourceApplication as AnyObject,
+//                                            UIApplicationOpenURLOptionsKey.annotation.rawValue: annotation!]
+//        return GIDSignIn.sharedInstance().handle(url as URL?,
+//                                                    sourceApplication: sourceApplication,
+//                                                    annotation: annotation)
+//    }
+//
 
     
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!,
@@ -99,71 +106,75 @@ class AppDelegate: UIResponder, UIApplicationDelegate,GIDSignInDelegate {
             let givenName = user.profile.givenName
             let familyName = user.profile.familyName
             let email = user.profile.email
-            self.callSignUpServiec(f)
+          //  self.callSignUpServiec(f)
+            UserDefaults.standard.set(1, forKey: "isLogin")
+            UserDefaults.standard.synchronize()
+            let viewController = HomeVC(nibName: "HomeVC", bundle: nil)
+            self.navigationController?.pushViewController(viewController, animated: true)
         }
     }
     
     
     
-    func callSignUpServiec(firstName:String,){
-        
-        
-        let dic = [ "firstName": self.txtFirstName.text ?? "",
-                    "lastName":self.txtLastName.text ?? "",
-                    "password": self.txtPassword.text ?? "",
-                    "countryCode": self.txtCountryCode.text ?? "",
-                    "email": self.txtEmail.text ?? "",
-                    "state":self.txtState.text ?? "",
-                    "signupType":1
-            ] as [String : Any]
-        
-        SVProgressHUD.show()
-        ServiceClass().signUpDetails(strUrl:"auth/signup", param: dic ) { error , dicData  in
-            
-            if dicData["status"] as! Bool == true {
-                
-                
-                
-                
-                self.appUserObject = AppUserObject.instance(from: dicData)
-                self.appUserObject?.token = dicData["auth_token"] as! String
-                self.appUserObject?.saveToUserDefault()
-                UserDefaults.standard.set(1, forKey: "isLogin")
-                UserDefaults.standard.synchronize()
-                let viewController = HomeVC(nibName: "HomeVC", bundle: nil)
-                self.present(viewController, animated: true, completion: nil)
-                
-                
-                
-                
-                
-                
-                SVProgressHUD.dismiss()
-                
-            }
-            else{
-                
-                if let users = dicData["error"] as? [String : Any] {
-                    
-                    for errData in (users as? [String : Any])!{
-                        print(errData)
-                        //  let msg =
-                        //  ECSAlert().showAlert(message: msg, controller: self)
-                    }
-                    
-                    
-                    
-                    
-                }
-                
-                SVProgressHUD.dismiss()
-                
-                
-                
-            }
-            
-        }
-    }
+//    func callSignUpServiec(firstName:String,){
+//        
+//        
+//        let dic = [ "firstName": self.txtFirstName.text ?? "",
+//                    "lastName":self.txtLastName.text ?? "",
+//                    "password": self.txtPassword.text ?? "",
+//                    "countryCode": self.txtCountryCode.text ?? "",
+//                    "email": self.txtEmail.text ?? "",
+//                    "state":self.txtState.text ?? "",
+//                    "signupType":1
+//            ] as [String : Any]
+//        
+//        SVProgressHUD.show()
+//        ServiceClass().signUpDetails(strUrl:"auth/signup", param: dic ) { error , dicData  in
+//            
+//            if dicData["status"] as! Bool == true {
+//                
+//                
+//                
+//                
+//                self.appUserObject = AppUserObject.instance(from: dicData)
+//                self.appUserObject?.token = dicData["auth_token"] as! String
+//                self.appUserObject?.saveToUserDefault()
+//                UserDefaults.standard.set(1, forKey: "isLogin")
+//                UserDefaults.standard.synchronize()
+//                let viewController = HomeVC(nibName: "HomeVC", bundle: nil)
+//                self.present(viewController, animated: true, completion: nil)
+//                
+//                
+//                
+//                
+//                
+//                
+//                SVProgressHUD.dismiss()
+//                
+//            }
+//            else{
+//                
+//                if let users = dicData["error"] as? [String : Any] {
+//                    
+//                    for errData in (users as? [String : Any])!{
+//                        print(errData)
+//                        //  let msg =
+//                        //  ECSAlert().showAlert(message: msg, controller: self)
+//                    }
+//                    
+//                    
+//                    
+//                    
+//                }
+//                
+//                SVProgressHUD.dismiss()
+//                
+//                
+//                
+//            }
+//            
+//        }
+//    }
     
     
     

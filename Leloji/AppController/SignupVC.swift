@@ -9,6 +9,7 @@
 import UIKit
 import SVProgressHUD
 import TextFieldEffects
+import Crashlytics
 
 class SignupVC: BaseViewController {
    
@@ -34,9 +35,13 @@ class SignupVC: BaseViewController {
        // self.txtEmail.textRect(forBounds: self.txtEmail.bounds)
     }
     
+    @IBAction func crashButtonTapped(_ sender: AnyObject) {
+        Crashlytics.sharedInstance().crash()
+    }
+
 
     @IBAction func clickToSignUp(_ sender: Any) {
-        
+         //Crashlytics.sharedInstance().crash()
         let strEmail : String
         strEmail = txtEmail.text!
 

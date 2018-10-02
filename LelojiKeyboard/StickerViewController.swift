@@ -35,8 +35,8 @@ class StickerViewController: UIViewController ,KeyboardController  {
     override func viewDidLoad() {
         super.viewDidLoad()
       
-       print(imgArrayThumbnil)
-         print(imgArray)
+        print(imgArrayThumbnil)
+        print(imgArray)
      
         setView()
         
@@ -58,7 +58,7 @@ class StickerViewController: UIViewController ,KeyboardController  {
 
     
     func  setView(){
-       // configureStikers()
+        configureStikers()
         hintView.isHidden = true
         self.stickerThumbnil.delegate = self
         self.emojiPanel.delegate = self

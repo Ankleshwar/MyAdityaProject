@@ -7,24 +7,14 @@
 //
 
 import UIKit
-
 import Toast_Swift
-import ObjectMapper
+
 
 
 class ECSHelper: NSObject {
     
     
-//    open func setRootController(_ controller:UIViewController)
-//    {
-//        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-//        var arrayController:Array = (appDelegate.navigationController?.viewControllers)!
-//        arrayController.removeAll();
-//        arrayController.append(controller)
-//        appDelegate.navigationController?.viewControllers = arrayController;
-//        
-//        
-//    }
+
     
    
     

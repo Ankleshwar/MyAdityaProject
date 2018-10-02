@@ -9,9 +9,10 @@
 import Foundation
 import UIKit
 
-
-let iPhoneHeight: CGFloat = 258.0
-let iPhoneFullHeight: CGFloat = 333.0
+//let iPhoneHeight: CGFloat = 258.0
+//let iPhoneFullHeight: CGFloat = 333.0
+let iPhoneHeight: CGFloat = 333.0
+let iPhoneFullHeight: CGFloat = 400.0
 let iPadHeight:CGFloat = 300.0
 let iPadFullHeight:CGFloat = 333.0
 

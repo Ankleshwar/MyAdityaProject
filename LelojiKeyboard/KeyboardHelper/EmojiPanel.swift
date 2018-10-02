@@ -18,6 +18,7 @@ class EmojiPanel: UIView {
     weak var delegate: EmojiPanelDelegate?
     var collectionView: UICollectionView!
     var arrEmojiPanel = [LLSticker]()
+    var arrSelectedEmoji = [String]()
     var selectedPackIndex: Int = 0
     var isEmoji: Bool!
     var iconSize: CGSize {
@@ -82,11 +83,12 @@ extension EmojiPanel: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if (collectionView.cellForItem(at: indexPath) as? StickerIcon) != nil {
               let objeSticker = self.arrEmojiPanel[indexPath.row]
-             let imgName = objeSticker.image
+            let imgName = objeSticker.image
             let url = URL(string: (imgName!))
             if isEmoji == true {
                 KingfisherManager.shared.retrieveImage(with: url!, options: nil, progressBlock: nil, completionHandler: { image, error, cacheType, imageURL in
                     self.delegate?.didSelect(image: image)
+                    self.arrSelectedEmoji.append(objeSticker.id)
                 })
                
 

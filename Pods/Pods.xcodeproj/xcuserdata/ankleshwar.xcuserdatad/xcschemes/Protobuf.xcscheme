@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C555B5C6E74F98E9232AAFC8CEA3D164"
+               BlueprintIdentifier = "F62DCEFCB2DF9ED923128F8205046B8B"
                BlueprintName = "Protobuf"
                ReferencedContainer = "container:Pods.xcodeproj"
                BuildableName = "Protobuf.framework">

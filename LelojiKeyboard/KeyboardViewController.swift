@@ -8,6 +8,9 @@
 
 import UIKit
 import MobileCoreServices
+import RealmSwift
+
+
 
 class ImageCollectionViewCell:UICollectionViewCell {
     @IBOutlet var imgView:UIImageView!
@@ -57,12 +60,26 @@ class KeyboardViewController: UIInputViewController{
     
     var imgArray = NSMutableArray()
     
-    
+    override func updateViewConstraints()
+    {
+        super.updateViewConstraints()
+        
+        // Add custom view sizing constraints here
+        if (view.frame.size.width == 0 || view.frame.size.height == 0) {
+            return
+        }
+        
+        setUpHeightConstraint()
+    }
  
     override func viewDidLoad() {
         super.viewDidLoad()
 
-       
+        do {
+            let realm = try Realm()
+        }catch{
+            print("Error to initialising realm \(error)")
+        }
         
 
   
@@ -96,7 +113,34 @@ class KeyboardViewController: UIInputViewController{
     }
     
     
+    func setUpHeightConstraint()
+    {
+        let customHeight = 240
+        
+        if heightConstraint == nil {
+            heightConstraint = NSLayoutConstraint(item: view,
+                                                  attribute: .height,
+                                                  relatedBy: .equal,
+                                                  toItem: nil,
+                                                  attribute: .notAnAttribute,
+                                                  multiplier: 1,
+                                                  constant: CGFloat(customHeight))
+            heightConstraint.priority = UILayoutPriority.required
+            
+            view.addConstraint(heightConstraint)
+        }
+        else {
+            heightConstraint.constant = CGFloat(customHeight)
+        }
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
+        
+//        var _expandedHeight: CGFloat = 240
+//        var _heightConstraint = NSLayoutConstraint(item: view, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 0.0, constant: _expandedHeight)
+//        view.addConstraint(heightConstraint)
+        
+        
         getHomeData()
         
         
@@ -116,7 +160,8 @@ class KeyboardViewController: UIInputViewController{
         }
         
         let keyboard = self.type.controller(thumbnilArray: self.imgArrayThumbnilMain, arrEmoji: imgArrayMain)
-       keyboard.view.frame = self.view.bounds
+        keyboard.view.frame = self.view.bounds
+        print(keyboard.view.frame)
         self.view.addSubview(keyboard.view)
         self.addChildViewController(keyboard)
       
@@ -124,11 +169,7 @@ class KeyboardViewController: UIInputViewController{
     
 
     
-    override func updateViewConstraints() {
-        super.updateViewConstraints()
-        
-      
-    }
+
 
     
 
@@ -157,81 +198,6 @@ class KeyboardViewController: UIInputViewController{
 
 }
 
-//extension KeyboardViewController: UICollectionViewDelegate,UICollectionViewDataSource{
-//
-//
-//
-//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        return self.imgArray.count
-//    }
-//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//
-//        let iCell = collectionView.dequeueReusableCell(withReuseIdentifier: "ImageCollectionViewCell", for: indexPath as IndexPath) as! ImageCollectionViewCell
-//        iCell.imgView.image = UIImage(named: self.imgArray.object(at: indexPath.row) as! String)
-//        if indexPath.row == 30 {
-//            let imgGIF = UIImage.gifImageWithName("a31")
-//            iCell.imgView .image = imgGIF
-//
-//        }
-//
-//
-//        return iCell
-//    }
-//
-//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//
-//        let pb = UIPasteboard.general
-//        if indexPath.row == 30 {
-//            let url: URL = Bundle.main.url(forResource: "a31", withExtension: ".gif")! as URL
-//            do {
-//                let imageData = try Data(contentsOf: url as URL)
-//                pb.setData(imageData , forPasteboardType: "com.compuserve.gif")
-//            } catch {
-//                print("Unable to load data: \(error)")
-//            }
-//        }
-//        else{
-//            let data = UIImagePNGRepresentation( UIImage(named: self.imgArray.object(at: indexPath.row) as! String)!)
-//            pb.setData(data!, forPasteboardType: kUTTypePNG as String)
-//        }
-//
-//
-//
-//
-//
-//        let iCell = self.collectionView.cellForItem(at: indexPath as IndexPath) as! ImageCollectionViewCell
-//        UIView.animate(withDuration: 0.2, animations: {
-//            iCell.transform = CGAffineTransform(scaleX: 2.0, y: 2.0)
-//        }, completion: {(_) -> Void in
-//            iCell.transform =
-//                CGAffineTransform(scaleX: 1.0, y: 1.0)
-//        })
-//        (textDocumentProxy as UIKeyInput).insertText("")
-//
-//    }
-//}
-
-//extension KeyboardViewController : UICollectionViewDelegateFlowLayout{
-//
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-//        return UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
-//    }
-//
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//      //  let collectionViewWidth = collectionView.bounds.width
-//
-//
-//        return CGSize(width: 50 , height: 50)
-//
-//    }
-//
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-//        return 5
-//    }
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-//        return 5
-//    }
-//}
 
 extension KeyboardViewController: KeyboardContolPanelController {
  

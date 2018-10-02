@@ -6,6 +6,40 @@ PODS:
   - Bolts/AppLinks (1.9.0):
     - Bolts/Tasks
   - Bolts/Tasks (1.9.0)
+  - Braintree/Apple-Pay (4.16.0):
+    - Braintree/Core
+  - Braintree/Card (4.16.0):
+    - Braintree/Core
+  - Braintree/Core (4.16.0)
+  - Braintree/PaymentFlow (4.16.0):
+    - Braintree/Card
+    - Braintree/Core
+  - Braintree/PayPal (4.16.0):
+    - Braintree/Core
+    - Braintree/PayPalOneTouch
+  - Braintree/PayPalDataCollector (4.16.0):
+    - Braintree/Core
+    - Braintree/PayPalUtils
+  - Braintree/PayPalOneTouch (4.16.0):
+    - Braintree/Core
+    - Braintree/PayPalDataCollector
+    - Braintree/PayPalUtils
+  - Braintree/PayPalUtils (4.16.0)
+  - Braintree/UnionPay (4.16.0):
+    - Braintree/Card
+    - Braintree/Core
+  - BraintreeDropIn (6.2.0):
+    - BraintreeDropIn/DropIn (= 6.2.0)
+  - BraintreeDropIn/DropIn (6.2.0):
+    - Braintree/Card (~> 4.11)
+    - Braintree/Core (~> 4.11)
+    - Braintree/PaymentFlow (~> 4.11)
+    - Braintree/UnionPay (~> 4.11)
+    - BraintreeDropIn/UIKit
+  - BraintreeDropIn/UIKit (6.2.0)
+  - Crashlytics (3.10.2):
+    - Fabric (~> 1.7.7)
+  - Fabric (1.7.7)
   - FacebookCore (0.3.1):
     - Bolts (~> 1.8)
     - FBSDKCoreKit (~> 4.33)
@@ -77,8 +111,12 @@ PODS:
     - nanopb/encode (= 0.3.8)
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
-  - ObjectMapper (3.1.0)
   - Protobuf (3.5.0)
+  - Realm (3.7.4):
+    - Realm/Headers (= 3.7.4)
+  - Realm/Headers (3.7.4)
+  - RealmSwift (3.7.4):
+    - Realm (= 3.7.4)
   - SVProgressHUD (2.2.5)
   - SwiftKeychainWrapper (3.0.1)
   - SwiftyJSON (4.0.0)
@@ -88,6 +126,11 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
+  - Braintree/Apple-Pay
+  - Braintree/PayPal
+  - BraintreeDropIn
+  - Crashlytics
+  - Fabric
   - FacebookCore
   - FacebookLogin
   - FacebookShare
@@ -96,7 +139,7 @@ DEPENDENCIES:
   - GoogleSignIn
   - JWTDecode
   - Kingfisher
-  - ObjectMapper
+  - RealmSwift
   - SVProgressHUD
   - SwiftKeychainWrapper
   - SwiftyJSON
@@ -107,6 +150,10 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   Alamofire: 907e0a98eb68cdb7f9d1f541a563d6ac5dc77b25
   Bolts: ac6567323eac61e203f6a9763667d0f711be34c8
+  Braintree: 41b53612276bf3308d2299bec2b4c96594327662
+  BraintreeDropIn: 4e80bce4bc2b430f2fb1af0cd13ff3223d2758d3
+  Crashlytics: 0360624eea1c978a743feddb2fb1ef8b37fb7a0d
+  Fabric: bda89e242bce1b7b8ab264248cf3407774ce0095
   FacebookCore: 33078ef1d7d76b73f7e8c990dca7d3ea6db8d22f
   FacebookLogin: 6f15bf4fefd7a8865abbfa8fcd7f3dfd87aa275f
   FacebookShare: c9ee8e5399d961fda00ded9befccacfe04fccf93
@@ -125,8 +172,9 @@ SPEC CHECKSUMS:
   JWTDecode: 83e8b381aafe27158d9f692cbdca2b12d61d460c
   Kingfisher: 976d828df2b24834c6a3f2fc4d82cdbd26552be1
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
-  ObjectMapper: 20505058f54e5c3ca69e1d6de9897d152a5369a6
   Protobuf: 8a9838fba8dae3389230e1b7f8c104aa32389c03
+  Realm: a469bb59e33f9926102ccaea4349822c53b9117e
+  RealmSwift: a45861b21c180f5cf0f122144b9759fa8dde3e9e
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   SwiftKeychainWrapper: 38952a3636320ae61bad3513cadd870929de7a4a
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
@@ -134,6 +182,6 @@ SPEC CHECKSUMS:
   Toast-Swift: ba0b01b095aada709d915f9beb1d38184a2721c3
   YALSideMenu: 4d6b90ea44dcdded18a99e46b676e4ad51d9c6bb
 
-PODFILE CHECKSUM: 0a88daa51bcd696b9111b0650685586591578981
+PODFILE CHECKSUM: afcc99f272eda980fab449db7b226f90c402b9ca
 
 COCOAPODS: 1.4.0

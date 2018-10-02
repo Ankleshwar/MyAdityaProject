@@ -112,14 +112,18 @@ class LoginVC: BaseViewController, FBSDKLoginButtonDelegate {
                 print(dict)
                // self.callSocialScreenValue(name: userName as String, email: userEmail as String)
                 
-                
+                self.setHomeController()
             }
         })
     }
     
    public func setHomeController() {
-        let viewController = HomeVC(nibName: "HomeVC", bundle: nil)
-        present(viewController, animated: true, completion: nil)
+    
+    UserDefaults.standard.set(1, forKey: "isLogin")
+    UserDefaults.standard.synchronize()
+    
+    let viewController = HomeVC(nibName: "HomeVC", bundle: nil)
+    self.present(viewController, animated: true, completion: nil)
     }
     
     @IBAction func clickToBack(_ sender: Any) {

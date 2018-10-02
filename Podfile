@@ -7,7 +7,7 @@ target 'Leloji' do
 pod 'Firebase/Core'
 pod 'Firebase/Messaging'
 pod  'GoogleSignIn'
-pod 'ObjectMapper'
+
 pod 'TextFieldEffects'
 pod 'SwiftyJSON'
 pod 'Alamofire'
@@ -20,6 +20,12 @@ pod 'FacebookCore'
 pod 'FacebookLogin'
 pod 'FacebookShare'
 pod 'Kingfisher'
+pod 'BraintreeDropIn'
+pod 'Braintree/Apple-Pay'
+pod 'Braintree/PayPal'
+
+pod 'Fabric'
+pod 'Crashlytics'
 
   target 'LelojiTests' do
     inherit! :search_paths
@@ -36,10 +42,11 @@ end
 target 'LelojiKeyboard' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
+
+pod 'RealmSwift'
 pod 'Kingfisher'
 pod 'Alamofire'
 pod 'SwiftyJSON'
-
 
   # Pods for LelojiKeyboard
 
