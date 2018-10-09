@@ -26,6 +26,7 @@ pod 'Braintree/PayPal'
 
 pod 'Fabric'
 pod 'Crashlytics'
+  # Pods for Leloji
 
   target 'LelojiTests' do
     inherit! :search_paths
@@ -47,7 +48,6 @@ pod 'RealmSwift'
 pod 'Kingfisher'
 pod 'Alamofire'
 pod 'SwiftyJSON'
-
   # Pods for LelojiKeyboard
 
 end

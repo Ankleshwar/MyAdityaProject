@@ -25,12 +25,12 @@ enum KeyboardType {
     case stickers
     
     
-    func controller(thumbnilArray:NSMutableArray,arrEmoji:[LLSticker]) -> UIViewController & KeyboardController {
+    func controller() -> UIViewController & KeyboardController {
         switch self {
         case .stickers :
              let lettersController = StickerViewController(nibName: "StickerViewController", bundle: nil)
-                lettersController.imgArrayThumbnil = thumbnilArray
-                lettersController.imgArray = arrEmoji
+              //  lettersController.imgArrayThumbnil = thumbnilArray
+                //lettersController.imgArray = arrEmoji
             return lettersController
         case .letters:
             let lettersController = LettersViewController(nibName: "LettersViewController", bundle: nil)
@@ -65,23 +65,28 @@ class KeyboardViewController: UIInputViewController{
         super.updateViewConstraints()
         
         // Add custom view sizing constraints here
-        if (view.frame.size.width == 0 || view.frame.size.height == 0) {
-            return
-        }
+//        if (view.frame.size.width == 0 || view.frame.size.height == 0) {
+//            return
+//        }
         
         setUpHeightConstraint()
     }
  
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        do {
-            let realm = try Realm()
-        }catch{
-            print("Error to initialising realm \(error)")
-        }
+   
+//
+//        do {
+//            let realm = try Realm()
+////          try  realm.write {
+////                realm.add(data)
+////            }
+//
+//        }catch{
+//            print("Error to initialising realm \(error)")
+//        }
         
-
+        print(Realm.Configuration.defaultConfiguration.fileURL)
   
 
     }
@@ -99,9 +104,13 @@ class KeyboardViewController: UIInputViewController{
             case .Success(let json):
                 let obj = LLHomeData(fromJson: json)
                 for i in 0 ..< obj.result.count{
-                    self.imgArrayThumbnilMain.add(obj.result[i].category)
-                    self.imgArrayMain = obj.result[0].category.stickers
+//                    self.imgArrayThumbnilMain.add(obj.result[i].category)
+//                    self.imgArrayMain = obj.result[0].category.stickers
+                 
+                    self.insertOrUpdate(cat: obj.result[i].category)
                 }
+         
+                
                 
 
                 
@@ -112,6 +121,36 @@ class KeyboardViewController: UIInputViewController{
         }
     }
     
+    
+    func insertOrUpdate(cat: LLCategory) {
+                do {
+                    let realm = try Realm()
+                    
+                    try! realm.write({
+                        let newsRealm = StickerCategory()
+                        newsRealm.name = cat.name
+                        newsRealm.icon = cat.icon
+                        let sticker = cat.stickers
+                       
+                        
+                        for stickersJson in sticker ?? [] {
+                            let stickerRealm = StickerData(obj: stickersJson)
+                            newsRealm.stickers.append(stickerRealm)
+
+                        }
+                         realm.add(newsRealm)
+               
+
+                        
+                    })
+        
+                }catch{
+                    print("Error to initialising realm \(error)")
+                }
+        
+        
+       
+    }
     
     func setUpHeightConstraint()
     {
@@ -141,7 +180,9 @@ class KeyboardViewController: UIInputViewController{
 //        view.addConstraint(heightConstraint)
         
         
-        getHomeData()
+       // getHomeData()
+        
+        self.reloadKeyboard()
         
         
     }
@@ -159,7 +200,7 @@ class KeyboardViewController: UIInputViewController{
             oldKeyboard.removeFromParentViewController()
         }
         
-        let keyboard = self.type.controller(thumbnilArray: self.imgArrayThumbnilMain, arrEmoji: imgArrayMain)
+        let keyboard = self.type.controller()
         keyboard.view.frame = self.view.bounds
         print(keyboard.view.frame)
         self.view.addSubview(keyboard.view)

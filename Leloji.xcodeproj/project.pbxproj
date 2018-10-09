@@ -212,7 +212,7 @@
 		3B3488A4215D47B1009CB92C /* LLCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF1E0A12143ABFD00A84661 /* LLCategory.swift */; };
 		3B3488A5215D47B1009CB92C /* LLSticker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF1E0A22143ABFD00A84661 /* LLSticker.swift */; };
 		3B3488A6215D47D2009CB92C /* ServiceClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD7331C20AEC990007BEBA5 /* ServiceClass.swift */; };
-		3B6698B8214D2D7000AE103E /* EmojiData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6698B7214D2D7000AE103E /* EmojiData.swift */; };
+		3B6698B8214D2D7000AE103E /* StickerCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6698B7214D2D7000AE103E /* StickerCategory.swift */; };
 		3B701AA9215D4C1D0022BE28 /* Icon-App-57x57@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B701A91215D4C1D0022BE28 /* Icon-App-57x57@1x.png */; };
 		3B701AAA215D4C1D0022BE28 /* Icon-App-76x76@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B701A92215D4C1D0022BE28 /* Icon-App-76x76@2x.png */; };
 		3B701AAB215D4C1D0022BE28 /* Icon-App-29x29@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B701A93215D4C1D0022BE28 /* Icon-App-29x29@1x.png */; };
@@ -239,6 +239,7 @@
 		3B701AC0215D4C1D0022BE28 /* Icon-App-29x29@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B701AA8215D4C1D0022BE28 /* Icon-App-29x29@2x.png */; };
 		3BB306972145495000BE59A6 /* UIExtentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD7332120AEC990007BEBA5 /* UIExtentions.swift */; };
 		3BB3069921454C1900BE59A6 /* Constaint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD7331620AEC990007BEBA5 /* Constaint.swift */; };
+		3BBA707C2168C30000D19DC4 /* StickerData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBA707B2168C30000D19DC4 /* StickerData.swift */; };
 		3BBF65C920B0370D00F7FF06 /* SocialLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBF65C820B0370D00F7FF06 /* SocialLogin.swift */; };
 		3BEEEC9C214589B0001EBEFB /* final time.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3BEEEC9B214589AF001EBEFB /* final time.gif */; };
 		3BF18E342150159A00F57A51 /* LLPayementVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF18E322150159A00F57A51 /* LLPayementVC.swift */; };
@@ -501,7 +502,7 @@
 		1BD733E520AED398007BEBA5 /* referal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = referal.png; sourceTree = "<group>"; };
 		1BD733E720AEDC77007BEBA5 /* facebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebook.png; sourceTree = "<group>"; };
 		1BD733E820AEDC77007BEBA5 /* google-plus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "google-plus.png"; sourceTree = "<group>"; };
-		3B6698B7214D2D7000AE103E /* EmojiData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiData.swift; sourceTree = "<group>"; };
+		3B6698B7214D2D7000AE103E /* StickerCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickerCategory.swift; sourceTree = "<group>"; };
 		3B701A91215D4C1D0022BE28 /* Icon-App-57x57@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-App-57x57@1x.png"; sourceTree = "<group>"; };
 		3B701A92215D4C1D0022BE28 /* Icon-App-76x76@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-App-76x76@2x.png"; sourceTree = "<group>"; };
 		3B701A93215D4C1D0022BE28 /* Icon-App-29x29@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-App-29x29@1x.png"; sourceTree = "<group>"; };
@@ -526,6 +527,7 @@
 		3B701AA6215D4C1D0022BE28 /* Icon-App-76x76@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-App-76x76@1x.png"; sourceTree = "<group>"; };
 		3B701AA7215D4C1D0022BE28 /* Icon-App-40x40@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-App-40x40@3x.png"; sourceTree = "<group>"; };
 		3B701AA8215D4C1D0022BE28 /* Icon-App-29x29@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-App-29x29@2x.png"; sourceTree = "<group>"; };
+		3BBA707B2168C30000D19DC4 /* StickerData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickerData.swift; sourceTree = "<group>"; };
 		3BBF65C820B0370D00F7FF06 /* SocialLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialLogin.swift; sourceTree = "<group>"; };
 		3BBF65CA20B0496600F7FF06 /* Leloji.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Leloji.entitlements; sourceTree = "<group>"; };
 		3BEEEC9B214589AF001EBEFB /* final time.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "final time.gif"; sourceTree = "<group>"; };
@@ -948,7 +950,8 @@
 		3B6698B6214D2D4A00AE103E /* KeyboardModel */ = {
 			isa = PBXGroup;
 			children = (
-				3B6698B7214D2D7000AE103E /* EmojiData.swift */,
+				3BBA707B2168C30000D19DC4 /* StickerData.swift */,
+				3B6698B7214D2D7000AE103E /* StickerCategory.swift */,
 			);
 			path = KeyboardModel;
 			sourceTree = "<group>";
@@ -1018,9 +1021,9 @@
 				1BD731A020AEBC01007BEBA5 /* Frameworks */,
 				1BD731A120AEBC01007BEBA5 /* Resources */,
 				1BD731E320AEBC66007BEBA5 /* Embed App Extensions */,
-				70992319C42421D6FFCB74AD /* [CP] Embed Pods Frameworks */,
-				844190227CED901E7EFA4C47 /* [CP] Copy Pods Resources */,
 				3BCE15BF215FDE78004EF9A8 /* ShellScript */,
+				44A18648619021F9193C4361 /* [CP] Embed Pods Frameworks */,
+				9C7145882CBDA28041E200A2 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1040,8 +1043,6 @@
 				1BD731B320AEBC04007BEBA5 /* Sources */,
 				1BD731B420AEBC04007BEBA5 /* Frameworks */,
 				1BD731B520AEBC04007BEBA5 /* Resources */,
-				5C3F0917625B470EE4C21EF8 /* [CP] Embed Pods Frameworks */,
-				D95954F832887DABE880814C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1061,8 +1062,6 @@
 				1BD731BE20AEBC04007BEBA5 /* Sources */,
 				1BD731BF20AEBC04007BEBA5 /* Frameworks */,
 				1BD731C020AEBC04007BEBA5 /* Resources */,
-				A403234CFD693B547B3A3BC9 /* [CP] Embed Pods Frameworks */,
-				658546CA84DAC0B514620036 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1082,7 +1081,6 @@
 				1BD731D420AEBC66007BEBA5 /* Sources */,
 				1BD731D520AEBC66007BEBA5 /* Frameworks */,
 				1BD731D620AEBC66007BEBA5 /* Resources */,
-				CF316C8FF286D6F9863D6D66 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1370,40 +1368,12 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Fabric/run\" 39ea1b0495cddee2132f2b9594494f8b24c98dad 5b0b3bdfa725fc3e184463861ac64a292be611b98bad536654b30943d462ec45\n";
 		};
-		5C3F0917625B470EE4C21EF8 /* [CP] Embed Pods Frameworks */ = {
+		44A18648619021F9193C4361 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LelojiTests/Pods-LelojiTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		658546CA84DAC0B514620036 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LelojiUITests/Pods-LelojiUITests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		70992319C42421D6FFCB74AD /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+			inputFileListPaths = (
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Leloji/Pods-Leloji-frameworks.sh",
@@ -1437,6 +1407,8 @@
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
@@ -1487,16 +1459,20 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		844190227CED901E7EFA4C47 /* [CP] Copy Pods Resources */ = {
+		9C7145882CBDA28041E200A2 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			inputFileListPaths = (
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Leloji/Pods-Leloji-resources.sh",
 				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
 			);
@@ -1541,21 +1517,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		A403234CFD693B547B3A3BC9 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LelojiUITests/Pods-LelojiUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		C4330D6B445E4B787B470897 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1572,36 +1533,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		CF316C8FF286D6F9863D6D66 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LelojiKeyboard/Pods-LelojiKeyboard-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D95954F832887DABE880814C /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LelojiTests/Pods-LelojiTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1688,7 +1619,7 @@
 				1BD731F720AEBCC8007BEBA5 /* KeyboardController.swift in Sources */,
 				3B3488A6215D47D2009CB92C /* ServiceClass.swift in Sources */,
 				3B3488A5215D47B1009CB92C /* LLSticker.swift in Sources */,
-				3B6698B8214D2D7000AE103E /* EmojiData.swift in Sources */,
+				3B6698B8214D2D7000AE103E /* StickerCategory.swift in Sources */,
 				1BD731FD20AEBCC8007BEBA5 /* StickerIcon.swift in Sources */,
 				3B3488A2215D47B1009CB92C /* LLResult.swift in Sources */,
 				1BD731FB20AEBCC8007BEBA5 /* NumericButton.swift in Sources */,
@@ -1700,6 +1631,7 @@
 				3B3488A3215D47B1009CB92C /* LLHomeData.swift in Sources */,
 				1BD731FA20AEBCC8007BEBA5 /* EmojiPanel.swift in Sources */,
 				1BD731FF20AEBCC8007BEBA5 /* StickerPackIcon.swift in Sources */,
+				3BBA707C2168C30000D19DC4 /* StickerData.swift in Sources */,
 				3B3488A4215D47B1009CB92C /* LLCategory.swift in Sources */,
 				3BB3069921454C1900BE59A6 /* Constaint.swift in Sources */,
 				3BB306972145495000BE59A6 /* UIExtentions.swift in Sources */,

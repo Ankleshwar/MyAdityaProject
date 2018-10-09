@@ -2,7 +2,7 @@
 
 import UIKit
 import Kingfisher
-
+import RealmSwift
 
 let stickerIconSize: CGFloat = 35.0
 let stickerSpacing: CGFloat = 5.0
@@ -14,10 +14,10 @@ protocol EmojiPanelDelegate: class {
 }
 
 class EmojiPanel: UIView {
-    var dataSource: StickerDataSource?
+   
     weak var delegate: EmojiPanelDelegate?
     var collectionView: UICollectionView!
-    var arrEmojiPanel = [LLSticker]()
+    var arrEmojiPanel: List<StickerData>!
     var arrSelectedEmoji = [String]()
     var selectedPackIndex: Int = 0
     var isEmoji: Bool!
@@ -56,7 +56,7 @@ class EmojiPanel: UIView {
     
 
     
-    func reloadCollection(arrData:[LLSticker]) {
+    func reloadCollection(arrData:List<StickerData>) {
         
         self.arrEmojiPanel = arrData
         collectionView.reloadData()
@@ -74,7 +74,7 @@ extension EmojiPanel: UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: StickerIcon.identifier, for: indexPath) as! StickerIcon
         let objeSticker = self.arrEmojiPanel[indexPath.row]
         let imgName = objeSticker.image
-        cell.configure(for:imgName!,inPack:indexPath.row,emoji:isEmoji)
+        cell.configure(for:imgName,inPack:indexPath.row,emoji:isEmoji)
         return cell
     }
 }
@@ -84,7 +84,7 @@ extension EmojiPanel: UICollectionViewDelegate {
         if (collectionView.cellForItem(at: indexPath) as? StickerIcon) != nil {
               let objeSticker = self.arrEmojiPanel[indexPath.row]
             let imgName = objeSticker.image
-            let url = URL(string: (imgName!))
+            let url = URL(string: (imgName))
             if isEmoji == true {
                 KingfisherManager.shared.retrieveImage(with: url!, options: nil, progressBlock: nil, completionHandler: { image, error, cacheType, imageURL in
                     self.delegate?.didSelect(image: image)

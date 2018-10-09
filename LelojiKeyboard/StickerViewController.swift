@@ -11,16 +11,17 @@ let kPressPasteTitleShowDuration = 2.5
 let kPressPasteTitleAppearDuration = 0.5
 
 import UIKit
+import RealmSwift
 
 class StickerViewController: UIViewController ,KeyboardController  {
     var height: CGFloat = StickerViewController.defaultHeight()
     
     @IBOutlet weak var hintView: UIView!
-    
+    let realm = try! Realm()
     @IBOutlet weak var emojiPanel: EmojiPanel!
      var hintButton: UIButton!
-    var imgArrayThumbnil = NSMutableArray()
-    var imgArray : [LLSticker]!
+    var imgArrayThumbnil: Results<StickerCategory>!
+ 
     
     @IBOutlet weak var stickerThumbnil: ThumbnilVC!
     func configureKeyboard() {
@@ -35,9 +36,10 @@ class StickerViewController: UIViewController ,KeyboardController  {
     override func viewDidLoad() {
         super.viewDidLoad()
       
-        print(imgArrayThumbnil)
-        print(imgArray)
-     
+        
+      
+       imgArrayThumbnil = realm.objects(StickerCategory.self)
+        
         setView()
         
         
@@ -65,7 +67,7 @@ class StickerViewController: UIViewController ,KeyboardController  {
         self.stickerThumbnil.reloadCollection(arrData: self.imgArrayThumbnil)
         self.stickerThumbnil.iconSize = CGSize(width: 30.0, height: 30.0)
         self.stickerThumbnil.isKeyboard = true
-        self.emojiPanel.reloadCollection(arrData: self.imgArray)
+        self.emojiPanel.reloadCollection(arrData: self.imgArrayThumbnil[0].stickers)
         self.emojiPanel.isEmoji = true
         self.stickerThumbnil.configeEmojiPanel(panel: self.emojiPanel)
         configuteHintButton()
@@ -176,26 +178,6 @@ class StickerViewController: UIViewController ,KeyboardController  {
             }, completion: nil)
         })
     }
-
-}
-
-extension StickerViewController: StickerDataSource {
-   
-    
-    var arrThumbnilData: NSMutableArray {
-        get {
-            return self.imgArray as! NSMutableArray
-        }
-        set {
-
-
-            self.arrThumbnilData  =  self.imgArray as! NSMutableArray
-        }
-    }
-    
-
-    
-
 
 }
 

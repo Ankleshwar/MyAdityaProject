@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C04613378F574D5A8FCB865863993DC6"
+               BlueprintIdentifier = "E64E5A368BEEE6225B89C6D7A0F37687"
                BuildableName = "Pods_LelojiKeyboard.framework"
                BlueprintName = "Pods-LelojiKeyboard"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "C04613378F574D5A8FCB865863993DC6"
+            BlueprintIdentifier = "E64E5A368BEEE6225B89C6D7A0F37687"
             BuildableName = "Pods_LelojiKeyboard.framework"
             BlueprintName = "Pods-LelojiKeyboard"
             ReferencedContainer = "container:Pods.xcodeproj">
