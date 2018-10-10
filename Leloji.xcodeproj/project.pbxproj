@@ -207,6 +207,7 @@
 		1BD733E620AED399007BEBA5 /* referal.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BD733E520AED398007BEBA5 /* referal.png */; };
 		1BD733E920AEDC77007BEBA5 /* facebook.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BD733E720AEDC77007BEBA5 /* facebook.png */; };
 		1BD733EA20AEDC77007BEBA5 /* google-plus.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BD733E820AEDC77007BEBA5 /* google-plus.png */; };
+		3B28EC88216DCD4C0014C2FD /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B28EC87216DCD4C0014C2FD /* DateHelper.swift */; };
 		3B3488A2215D47B1009CB92C /* LLResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF1E09F2143ABFD00A84661 /* LLResult.swift */; };
 		3B3488A3215D47B1009CB92C /* LLHomeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF1E0A02143ABFD00A84661 /* LLHomeData.swift */; };
 		3B3488A4215D47B1009CB92C /* LLCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF1E0A12143ABFD00A84661 /* LLCategory.swift */; };
@@ -502,6 +503,7 @@
 		1BD733E520AED398007BEBA5 /* referal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = referal.png; sourceTree = "<group>"; };
 		1BD733E720AEDC77007BEBA5 /* facebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebook.png; sourceTree = "<group>"; };
 		1BD733E820AEDC77007BEBA5 /* google-plus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "google-plus.png"; sourceTree = "<group>"; };
+		3B28EC87216DCD4C0014C2FD /* DateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
 		3B6698B7214D2D7000AE103E /* StickerCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickerCategory.swift; sourceTree = "<group>"; };
 		3B701A91215D4C1D0022BE28 /* Icon-App-57x57@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-App-57x57@1x.png"; sourceTree = "<group>"; };
 		3B701A92215D4C1D0022BE28 /* Icon-App-76x76@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-App-76x76@2x.png"; sourceTree = "<group>"; };
@@ -682,6 +684,7 @@
 				1BD731EE20AEBCC8007BEBA5 /* StickerPackIcon.xib */,
 				1BD731EF20AEBCC8007BEBA5 /* ThumbnilVC.swift */,
 				1BD731F020AEBCC8007BEBA5 /* UIImage+Scale.swift */,
+				3B28EC87216DCD4C0014C2FD /* DateHelper.swift */,
 			);
 			path = KeyboardHelper;
 			sourceTree = "<group>";
@@ -1635,6 +1638,7 @@
 				3B3488A4215D47B1009CB92C /* LLCategory.swift in Sources */,
 				3BB3069921454C1900BE59A6 /* Constaint.swift in Sources */,
 				3BB306972145495000BE59A6 /* UIExtentions.swift in Sources */,
+				3B28EC88216DCD4C0014C2FD /* DateHelper.swift in Sources */,
 				1BD731F920AEBCC8007BEBA5 /* CopyboardManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -96,24 +96,24 @@ class KeyboardViewController: UIInputViewController{
         
         ServiceClass().homeData(strUrl:"emojis/stickers", prama: [:] as! [String : String] ) { (result)  in
             switch result {
-            case .Error(let _):
+            case .Error( _):
                 do {
                     // ECSAlert().showAlert(message: (error.localizedDescription), controller: self)
                     self.reloadKeyboard()
                 }
             case .Success(let json):
+                let realm = try! Realm()
+                try! realm.write ({
+                    realm.deleteAll()
+                })
                 let obj = LLHomeData(fromJson: json)
                 for i in 0 ..< obj.result.count{
-//                    self.imgArrayThumbnilMain.add(obj.result[i].category)
-//                    self.imgArrayMain = obj.result[0].category.stickers
-                 
                     self.insertOrUpdate(cat: obj.result[i].category)
                 }
-         
                 
-                
-
-                
+                let strDate = Date().toString(dateFormat: "yyyy-MM-dd'T'HH:mm:ss.SSSZZZ")
+                UserDefaults.standard.set(strDate, forKey: "apiCallTime")
+                UserDefaults.standard.synchronize()
                 self.reloadKeyboard()
             }
             
@@ -122,11 +122,13 @@ class KeyboardViewController: UIInputViewController{
     }
     
     
+    
     func insertOrUpdate(cat: LLCategory) {
                 do {
                     let realm = try Realm()
-                    
                     try! realm.write({
+                        
+                        
                         let newsRealm = StickerCategory()
                         newsRealm.name = cat.name
                         newsRealm.icon = cat.icon
@@ -175,14 +177,33 @@ class KeyboardViewController: UIInputViewController{
     
     override func viewWillAppear(_ animated: Bool) {
         
-//        var _expandedHeight: CGFloat = 240
-//        var _heightConstraint = NSLayoutConstraint(item: view, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 0.0, constant: _expandedHeight)
-//        view.addConstraint(heightConstraint)
-        
-        
-       // getHomeData()
-        
-        self.reloadKeyboard()
+//
+        if let time = UserDefaults.standard.string(forKey: "apiCallTime"){
+            let dicTime = self.dateDiff(dateStr: time)
+            if let hour = dicTime["HH"] {
+                if hour == 4  {
+                    getHomeData()
+                }else if hour > 4{
+                    getHomeData()
+                }else{
+                    self.reloadKeyboard()
+                }
+
+            }else if let _ = dicTime["MM"] {
+                 self.reloadKeyboard()
+
+            }else if let _ = dicTime["SS"]{
+
+                self.reloadKeyboard()
+            }
+
+        }else{
+             getHomeData()
+        }
+
+       
+       
+       
         
         
     }

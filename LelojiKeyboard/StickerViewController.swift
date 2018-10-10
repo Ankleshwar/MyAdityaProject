@@ -244,3 +244,69 @@ extension UIInputViewController {
     
 }
 
+extension UIViewController{
+    
+    func dateDiff(dateStr:String) -> [String:Int] {
+        var dicData = [String:Int]()
+        var f:DateFormatter = DateFormatter()
+        f.timeZone = NSTimeZone.local
+        f.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZZZ"
+        
+        var now = f.string(from: NSDate() as Date)
+        var startDate = f.date(from: dateStr)
+        var endDate = f.date(from: now)
+        var calendar = Calendar.current
+        
+        let component: Set<Calendar.Component> = [.day, .hour, .minute, .second]
+        let dateComponents = calendar.dateComponents(component, from: startDate!, to: endDate!)
+        
+        
+        
+        let days = abs(dateComponents.day!)
+        let hours = abs(dateComponents.hour!)
+        let min = abs(dateComponents.minute!)
+        let sec = abs(dateComponents.second!)
+        
+        var timeAgo = ""
+        
+        if (sec > 0){
+            if (sec > 1) {
+                timeAgo = "\(sec) Seconds Ago"
+                dicData["SS"] = sec
+            } else {
+                timeAgo = "\(sec) Second Ago"
+            }
+        }
+        
+        if (min > 0){
+            if (min > 1) {
+                timeAgo = "\(min) Minutes Ago"
+                dicData["MM"] = min
+            } else {
+                timeAgo = "\(min) Minute Ago"
+            }
+        }
+        
+        if(hours > 0){
+            if (hours > 1) {
+                timeAgo = "\(hours) Hours Ago"
+                dicData["HH"] = hours
+            } else {
+                timeAgo = "\(hours) Hour Ago"
+            }
+        }
+        
+        if (days > 0) {
+            if (days > 1) {
+                timeAgo = "\(days) Days Ago"
+                dicData["DD"] = days
+            } else {
+                timeAgo = "\(days) Day Ago"
+            }
+        }
+        
+        print("timeAgo is===> \(timeAgo)")
+        return dicData;
+    }
+
+}
