@@ -242,6 +242,7 @@
 		3BB3069921454C1900BE59A6 /* Constaint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD7331620AEC990007BEBA5 /* Constaint.swift */; };
 		3BBA707C2168C30000D19DC4 /* StickerData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBA707B2168C30000D19DC4 /* StickerData.swift */; };
 		3BBF65C920B0370D00F7FF06 /* SocialLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBF65C820B0370D00F7FF06 /* SocialLogin.swift */; };
+		3BC91E67216E0F1E00936C45 /* UseStickers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC91E66216E0F1E00936C45 /* UseStickers.swift */; };
 		3BEEEC9C214589B0001EBEFB /* final time.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3BEEEC9B214589AF001EBEFB /* final time.gif */; };
 		3BF18E342150159A00F57A51 /* LLPayementVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF18E322150159A00F57A51 /* LLPayementVC.swift */; };
 		3BF18E352150159A00F57A51 /* LLPayementVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BF18E332150159A00F57A51 /* LLPayementVC.xib */; };
@@ -532,6 +533,7 @@
 		3BBA707B2168C30000D19DC4 /* StickerData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickerData.swift; sourceTree = "<group>"; };
 		3BBF65C820B0370D00F7FF06 /* SocialLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialLogin.swift; sourceTree = "<group>"; };
 		3BBF65CA20B0496600F7FF06 /* Leloji.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Leloji.entitlements; sourceTree = "<group>"; };
+		3BC91E66216E0F1E00936C45 /* UseStickers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseStickers.swift; sourceTree = "<group>"; };
 		3BEEEC9B214589AF001EBEFB /* final time.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "final time.gif"; sourceTree = "<group>"; };
 		3BF18E322150159A00F57A51 /* LLPayementVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LLPayementVC.swift; sourceTree = "<group>"; };
 		3BF18E332150159A00F57A51 /* LLPayementVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LLPayementVC.xib; sourceTree = "<group>"; };
@@ -955,6 +957,7 @@
 			children = (
 				3BBA707B2168C30000D19DC4 /* StickerData.swift */,
 				3B6698B7214D2D7000AE103E /* StickerCategory.swift */,
+				3BC91E66216E0F1E00936C45 /* UseStickers.swift */,
 			);
 			path = KeyboardModel;
 			sourceTree = "<group>";
@@ -1634,6 +1637,7 @@
 				3B3488A3215D47B1009CB92C /* LLHomeData.swift in Sources */,
 				1BD731FA20AEBCC8007BEBA5 /* EmojiPanel.swift in Sources */,
 				1BD731FF20AEBCC8007BEBA5 /* StickerPackIcon.swift in Sources */,
+				3BC91E67216E0F1E00936C45 /* UseStickers.swift in Sources */,
 				3BBA707C2168C30000D19DC4 /* StickerData.swift in Sources */,
 				3B3488A4215D47B1009CB92C /* LLCategory.swift in Sources */,
 				3BB3069921454C1900BE59A6 /* Constaint.swift in Sources */,

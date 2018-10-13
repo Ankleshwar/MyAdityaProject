@@ -49,6 +49,52 @@ class ServiceClass: NSObject {
     }
     
     
+    public func copyImageData(strUrl:String,param:[String:AnyObject],header:String,completion:@escaping (dictionaryBlock)){
+        //var appUserObject: AppUserObject?
+       // print(appUserObject?.token)
+        
+        let headersValue = [
+            "Authorization": "secret \(header)",
+            
+        ]
+        
+        requestPOSTURL(baseURL+strUrl, params: param as [String : AnyObject], headers: headersValue, success: {
+            (JSONResponse) -> Void in
+            print(JSONResponse)
+            
+            let dicData = JSONResponse.dictionaryObject!
+            if dicData["status"] as! Bool == true {
+                completion(nil,JSONResponse.dictionaryObject!)
+            }else{
+                let msg = dicData["error"] as! String
+                
+                let error = NSError(domain:"", code:401, userInfo:[ NSLocalizedDescriptionKey: msg])
+                
+                completion(error as Error,[:])
+                
+                
+            }
+            
+            
+            
+            
+            
+            
+            
+        }) {
+            (error) -> Void in
+            
+            completion(error as Error,[:])
+            
+        }
+    }
+    
+    
+    
+    
+    
+    
+    
     
     
     

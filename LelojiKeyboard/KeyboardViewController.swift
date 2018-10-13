@@ -52,7 +52,7 @@ protocol KeyboardContolPanelController {
 }
 class KeyboardViewController: UIInputViewController{
 
-    
+    var copyImageData: Results<UseStickers>!
     var imgArrayThumbnilMain = NSMutableArray()
     var imgArrayMain : [LLSticker]!
     var heightConstraint: NSLayoutConstraint!
@@ -75,18 +75,16 @@ class KeyboardViewController: UIInputViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
    
-//
-//        do {
-//            let realm = try Realm()
-////          try  realm.write {
-////                realm.add(data)
-////            }
-//
-//        }catch{
-//            print("Error to initialising realm \(error)")
-//        }
-        
-        print(Realm.Configuration.defaultConfiguration.fileURL)
+
+        do {
+            let realm = try Realm()
+             copyImageData = realm.objects(UseStickers.self)
+
+        }catch{
+            print("Error to initialising realm \(error)")
+        }
+       
+        print(copyImageData)
   
 
     }
@@ -120,6 +118,30 @@ class KeyboardViewController: UIInputViewController{
             
         }
     }
+    
+    
+    
+    func sendCopyData() {
+        
+        let dic = [
+            "emoji_ids": copyImageData
+            ]
+        
+        
+        
+        ServiceClass().copyImageData(strUrl:"emojis/copy-emoji", param: dic as [String : AnyObject], header:"" ) { error , dicData  in
+            
+            if error != nil{
+               
+            }
+            else{
+                let strDate = Date().toString(dateFormat: "yyyy-MM-dd'T'HH:mm:ss.SSSZZZ")
+                UserDefaults.standard.set(strDate, forKey: "copyApiTimes")
+                UserDefaults.standard.synchronize()
+            }
+        }
+    }
+    
     
     
     
@@ -207,6 +229,28 @@ class KeyboardViewController: UIInputViewController{
         
         
     }
+    
+    
+    func callCopyApi(){
+        if let time = UserDefaults.standard.string(forKey: "copyApiTimes"){
+            let dicTime = self.dateDiff(dateStr: time)
+            if let hour = dicTime["HH"] {
+                if hour == 1  {
+                    sendCopyData()
+                }else if hour > 1{
+                    sendCopyData()
+                }
+                
+            }
+            
+        }else{
+           sendCopyData()
+        }
+
+    }
+    
+    
+    
     
     var type = KeyboardType.stickers {
         didSet {

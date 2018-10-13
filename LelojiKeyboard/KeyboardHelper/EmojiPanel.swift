@@ -61,6 +61,32 @@ class EmojiPanel: UIView {
         self.arrEmojiPanel = arrData
         collectionView.reloadData()
     }
+    
+    func insertOrUpdate(stk: StickerData) {
+        do {
+            let realm = try Realm()
+            try! realm.write({
+                
+                let newObj = UseStickers()
+                newObj.id = stk.id
+                newObj.image = stk.image
+                newObj.name = stk.name
+                newObj.category = stk.category
+                realm.add(newObj)
+                
+                
+                
+            })
+            
+        }catch{
+            print("Error to initialising realm \(error)")
+        }
+        
+        
+        
+    }
+    
+    
 }
 
 extension EmojiPanel: UICollectionViewDataSource {
@@ -82,9 +108,10 @@ extension EmojiPanel: UICollectionViewDataSource {
 extension EmojiPanel: UICollectionViewDelegate { 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if (collectionView.cellForItem(at: indexPath) as? StickerIcon) != nil {
-              let objeSticker = self.arrEmojiPanel[indexPath.row]
+            let objeSticker = self.arrEmojiPanel[indexPath.row]
             let imgName = objeSticker.image
             let url = URL(string: (imgName))
+            self.insertOrUpdate(stk: objeSticker)
             if isEmoji == true {
                 KingfisherManager.shared.retrieveImage(with: url!, options: nil, progressBlock: nil, completionHandler: { image, error, cacheType, imageURL in
                     self.delegate?.didSelect(image: image)
