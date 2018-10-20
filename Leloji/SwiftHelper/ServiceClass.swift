@@ -138,10 +138,167 @@ class ServiceClass: NSObject {
     
     
     
-    public func homeData(strUrl:String,prama:[String:String],completion: @escaping (JSONTaskCompletionHandler)){
+    public func getBrainTreeToken(strUrl:String,prama:[String:String],header:String,completion: @escaping (JSONTaskCompletionHandler)){
         print(baseURL+strUrl)
         
-        requestGETURL(baseURL+strUrl, params: nil, headers: nil, success: {
+        let headersValue: HTTPHeaders = [
+            "Authorization": "secret \(header)"
+            
+        ]
+        
+        requestGETURL(baseURL+strUrl, params: nil, headers: headersValue, success: {
+            (JSONResponse) -> Void in
+            print(JSONResponse)
+            
+            let dicData = JSONResponse.dictionaryObject!
+            if dicData["status"] as! Bool == true {
+                completion(.Success(JSONResponse))
+            }else{
+                let msg = dicData["error"] as! String
+                
+                let error = NSError(domain:"", code:401, userInfo:[ NSLocalizedDescriptionKey: msg])
+                
+                completion(.Error(.jsonConversionFailure))
+                
+                
+            }
+            
+            
+            
+            
+            
+            
+            
+        }) {
+            (error) -> Void in
+            print(error)
+            completion(.Error(.responseUnsuccessful))
+            
+        }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    }
+    
+    
+    public func sendPaymentNonch(strUrl:String,prama:[String:Any],header:String,completion: @escaping (JSONTaskCompletionHandler)){
+        print(baseURL+strUrl)
+        print(prama)
+        let headersValue: HTTPHeaders = [
+            "Authorization": "secret \(header)"
+            
+        ]
+        
+        requestPOSTURL(baseURL+strUrl, params: prama as [String : AnyObject], headers: headersValue, success: {
+            (JSONResponse) -> Void in
+            print(JSONResponse)
+            
+            let dicData = JSONResponse.dictionaryObject!
+            if dicData["status"] as! Bool == true {
+                completion(.Success(JSONResponse))
+            }else{
+                let msg = dicData["error"] as! String
+                
+                let error = NSError(domain:"", code:401, userInfo:[ NSLocalizedDescriptionKey: msg])
+                
+                completion(.Error(.jsonConversionFailure))
+                
+                
+            }
+            
+            
+            
+            
+            
+            
+            
+        }) {
+            (error) -> Void in
+            print(error)
+            completion(.Error(.responseUnsuccessful))
+            
+        }
+        
+        
+        
+        
+        
+        
+    }
+    
+    
+    
+    
+    
+    
+    public func getDiscountedData(strUrl:String,prama:[String:String],header:String,completion: @escaping (JSONTaskCompletionHandler)){
+        print(baseURL+strUrl)
+        
+        let headersValue: HTTPHeaders = [
+            "Authorization": "secret \(header)"
+            
+        ]
+        
+        requestPOSTURL(baseURL+strUrl, params: prama as [String : AnyObject], headers: headersValue, success: {
+            (JSONResponse) -> Void in
+            print(JSONResponse)
+            
+            let dicData = JSONResponse.dictionaryObject!
+            if dicData["status"] as! Bool == true {
+                completion(.Success(JSONResponse))
+            }else{
+                let msg = dicData["error"] as! String
+                
+                let error = NSError(domain:"", code:401, userInfo:[ NSLocalizedDescriptionKey: msg])
+                
+                completion(.Error(.jsonConversionFailure))
+                
+                
+            }
+            
+            
+            
+            
+            
+            
+            
+        }) {
+            (error) -> Void in
+            print(error)
+            completion(.Error(.responseUnsuccessful))
+            
+        }
+        
+        
+        
+        
+        
+        
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    public func homeData(strUrl:String,prama:[String:String],header:String,completion: @escaping (JSONTaskCompletionHandler)){
+        print(baseURL+strUrl)
+       
+        let headersValue: HTTPHeaders = [
+            "Authorization": "secret \(header)"
+            
+        ]
+        
+        requestGETURL(baseURL+strUrl, params: nil, headers: headersValue, success: {
             (JSONResponse) -> Void in
             print(JSONResponse)
             
@@ -266,171 +423,20 @@ class ServiceClass: NSObject {
     
     
     
-    public func getDataForSearchCity(strUrl:String,prama:[String:String],completion: @escaping (arrayBlock)){
-      
-        
-        requestGETURL(baseURL+strUrl, params: nil, headers: nil, success: {
-                    (JSONResponse) -> Void in
-                    print(JSONResponse)
   
-   
-//
-//            for rootdic  in JSONResponse.arrayObject! {
-//                if let obj = rootdic as? [String: Any] {
-//                   // let object = PlaceObject(JSON: obj)
-//                  //  self.arrIteam.append(object)
-//                }
-//
-//            }
-//
-          
-            completion(nil,self.arrIteam)
-           
-     
-            
-            }){
-            (error) -> Void in
-                
-                completion(error,[])
-                       
-        }
-        
-        //            for responseDic  in    JSONResponse["wsResponse"]{
-        //                print(responseDic)
-        //                if "0" == (responseDic.0){
-        //                    for rootdic  in JSONResponse.dictionaryObject! {
-        //                        print(rootdic)
-        //                        if rootdic is [String: Any] {
-        //
-        //                              print(rootdic)
-        //
-        //                        }
-        //
-        //                    }
-        //
-        //
-        //
-        //                completion(nil,self.arrIteam)
-        //            }
-        //
-        //
-        //            }
-        //
+    
+    
+    
+  
+    
 
-       
-        
-        
-    }
-    
-    
-    
-    public func getDataBusList(strUrl:String,prama:[String: AnyObject],completion: @escaping (arrayBlock)){
-        
-        print(prama)
-        
-        
-        
-        
-//        requestPOSTURL(baseURL+strUrl, params: prama, headers: nil, success: {
-//            (JSONResponse) -> Void in
-//
-//            print(JSONResponse)
-//
-//            print(JSONResponse.dictionaryObject!)
-//            self.arrIteam.removeAll()
-////            if "SUCCESS" == JSONResponse["wsResponse"]["message"]{
-////                for rootdic in JSONResponse["service"].array!{
-////
-////                        let object = IBService(fromJson: rootdic)
-////                        self.arrIteam.append(object)
-////
-////
-////
-////
-////                }
-//                completion(nil, self.arrIteam)
-//        }
-//            else{
-//                let errorTemp = NSError(domain:"No Service Avilable", code:205, userInfo:nil)
-//                completion(errorTemp,[])
-//            }
-//
-//
-//
-//
-//
-//
-//
-//        }){
-//            (error) -> Void in
-//
-//            completion(error,[])
-//
-//        }
-//
-        
-        
-        
-        
-    }
-    
-    public func getNearByPlace(prama:[String: AnyObject],completion: @escaping (arrayBlock)){
-        
-                //print(prama)
-        
-       let lat = prama["lat"] as! Double
-       let lng = prama["lng"] as! Double
-       let type = prama["type"] as! String
-       let commanUrl = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=\(lat),\(lng)&radius=5000&type=\(type)&key=AIzaSyBfK9hv6qIpL7vLV-WRa1qkiNzD4ix1Hjc"
-        
-        requestGETURL(commanUrl, params: [:], headers: nil, success: {
-                    (JSONResponse) -> Void in
-        
-                   // print(JSONResponse)
-        
-                    print(JSONResponse.dictionaryObject!)
-                    self.arrIteam.removeAll()
-                    if "OK" == JSONResponse["status"]{
-                        for rootdic in JSONResponse["results"].array!{
-        
-                              
-        
-//                            let object = VMGooglePlaceData(fromJson: rootdic)
-//                            self.arrIteam.append(object)
-        
-        
-                        }
-                        completion(nil, self.arrIteam)
-                }
-                    else{
-                        let errorTemp = NSError(domain:"No Service Avilable", code:205, userInfo:nil)
-                        completion(errorTemp,[])
-                    }
-        
-        
-        
-        
-        
-        
-        
-                }){
-                    (error) -> Void in
-    
-                    completion(error,[])
-    
-                }
-    
-        
-        
-        
-        
-    }
     
 
 
     
-    private  func requestGETURL(_ strURL : String, params : [String : AnyObject]?, headers : [String : String]?, success:@escaping (JSON) -> Void, failure:@escaping (Error) -> Void) {
-        Alamofire.request(strURL).responseJSON { (responseObject) -> Void in
+    private  func requestGETURL(_ strURL : String, params : [String : AnyObject]?, headers : HTTPHeaders, success:@escaping (JSON) -> Void, failure:@escaping (Error) -> Void) {
+        print(headers)
+        Alamofire.request(strURL, headers: headers).responseJSON { (responseObject) -> Void in
             
             print(responseObject)
             if responseObject.result.isSuccess {

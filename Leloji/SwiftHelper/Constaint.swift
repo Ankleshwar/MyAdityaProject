@@ -8,7 +8,7 @@
 // oldgoogleapikey AIzaSyBewtQYUgN9CUf-kXFTYvcxavtdSi4wu9U
 import Foundation
 
-let googleApikey = "AIzaSyB3bRHVPT8erGG8oTZdbFCuSA3aKIWxCMI"
+let googleApikey = "AIzaSyCNLa3ITEcjVepDHlmq2veWA3vNBJGaLLU"
 let googlePlaceApikey = "AIzaSyBfK9hv6qIpL7vLV-WRa1qkiNzD4ix1Hjc"
 let baseURL = "http://ec2-13-126-37-79.ap-south-1.compute.amazonaws.com/api/"
 

@@ -10,6 +10,14 @@ import UIKit
 import SVProgressHUD
 import TextFieldEffects
 import Crashlytics
+import GoogleMaps
+import GooglePlaces
+import GooglePlacePicker
+import CoreLocation
+
+
+
+
 
 class SignupVC: BaseViewController {
    
@@ -20,12 +28,16 @@ class SignupVC: BaseViewController {
     @IBOutlet weak var txtPassword: HoshiTextField!
     @IBOutlet weak var txtEmail: HoshiTextField!
     @IBOutlet weak var txtFirstName: HoshiTextField!
-    
-    
+    var strName: String = ""
+    var strEmail: String = ""
+    var strId : String = ""
+     var strType : Int = 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+            self.txtFirstName.text = strName
+            self.txtEmail.text = strName
+        
         
     }
 
@@ -98,7 +110,7 @@ class SignupVC: BaseViewController {
                    "countryCode": self.txtCountryCode.text ?? "",
                    "email": self.txtEmail.text ?? "",
                    "state":self.txtState.text ?? "",
-                   "signupType":1
+                   "signupType": strType
             ] as [String : Any]
         
          SVProgressHUD.show()
@@ -150,20 +162,18 @@ class SignupVC: BaseViewController {
     }
     
     
-    }
+    
+    
+    
+    
+    
+}
     
     
     
     
 
-extension SignupVC: UITextFieldDelegate{
-    
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        return true
-    }
-    
-}
+
 class MyCustomTextField : UITextField {
     var leftMargin : CGFloat = 10.0
     
@@ -178,4 +188,116 @@ class MyCustomTextField : UITextField {
         newBounds.origin.x += leftMargin
         return newBounds
     }
+}
+
+extension SignupVC: GMSAutocompleteViewControllerDelegate {
+    
+    // Handle the user's selection.
+    func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace) {
+        // Print place info to the console.
+        print("Place name: \(place.name)")
+        //        print("Place address: \(place.formattedAddress)")
+        //        print("Place attributions: \(place.attributions)")
+        let lat = place.coordinate.latitude
+        let lon = place.coordinate.longitude
+//        self.lat = String(lat)
+//        self.lng = String(lon)
+        
+        print("lat lon",lat,lon)
+        
+        let geoCoder = CLGeocoder()
+        let location = CLLocation(latitude: lat, longitude: lon)
+        geoCoder.reverseGeocodeLocation(location, completionHandler: { (placemarks, error) -> Void in
+            
+            // Place details
+            var placeMark: CLPlacemark!
+            placeMark = placemarks?[0]
+            
+            // Location name
+            if let locationName = placeMark.location {
+                print(locationName)
+            }
+            // Street address
+            if let street = placeMark.thoroughfare {
+                print(street)
+            }
+            // City
+            if let city = placeMark.subAdministrativeArea {
+                self.txtState.text = city
+                print(city)
+                
+            }
+            // Zip code
+            if let zip = placeMark.isoCountryCode {
+                self.txtCountryCode.text = zip
+                print(zip)
+                 self.dismiss(animated: true, completion: nil)
+            }
+            // Country
+            if let country = placeMark.country {
+                print(country)
+            }
+        })
+        
+      
+       
+    }
+    
+    func viewController(_ viewController: GMSAutocompleteViewController, didFailAutocompleteWithError error: Error) {
+        // TODO: handle the error.
+        print("Error: ", error.localizedDescription)
+    }
+    
+    func wasCancelled(_ viewController: GMSAutocompleteViewController) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    // Show the network activity indicator.
+    func didRequestAutocompletePredictions(_ viewController: GMSAutocompleteViewController) {
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
+    }
+    
+    // Hide the network activity indicator.
+    func didUpdateAutocompletePredictions(_ viewController: GMSAutocompleteViewController) {
+        UIApplication.shared.isNetworkActivityIndicatorVisible = false
+    }
+    
+}
+
+
+extension SignupVC: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+        
+    }
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+     
+        // self.moveTextField(textField: textField, moveDistance: 50, up: true)
+        
+        let autocompleteController = GMSAutocompleteViewController()
+        autocompleteController.delegate = self
+        
+        // Set a filter to return only addresses.
+        let filter = GMSAutocompleteFilter()
+        filter.type = .address
+        autocompleteController.autocompleteFilter = filter
+        
+        
+        if textField == self.txtCountryCode {
+            
+            textField.resignFirstResponder()
+            present(autocompleteController, animated: true, completion: nil)
+            
+        }
+        else if textField == self.txtState {
+            
+            textField.resignFirstResponder()
+            present(autocompleteController, animated: true, completion: nil)
+        }
+        
+    }
+    
+    
 }

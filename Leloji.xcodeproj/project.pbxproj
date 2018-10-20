@@ -207,6 +207,7 @@
 		1BD733E620AED399007BEBA5 /* referal.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BD733E520AED398007BEBA5 /* referal.png */; };
 		1BD733E920AEDC77007BEBA5 /* facebook.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BD733E720AEDC77007BEBA5 /* facebook.png */; };
 		1BD733EA20AEDC77007BEBA5 /* google-plus.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BD733E820AEDC77007BEBA5 /* google-plus.png */; };
+		3B1D89F9217B0078005C3B8D /* Voucher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1D89F8217B0078005C3B8D /* Voucher.swift */; };
 		3B28EC88216DCD4C0014C2FD /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B28EC87216DCD4C0014C2FD /* DateHelper.swift */; };
 		3B3488A2215D47B1009CB92C /* LLResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF1E09F2143ABFD00A84661 /* LLResult.swift */; };
 		3B3488A3215D47B1009CB92C /* LLHomeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF1E0A02143ABFD00A84661 /* LLHomeData.swift */; };
@@ -238,6 +239,10 @@
 		3B701ABE215D4C1D0022BE28 /* Icon-App-76x76@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B701AA6215D4C1D0022BE28 /* Icon-App-76x76@1x.png */; };
 		3B701ABF215D4C1D0022BE28 /* Icon-App-40x40@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B701AA7215D4C1D0022BE28 /* Icon-App-40x40@3x.png */; };
 		3B701AC0215D4C1D0022BE28 /* Icon-App-29x29@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B701AA8215D4C1D0022BE28 /* Icon-App-29x29@2x.png */; };
+		3B87FE9221748E2D00B7A3D3 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B87FE9121748E2D00B7A3D3 /* CoreLocation.framework */; };
+		3B87FE9421749FE600B7A3D3 /* AppUserObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD7333E20AECAF0007BEBA5 /* AppUserObject.m */; };
+		3B87FE972174AB6B00B7A3D3 /* Subscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B87FE952174AB6B00B7A3D3 /* Subscription.swift */; };
+		3B87FE982174AB6B00B7A3D3 /* MembershipPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B87FE962174AB6B00B7A3D3 /* MembershipPlan.swift */; };
 		3BB306972145495000BE59A6 /* UIExtentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD7332120AEC990007BEBA5 /* UIExtentions.swift */; };
 		3BB3069921454C1900BE59A6 /* Constaint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD7331620AEC990007BEBA5 /* Constaint.swift */; };
 		3BBA707C2168C30000D19DC4 /* StickerData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBA707B2168C30000D19DC4 /* StickerData.swift */; };
@@ -504,6 +509,7 @@
 		1BD733E520AED398007BEBA5 /* referal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = referal.png; sourceTree = "<group>"; };
 		1BD733E720AEDC77007BEBA5 /* facebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebook.png; sourceTree = "<group>"; };
 		1BD733E820AEDC77007BEBA5 /* google-plus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "google-plus.png"; sourceTree = "<group>"; };
+		3B1D89F8217B0078005C3B8D /* Voucher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Voucher.swift; sourceTree = "<group>"; };
 		3B28EC87216DCD4C0014C2FD /* DateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
 		3B6698B7214D2D7000AE103E /* StickerCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickerCategory.swift; sourceTree = "<group>"; };
 		3B701A91215D4C1D0022BE28 /* Icon-App-57x57@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-App-57x57@1x.png"; sourceTree = "<group>"; };
@@ -530,6 +536,9 @@
 		3B701AA6215D4C1D0022BE28 /* Icon-App-76x76@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-App-76x76@1x.png"; sourceTree = "<group>"; };
 		3B701AA7215D4C1D0022BE28 /* Icon-App-40x40@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-App-40x40@3x.png"; sourceTree = "<group>"; };
 		3B701AA8215D4C1D0022BE28 /* Icon-App-29x29@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-App-29x29@2x.png"; sourceTree = "<group>"; };
+		3B87FE9121748E2D00B7A3D3 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		3B87FE952174AB6B00B7A3D3 /* Subscription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Subscription.swift; sourceTree = "<group>"; };
+		3B87FE962174AB6B00B7A3D3 /* MembershipPlan.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MembershipPlan.swift; sourceTree = "<group>"; };
 		3BBA707B2168C30000D19DC4 /* StickerData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickerData.swift; sourceTree = "<group>"; };
 		3BBF65C820B0370D00F7FF06 /* SocialLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialLogin.swift; sourceTree = "<group>"; };
 		3BBF65CA20B0496600F7FF06 /* Leloji.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Leloji.entitlements; sourceTree = "<group>"; };
@@ -583,6 +592,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B87FE9221748E2D00B7A3D3 /* CoreLocation.framework in Frameworks */,
 				0359CEEFB86B24CA774C4669 /* Pods_LelojiKeyboard.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -996,6 +1006,9 @@
 		3BF1E09E2143ABFD00A84661 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				3B1D89F8217B0078005C3B8D /* Voucher.swift */,
+				3B87FE962174AB6B00B7A3D3 /* MembershipPlan.swift */,
+				3B87FE952174AB6B00B7A3D3 /* Subscription.swift */,
 				3BF1E09F2143ABFD00A84661 /* LLResult.swift */,
 				3BF1E0A02143ABFD00A84661 /* LLHomeData.swift */,
 				3BF1E0A12143ABFD00A84661 /* LLCategory.swift */,
@@ -1007,6 +1020,7 @@
 		3FFCCAE7DE7238CA6A8FC690 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3B87FE9121748E2D00B7A3D3 /* CoreLocation.framework */,
 				4F4E9F8A92463B95C0F667E7 /* Pods_Leloji.framework */,
 				FFFBCB68270961C71C355962 /* Pods_LelojiKeyboard.framework */,
 				534B664A37D979FDE79AD96F /* Pods_LelojiTests.framework */,
@@ -1474,12 +1488,18 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Leloji/Pods-Leloji-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+				"${PODS_ROOT}/GooglePlacePicker/Frameworks/GooglePlacePicker.framework/Resources/GooglePlacePicker.bundle",
+				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
 				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlacePicker.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlaces.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1568,10 +1588,12 @@
 				1BD7336520AECFC3007BEBA5 /* VMLandingVC.swift in Sources */,
 				1BD7332420AEC990007BEBA5 /* BubbleTransition.swift in Sources */,
 				1BD7327F20AEC7FA007BEBA5 /* iOSDevCenters+GIF.swift in Sources */,
+				3B1D89F9217B0078005C3B8D /* Voucher.swift in Sources */,
 				1BD7332A20AEC990007BEBA5 /* FlowingMenuTransitionManager+UIViewControllerAnimatedTransitioning.swift in Sources */,
 				3BF1E0A42143ABFD00A84661 /* LLHomeData.swift in Sources */,
 				1BD7333B20AEC990007BEBA5 /* UIWindow.swift in Sources */,
 				1BD731A720AEBC01007BEBA5 /* AppDelegate.swift in Sources */,
+				3B87FE972174AB6B00B7A3D3 /* Subscription.swift in Sources */,
 				1BD7333120AEC990007BEBA5 /* ECSHelper.swift in Sources */,
 				1BD7335F20AECFC3007BEBA5 /* ProfileVC.swift in Sources */,
 				1BD732FD20AEC931007BEBA5 /* EmojiPanel.swift in Sources */,
@@ -1596,6 +1618,7 @@
 				3BF1E0A32143ABFD00A84661 /* LLResult.swift in Sources */,
 				1BD7330520AEC931007BEBA5 /* UIImage+Scale.swift in Sources */,
 				1BD7332B20AEC990007BEBA5 /* FlowingMenuTransitionManager+UIViewControllerTransitioningDelegate.swift in Sources */,
+				3B87FE982174AB6B00B7A3D3 /* MembershipPlan.swift in Sources */,
 				1BD7333F20AECAF0007BEBA5 /* AppUserObject.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1634,6 +1657,7 @@
 				1BD7320620AEBCC8007BEBA5 /* StickerViewController.swift in Sources */,
 				1BD7320220AEBCC8007BEBA5 /* UIImage+Scale.swift in Sources */,
 				1BD731DB20AEBC66007BEBA5 /* KeyboardViewController.swift in Sources */,
+				3B87FE9421749FE600B7A3D3 /* AppUserObject.m in Sources */,
 				3B3488A3215D47B1009CB92C /* LLHomeData.swift in Sources */,
 				1BD731FA20AEBCC8007BEBA5 /* EmojiPanel.swift in Sources */,
 				1BD731FF20AEBCC8007BEBA5 /* StickerPackIcon.swift in Sources */,

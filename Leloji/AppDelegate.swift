@@ -21,6 +21,9 @@ import Braintree
 import FBSDKLoginKit
 import Fabric
 import Crashlytics
+import GooglePlacePicker
+import GoogleMaps
+import SVProgressHUD
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate,GIDSignInDelegate {
@@ -37,6 +40,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate,GIDSignInDelegate {
         Fabric.with([Crashlytics.self])
         GIDSignIn.sharedInstance().clientID = googleOAuthClientKey
         GIDSignIn.sharedInstance().delegate = self
+        GMSPlacesClient.provideAPIKey(googleApikey)
         return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
     }
     
@@ -106,78 +110,82 @@ class AppDelegate: UIResponder, UIApplicationDelegate,GIDSignInDelegate {
             let givenName = user.profile.givenName
             let familyName = user.profile.familyName
             let email = user.profile.email
-          //  self.callSignUpServiec(f)
-            UserDefaults.standard.set(1, forKey: "isLogin")
-            UserDefaults.standard.synchronize()
-            let viewController = HomeVC(nibName: "HomeVC", bundle: nil)
+           // self.callSignUpServiec(firstName: fullName ?? "", lastName: "", email: email ?? "", id: userId ?? "")
+           
+            
+            let viewController = SignupVC(nibName: "SignupVC", bundle: nil)
+            viewController.strName = fullName ?? ""
+            viewController.strEmail =  email ?? ""
+            viewController.strId = userId ?? ""
+            viewController.strType = 3
             self.navigationController?.pushViewController(viewController, animated: true)
+           
         }
     }
     
     
     
-//    func callSignUpServiec(firstName:String,){
-//        
-//        
-//        let dic = [ "firstName": self.txtFirstName.text ?? "",
-//                    "lastName":self.txtLastName.text ?? "",
-//                    "password": self.txtPassword.text ?? "",
-//                    "countryCode": self.txtCountryCode.text ?? "",
-//                    "email": self.txtEmail.text ?? "",
-//                    "state":self.txtState.text ?? "",
-//                    "signupType":1
-//            ] as [String : Any]
-//        
-//        SVProgressHUD.show()
-//        ServiceClass().signUpDetails(strUrl:"auth/signup", param: dic ) { error , dicData  in
-//            
-//            if dicData["status"] as! Bool == true {
-//                
-//                
-//                
-//                
-//                self.appUserObject = AppUserObject.instance(from: dicData)
-//                self.appUserObject?.token = dicData["auth_token"] as! String
-//                self.appUserObject?.saveToUserDefault()
-//                UserDefaults.standard.set(1, forKey: "isLogin")
-//                UserDefaults.standard.synchronize()
-//                let viewController = HomeVC(nibName: "HomeVC", bundle: nil)
-//                self.present(viewController, animated: true, completion: nil)
-//                
-//                
-//                
-//                
-//                
-//                
-//                SVProgressHUD.dismiss()
-//                
-//            }
-//            else{
-//                
-//                if let users = dicData["error"] as? [String : Any] {
-//                    
-//                    for errData in (users as? [String : Any])!{
-//                        print(errData)
-//                        //  let msg =
-//                        //  ECSAlert().showAlert(message: msg, controller: self)
-//                    }
-//                    
-//                    
-//                    
-//                    
-//                }
-//                
-//                SVProgressHUD.dismiss()
-//                
-//                
-//                
-//            }
-//            
-//        }
-//    }
+    func callSignUpServiec(firstName:String,lastName:String,email:String,id:String){
+        
+        
+        let dic = [ "firstName": firstName,
+                    "lastName": lastName,
+                    "email": email,
+                    "socialId": id,
+                    "signupType":2
+            ] as [String : Any]
+        
+        SVProgressHUD.show()
+        ServiceClass().signUpDetails(strUrl:"auth/signup", param: dic ) { error , dicData  in
+            
+            if error != nil {
+                
+                
+    
+                
+                
+                if let users = dicData["error"] as? [String : Any] {
+                    
+                    for errData in (users as? [String : Any])!{
+                        print(errData)
+                        
+                    }
+                    
+                    
+                    
+                    
+                }
+                
+                
+                
+                
+                
+                SVProgressHUD.dismiss()
+                
+            }
+            else{
+                
+               
+                
+                
+                let viewController = SignupVC(nibName: "SignupVC", bundle: nil)
+                viewController.strName = firstName
+                viewController.strEmail = email
+                viewController.strId = id
+                viewController.strType = 2
+                self.navigationController?.pushViewController(viewController, animated: true)
+                
+                SVProgressHUD.dismiss()
+                
+                
+                
+            }
+            
+        }
+    }
     
     
-    
+
 
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

@@ -92,7 +92,7 @@ class KeyboardViewController: UIInputViewController{
     
     func getHomeData() {
         
-        ServiceClass().homeData(strUrl:"emojis/stickers", prama: [:] as! [String : String] ) { (result)  in
+        ServiceClass().homeData(strUrl:"emojis/stickers", prama: [:] as! [String : String], header: "" ) { (result)  in
             switch result {
             case .Error( _):
                 do {

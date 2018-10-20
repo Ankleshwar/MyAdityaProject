@@ -7,7 +7,8 @@ target 'Leloji' do
 pod 'Firebase/Core'
 pod 'Firebase/Messaging'
 pod  'GoogleSignIn'
-
+pod 'GooglePlaces'
+pod 'GooglePlacePicker'
 pod 'TextFieldEffects'
 pod 'SwiftyJSON'
 pod 'Alamofire'

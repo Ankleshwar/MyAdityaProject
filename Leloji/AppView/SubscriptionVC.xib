@@ -12,6 +12,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SubscriptionVC" customModule="Leloji" customModuleProvider="target">
             <connections>
+                <outlet property="btnSubscription" destination="Gh6-ik-PCs" id="Rgy-Xe-O1M"/>
+                <outlet property="btnVoucher" destination="Abv-n9-jb5" id="uAp-Qf-fgI"/>
                 <outlet property="flowingMenuTransitionManager" destination="iVS-t3-EnT" id="yze-5e-Qcu"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -76,6 +78,9 @@
                     <state key="normal" title="Subscribe to our monthly plan for 49 INR">
                         <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
+                    <connections>
+                        <action selector="clickToSubscription:" destination="-1" eventType="touchUpInside" id="sQX-P5-W7x"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Abv-n9-jb5">
                     <rect key="frame" x="10" y="301" width="394" height="40"/>

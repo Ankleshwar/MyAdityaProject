@@ -54,7 +54,7 @@ class HomeVC: BaseViewController{
         
        
         
-        ServiceClass().homeData(strUrl:"emojis/stickers", prama: [:] as! [String : String] ) { (result)  in
+        ServiceClass().homeData(strUrl:"emojis/stickers", prama: [:] as! [String : String], header: (self.appUserObject?.token ?? "") ) { (result)  in
             switch result {
                 case .Error(let error):
                     do {
