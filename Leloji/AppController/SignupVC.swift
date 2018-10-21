@@ -36,7 +36,7 @@ class SignupVC: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
             self.txtFirstName.text = strName
-            self.txtEmail.text = strName
+            self.txtEmail.text = strEmail
         
         
     }
@@ -76,7 +76,12 @@ class SignupVC: BaseViewController {
             ECSAlert().showAlert(message: "Please Match  Your Password", controller: self)
         }
         else{
-            callSignUpServiec()
+            if strType == 2 {
+                callSocialSignUpServiec()
+            }else{
+                callSignUpServiec()
+            }
+            
         }
         
 //        let viewController = HomeVC(nibName: "HomeVC", bundle: nil)
@@ -110,7 +115,7 @@ class SignupVC: BaseViewController {
                    "countryCode": self.txtCountryCode.text ?? "",
                    "email": self.txtEmail.text ?? "",
                    "state":self.txtState.text ?? "",
-                   "signupType": strType
+                   "signupType": 1
             ] as [String : Any]
         
          SVProgressHUD.show()
@@ -161,7 +166,65 @@ class SignupVC: BaseViewController {
         }
     }
     
-    
+    func callSocialSignUpServiec(){
+        
+        
+        let dic = [ "firstName": self.txtFirstName.text ?? "",
+                    "lastName":self.txtLastName.text ?? "",
+                    "password": self.txtPassword.text ?? "",
+                    "countryCode": self.txtCountryCode.text ?? "",
+                    "email": self.txtEmail.text ?? "",
+                    "state":self.txtState.text ?? "",
+                    "signupType": 2
+            ] as [String : Any]
+        
+        SVProgressHUD.show()
+        ServiceClass().signUpDetails(strUrl:"auth/socialsignup", param: dic ) { error , dicData  in
+            
+            if dicData["status"] as! Bool == true {
+                
+                
+                
+                
+                self.appUserObject = AppUserObject.instance(from: dicData)
+                self.appUserObject?.token = dicData["auth_token"] as! String
+                self.appUserObject?.saveToUserDefault()
+                UserDefaults.standard.set(1, forKey: "isLogin")
+                UserDefaults.standard.synchronize()
+                let viewController = HomeVC(nibName: "HomeVC", bundle: nil)
+                self.present(viewController, animated: true, completion: nil)
+                
+                
+                
+                
+                
+                
+                SVProgressHUD.dismiss()
+                
+            }
+            else{
+                
+                if let users = dicData["error"] as? [String : Any] {
+                    
+                    for errData in (users as? [String : Any])!{
+                        print(errData)
+                        //  let msg =
+                        //  ECSAlert().showAlert(message: msg, controller: self)
+                    }
+                    
+                    
+                    
+                    
+                }
+                
+                SVProgressHUD.dismiss()
+                
+                
+                
+            }
+            
+        }
+    }
     
     
     

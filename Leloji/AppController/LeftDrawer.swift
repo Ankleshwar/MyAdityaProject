@@ -3,7 +3,8 @@
 
 
 import UIKit
-
+import FBSDKCoreKit
+import FBSDKLoginKit
 
 
 class LeftDrawer: BaseViewController{
@@ -108,6 +109,8 @@ extension LeftDrawer: UITableViewDelegate,UITableViewDataSource {
             self.logOutUser()
             UserDefaults.standard.set(0, forKey: "isLogin")
             UserDefaults.standard.synchronize()
+            let manager = FBSDKLoginManager()
+            manager.logOut()
             let delegate =  UIApplication.shared.delegate as! AppDelegate
             delegate.setRootController()
             

@@ -109,13 +109,73 @@ class LoginVC: BaseViewController, FBSDKLoginButtonDelegate {
                 print("User Name is: \(userName)")
                 let userEmail : NSString = dict["email"] as! NSString
                 print("User Email is: \(userEmail)")
+                let userID : NSString = dict["id"] as! NSString
+                print("User ID is: \(userID)")
                 print(dict)
-               // self.callSocialScreenValue(name: userName as String, email: userEmail as String)
+                self.callSignUpServiec(firstName: userName as String, lastName: "", email: userEmail as String, id: userID as String)
                 
-                self.setHomeController()
+              
             }
         })
     }
+    
+    func callSignUpServiec(firstName:String,lastName:String,email:String,id:String){
+        
+        
+        let dic = [ "firstName": firstName,
+                    "lastName": lastName,
+                    "email": email,
+                    "socialId": id,
+                    "signupType":2
+            ] as [String : Any]
+        
+        SVProgressHUD.show()
+        ServiceClass().signUpDetails(strUrl:"auth/socialsignup", param: dic ) { error , dicData  in
+            
+            if error != nil {
+                
+                
+                
+                
+                let viewController = SignupVC(nibName: "SignupVC", bundle: nil)
+                viewController.strName = firstName
+                viewController.strEmail = email
+                viewController.strId = id
+                viewController.strType = 2
+                self.navigationController?.pushViewController(viewController, animated: true)
+                
+                
+                
+                
+                
+                
+                SVProgressHUD.dismiss()
+                
+            }
+            else{
+                
+                
+                self.appUserObject = AppUserObject.instance(from: dicData)
+                self.appUserObject?.token = dicData["auth_token"] as! String
+                self.appUserObject?.saveToUserDefault()
+                UserDefaults.standard.set(1, forKey: "isLogin")
+                UserDefaults.standard.synchronize()
+                let viewController = HomeVC(nibName: "HomeVC", bundle: nil)
+                self.present(viewController, animated: true, completion: nil)
+             
+                
+                SVProgressHUD.dismiss()
+                
+                
+                
+            }
+            
+        }
+    }
+    
+    
+    
+    
     
    public func setHomeController() {
     

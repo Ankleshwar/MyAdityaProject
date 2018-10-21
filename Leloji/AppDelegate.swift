@@ -29,7 +29,7 @@ import SVProgressHUD
 class AppDelegate: UIResponder, UIApplicationDelegate,GIDSignInDelegate {
   
 
-
+    var appUserObject: AppUserObject?
     var viewController: UIViewController?
     var window: UIWindow?
     var navigationController: UINavigationController?
@@ -110,15 +110,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate,GIDSignInDelegate {
             let givenName = user.profile.givenName
             let familyName = user.profile.familyName
             let email = user.profile.email
-           // self.callSignUpServiec(firstName: fullName ?? "", lastName: "", email: email ?? "", id: userId ?? "")
+            self.callSignUpServiec(firstName: fullName ?? "", lastName: "", email: email ?? "", id: userId ?? "")
            
-            
-            let viewController = SignupVC(nibName: "SignupVC", bundle: nil)
-            viewController.strName = fullName ?? ""
-            viewController.strEmail =  email ?? ""
-            viewController.strId = userId ?? ""
-            viewController.strType = 3
-            self.navigationController?.pushViewController(viewController, animated: true)
+
            
         }
     }
@@ -136,25 +130,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate,GIDSignInDelegate {
             ] as [String : Any]
         
         SVProgressHUD.show()
-        ServiceClass().signUpDetails(strUrl:"auth/signup", param: dic ) { error , dicData  in
+        ServiceClass().signUpDetails(strUrl:"auth/socialsignup", param: dic ) { error , dicData  in
             
             if error != nil {
                 
                 
     
                 
-                
-                if let users = dicData["error"] as? [String : Any] {
-                    
-                    for errData in (users as? [String : Any])!{
-                        print(errData)
-                        
-                    }
-                    
-                    
-                    
-                    
-                }
+                let viewController = SignupVC(nibName: "SignupVC", bundle: nil)
+                viewController.strName = firstName
+                viewController.strEmail = email
+                viewController.strId = id
+                viewController.strType = 2
+                self.navigationController?.pushViewController(viewController, animated: true)
+             
                 
                 
                 
@@ -166,15 +155,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate,GIDSignInDelegate {
             else{
                 
                
+                self.appUserObject = AppUserObject.instance(from: dicData)
+                self.appUserObject?.token = dicData["auth_token"] as! String
+                self.appUserObject?.saveToUserDefault()
+                UserDefaults.standard.set(1, forKey: "isLogin")
+                UserDefaults.standard.synchronize()
+                let viewController = HomeVC(nibName: "HomeVC", bundle: nil)
+              self.navigationController?.pushViewController(viewController, animated: true)
                 
-                
-                let viewController = SignupVC(nibName: "SignupVC", bundle: nil)
-                viewController.strName = firstName
-                viewController.strEmail = email
-                viewController.strId = id
-                viewController.strType = 2
-                self.navigationController?.pushViewController(viewController, animated: true)
-                
+
                 SVProgressHUD.dismiss()
                 
                 
