@@ -104,6 +104,7 @@ class ServiceClass: NSObject {
     public func getLoginDetails(strUrl:String,param:[String:String],completion:@escaping (dictionaryBlock)){
         
         print(param)
+        print(baseURL+strUrl)
         
         requestPOSTURL(baseURL+strUrl, params: param as [String : AnyObject], headers: nil, success: {
             (JSONResponse) -> Void in
